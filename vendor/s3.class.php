@@ -1,5 +1,4 @@
 <?php
-require_once 'conf/conf.php';
 /**
  *  Amazon S3 REST API Implementation
  *

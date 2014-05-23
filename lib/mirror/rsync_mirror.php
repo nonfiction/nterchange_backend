@@ -1,5 +1,4 @@
 <?php
-require_once 'conf/conf.php';
 /**
  * RsyncMirror is a class to mirror your site's uploads through Rsync.
  *
@@ -25,14 +24,14 @@ require_once 'conf/conf.php';
  */
 
 class RsyncMirror extends Object {
-	
-	
+
+
 	function __construct() {
 		$this->rsync_binary = '/usr/bin/rsync ';
-		
+
 		// Set SSH specific options as well as dealing with a public_key if available.
 		$this->private_key = CONF_DIR . "/ssh_private_key";
-		
+
 		if (defined('MIRROR_RSYNC_SSH') && MIRROR_RSYNC_SSH) {
 			$this->options = '-v -e "ssh';
 			if (file_exists($this->private_key)) {
@@ -41,7 +40,7 @@ class RsyncMirror extends Object {
 				// Do nothing, needs a public key to work properly.
 			}
 		}
-		
+
 		// I think we need this - otherwise we can't be sure the permissions
 		// are good enough to read the file by the web server.
 		// $this->options .= '--chmod=a+rx -t -p ';
@@ -49,17 +48,17 @@ class RsyncMirror extends Object {
 		$this->exclude = '--exclude "CVS" --exclude ".svn" ';
 		$this->ssh_connection_details = MIRROR_USERNAME . '@' . MIRROR_HOSTNAME . ':' . MIRROR_REMOTE_DIR;
 		// TODO: Rsync connection details.
-		
+
 	}
-	
+
 	function connect() {
 
 	}
-	
+
 	function disconnect() {
 
 	}
-	
+
 	function putFile($filename) {
 		$full_path_filename = $_SERVER['DOCUMENT_ROOT'] . $filename;
 		if (defined('MIRROR_RSYNC_SSH') && MIRROR_RSYNC_SSH) {
@@ -70,7 +69,7 @@ class RsyncMirror extends Object {
 			// Set the password as an environment variable.
 			$this->password = MIRROR_PASSWORD;
 			putenv ("RSYNC_PASSWORD=$this->password");
-			
+
 			// OR if you're using RSYNC without ssh, set the password in this file.
 			$this->password_file = CONF_DIR . "/rsync_password";
 
@@ -80,7 +79,7 @@ class RsyncMirror extends Object {
 			// Do an rsync specific command here.
 		}
 	}
-	
+
 	function deleteFile($filename) {
 
 	}

@@ -1,5 +1,4 @@
 <?php
-require_once 'conf/conf.php';
 require_once 'n_model.php';
 require_once 'n_filesystem.php';
 /**
@@ -8,7 +7,7 @@ require_once 'n_filesystem.php';
  * For better mime type information: fileinfo PECL Extension
  *    Install: pecl install fileinfo
  *  http://pecl.php.net/package/Fileinfo
- * 
+ *
  * Example: /upload/media_element/media_file/1
  * 	This will serve the real URL which doesn't visibly with each uploaded version.
  *  This way, uploading of new versions of a file doesn't have
@@ -51,7 +50,7 @@ class NDownload extends Object {
 		$url = eregi_replace('^/', '', $url);
 		return $url;
 	}
-	
+
 	/**
 	 * getAssetAttributes - Split the URL by /'s and return an array.
 	 *
@@ -62,7 +61,7 @@ class NDownload extends Object {
 		$url_parts = explode('/', $url);
 		return $url_parts;
 	}
-	
+
 	/**
 	 * setAssetAttributes - Setting some class attributes: model, field and asset_id
 	 *
@@ -73,7 +72,7 @@ class NDownload extends Object {
 		$this->field = $url_parts[1];
 		$this->asset_id = $url_parts[2];
 	}
-	
+
 	/**
 	 * getAssetModelName - Returns the asset model name.
 	 *
@@ -82,9 +81,9 @@ class NDownload extends Object {
 	function getAssetModelName() {
 		return $this->model;
 	}
-	
+
 	/**
-	 * getFilePath - Returns the full path to the filename 
+	 * getFilePath - Returns the full path to the filename
 	 *					referenced in model/field/asset_id
 	 *
 	 * @return 	string	The filename from the db plus DOCUMENT_ROOT.
@@ -103,7 +102,7 @@ class NDownload extends Object {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * getFileName - Strips off of the path and just returns the filename.
 	 *
@@ -114,7 +113,7 @@ class NDownload extends Object {
 		$filename = basename($path);
 		return $filename;
 	}
-	
+
 	/**
 	 * serveFile - Actually serves the file to the browser.
 	 *

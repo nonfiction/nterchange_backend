@@ -1,5 +1,4 @@
 <?php
-require_once 'conf/conf.php';
 /**
  * FtpMirror is a class to mirror your site's uploads through FTP.
  *
@@ -22,11 +21,11 @@ require_once 'conf/conf.php';
  */
 
 class FtpMirror extends Object {
-	
+
 	function __construct() {
 
 	}
-	
+
 	function connect() {
 		$this->connection = ftp_connect(MIRROR_HOSTNAME);
 		$this->login_result = ftp_login($this->connection, MIRROR_USERNAME, MIRROR_PASSWORD);
@@ -40,13 +39,13 @@ class FtpMirror extends Object {
 			NDebug::debug('FTP Mirror connection was successful.' , N_DEBUGTYPE_INFO);
 		}
 	}
-	
+
 	function disconnect() {
 		if (ftp_quit($this->connection)) {
 			NDebug::debug('FTP Mirror disconnected.' , N_DEBUGTYPE_INFO);
 		}
 	}
-	
+
 	function putFile($filename) {
 		if ((!$this->connection) || (!$this->login_result)) {
 			$this->connect();
@@ -55,10 +54,10 @@ class FtpMirror extends Object {
 		$file = basename($filename);
 		$dir_array = explode('/', $directories);
 		$empty = array_shift($dir_array);
-		
+
 		// Change into MIRROR_REMOTE_DIR.
 		ftp_chdir($this->connection, MIRROR_REMOTE_DIR);
-		
+
 		// Create any folders that are needed.
 		foreach ($dir_array as $dir) {
 			// If it doesn't exist, create it.
@@ -74,7 +73,7 @@ class FtpMirror extends Object {
 				}
 			}
 		}
-		
+
 		// Put the file into the folder.
 		$full_path = $_SERVER['DOCUMENT_ROOT'] . $filename;
 		if (ftp_put($this->connection, $file, $full_path, FTP_BINARY)) {
@@ -84,17 +83,17 @@ class FtpMirror extends Object {
 			NDebug::debug("FTP Mirror: $filename was NOT uploaded successfully" , N_DEBUGTYPE_INFO);
 		}
 	}
-	
+
 	function deleteFile($filename) {
 		if ((!$this->connection) || (!$this->login_result)) {
 			$this->connect();
 		}
 		// Take off the leading /
 		$filename = eregi_replace('^/', '', $filename);
-		
+
 		// Change into MIRROR_REMOTE_DIR.
 		ftp_chdir($this->connection, MIRROR_REMOTE_DIR);
-		
+
 		if (ftp_delete($this->connection, $filename)) {
 			NDebug::debug("FTP Mirror: $filename WAS deleted successfully" , N_DEBUGTYPE_INFO);
 		} else {
@@ -103,7 +102,7 @@ class FtpMirror extends Object {
 	}
 
 	function synchronizeDirectory() {
-		
+
 	}
 
 }

@@ -1,5 +1,4 @@
 <?php
-require_once 'conf/conf.php';
 require_once 'vendor/s3.class.php';
 /**
  * S3Mirror is a class to mirror your site's uploads through Amazon's S3 service.
@@ -22,19 +21,19 @@ require_once 'vendor/s3.class.php';
  */
 
 class S3Mirror extends Object {
-	
+
 	function __construct() {
 
 	}
-	
+
 	function connect() {
-		
+
 	}
-	
+
 	function disconnect() {
-		
+
 	}
-	
+
 	function putFile($filename) {
 		$s3svc = new S3();
 		// Removing the first slash is important - otherwise the URL is different.
@@ -46,17 +45,17 @@ class S3Mirror extends Object {
 		$fh = fopen( $filename, 'rb' );
 		$contents = fread( $fh, filesize( $filename ) );
 		fclose( $fh );
-		
+
 		$s3svc->putBucket( MIRROR_S3_BUCKET );
 		$out = $s3svc->putObject( $aws_filename, $contents, MIRROR_S3_BUCKET, 'public-read', $mime_type );
-		
+
 		// Now the file is accessable at:
 		//		http://MIRROR_S3_BUCKET.s3.amazonaws.com/put/the/filename/here.jpg 	OR
 		// 		http://s3.amazonaws.com/MIRROR_S3_BUCKET/put/the/filename/here.jpg
 
 		unset($s3svc);
 	}
-	
+
 	function deleteFile($filename) {
 		$s3svc = new S3();
 		// Removing the first slash is important - otherwise the URL is different.
@@ -66,7 +65,7 @@ class S3Mirror extends Object {
 	}
 
 	function synchronizeDirectory() {
-		
+
 	}
 
 }

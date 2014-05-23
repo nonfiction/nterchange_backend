@@ -1,0 +1,20 @@
+{
+  "name": "toe.js",
+  "version": "2.0.0",
+  "main": "dist/toe.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "homepage": "https://github.com/suderman/toe.js",
+  "_release": "2.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.0",
+    "commit": "5ef413604186dfe86e11b2281e907021e8385508"
+  },
+  "_source": "git://github.com/suderman/toe.js.git",
+  "_target": "*",
+  "_originalSource": "suderman/toe.js"
+}

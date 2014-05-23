@@ -1,0 +1,10 @@
+{
+  "name": "toe.js",
+  "version": "2.0.0",
+  "main": "dist/toe.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}

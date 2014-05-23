@@ -1,0 +1,10 @@
+{
+  "name": "text-shadow",
+  "version": "1.0.0",
+  "main": "text-shadow.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}

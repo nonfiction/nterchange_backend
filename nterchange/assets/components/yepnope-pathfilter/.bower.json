@@ -1,0 +1,20 @@
+{
+  "name": "yepnope-pathfilter",
+  "version": "1.0.0",
+  "main": "yepnope.pathfilter.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "homepage": "https://github.com/suderman/yepnope-pathfilter",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.0",
+    "commit": "0988d9a5bb40f4beadcaa72294d737c0411bc029"
+  },
+  "_source": "git://github.com/suderman/yepnope-pathfilter.git",
+  "_target": "~1.0.0",
+  "_originalSource": "yepnope-pathfilter"
+}

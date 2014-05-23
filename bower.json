@@ -4,7 +4,6 @@
   "dependencies": {
     "yepnope": "~1.5.4",
     "yepnope-pathfilter": "~1.0.0",
-    "animate": "~1.0.1",
     "html5shiv": "~3.7.0",
     "modernizr-ie": "~1.0.0",
     "nwmatcher": "~1.3.1",

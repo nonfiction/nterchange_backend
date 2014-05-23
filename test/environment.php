@@ -2,6 +2,8 @@
 
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE);
 require_once dirname(__FILE__).'/../vendor/autoload.php';
+require_once 'config/config.php';
+
 date_default_timezone_set('America/Edmonton');
 
 NDB::$db = 'nterchange_test';

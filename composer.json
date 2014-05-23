@@ -12,7 +12,6 @@
   "autoload": {
     "classmap": ["lib/", "app/"],
     "files": [
-      "config/config.php",
       "vendor/Smarty/libs/Smarty.class.php",
       "vendor/SmartyPaginate/SmartyPaginate.class.php"
     ]

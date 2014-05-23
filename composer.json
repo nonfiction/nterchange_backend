@@ -1,0 +1,27 @@
+{
+  "name": "nterchange3",
+  "description": "Core libraries for nterchange CMS",
+  "version": "4.0.0",
+  "require": {
+    "amazonwebservices/aws-sdk-for-php": "1.6.2",
+    "nterchange_pear": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "3.7.28"
+  },
+  "autoload": {
+    "classmap": ["lib/", "app/"],
+    "files": [
+      "config/config.php",
+      "vendor/Smarty/libs/Smarty.class.php",
+      "vendor/SmartyPaginate/SmartyPaginate.class.php"
+    ]
+  },
+  "include-path": ["./", "vendor/", "lib/"],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:nonfiction/nterchange_pear.git"
+    }
+  ]
+}

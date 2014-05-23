@@ -1,0 +1,42 @@
+// Web Fonts
+// example: .font('FontAwesome', "/fonts/font-awesome/fontawesome-webfont");
+.font(@fontname, @fontfile) {
+  @font-face {
+    font-family: "@{fontname}";
+    src: url("@{fontfile}.eot");
+    src: url("@{fontfile}.eot?#iefix") format("embedded-opentype"),
+         url("@{fontfile}.woff") format("woff"),
+         url("@{fontfile}.ttf") format("truetype"),
+         url("@{fontfile}.svg#@{fontname}") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+// Cross-browser opacity (including IE)
+.opacity(@opacity: 0.5) {
+  -webkit-opacity: @opacity;
+  -moz-opacity: @opacity;
+  opacity: @opacity;
+  @opperc: (@opacity * 100);
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+  filter: ~"alpha(opacity=@{opperc})";
+}
+
+// Text-selection colors
+.selection(@background, @color: #000, @img-background: transparent) {
+  ::selection {
+    background: @background;
+    color: @color;
+  }
+  ::-moz-selection {
+    background: @background;
+    color: @color;
+  }
+  img::selection {
+    background: @img-background;
+  }
+  img::-moz-selection {
+    background: @img-background;
+  }
+}

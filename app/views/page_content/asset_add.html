@@ -1,0 +1,19 @@
+<div class="ntoolbar-page btn-toolbar" role="toolbar" id="add_content_links_for_{$template_container_id}">
+
+    <div class="btn-group">
+      <label class="btn btn-sm btn-default btn-label" disabled>
+        {$template_container_name}
+      </label>
+
+      <button type="button" class="btn btn-sm btn-default add" data-href="{url_for controller=page_content action=select_content_type id=$page_id template_container_id=$template_container_id referer=1}">
+        <i class="fa fa-lg fa-plus-square"></i>
+      </button>
+
+      {if !$no_reorder}
+        <button type="button" class="btn btn-sm btn-default order" data-href="{url_for controller=page action=reorder_content id=$page_id template_container_id=$template_container_id}">
+          <i class="fa fa-lg fa-list"></i>
+        </button>
+      {/if}
+
+    </div>
+</div>

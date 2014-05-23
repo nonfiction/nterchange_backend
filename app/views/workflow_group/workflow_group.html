@@ -1,0 +1,21 @@
+<div id="asset">
+<div id="workflow{$id}">
+<div class="workflowtitle">{$_headline}</div>
+{link_to href="/nterchange/$asset/edit/`$id`" text="Edit" class="control"} | {link_to href="/nterchange/$asset/delete/`$id`" text="Delete" confirm="Are you sure?" class="control"}
+<div id="workflowusers{$id}" class="workflowusers">
+	{foreach from=$_users item=user name=workflow_users}
+	{include file="workflow_users/workflow_user.html" id=$user.id real_name=$user.real_name role=$user.role}
+	{/foreach}
+</div>
+<div class="control">
+<div id="add_person_{$id}_link">
+&rarr; <a href="javascript:workflowManager.toggleAddUser({$id});" class="control">Add a user</a> to the &quot;{$workflow_title}&quot; Workflow Group
+</div>
+{image_tag src="/nterchange/images/indicator.gif" id="add_user_indicator_`$id`" style="display:none;"}
+<div id="add_person_form_container_{$id}" class="add_person_form" style="display:none;">
+<a href="javascript:workflowManager.toggleAddUser({$id})" class="control">Cancel</a>
+{$add_user_form}
+</div>
+</div>
+</div>
+</div>

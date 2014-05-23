@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>nterchange{if $_TITLE_} - {$_TITLE_}{/if}</title>
+	{stylesheet_link_tag href=screen}
+	{stylesheet_link_tag href=handheld media=handheld}
+	{stylesheet_link_tag href=nterchange_custom}
+{$HEADER}
+</head>
+<body onload="document.login_form.username.focus();">
+<div id="header">
+<div id="logo">
+<img src="/nterchange/images/nterchange.gif" alt="" width="149" height="29" />
+</div>
+</div>
+
+{if $_FLASH_.notice}
+<div id="notice">
+{$_FLASH_.notice}
+</div>
+{/if}
+
+<div id="container">
+<div id="loginbox">
+<div id="login">
+<h1 class="title">{$_TITLE_}</h1>
+{$MAIN_CONTENT}
+{if !$forgot}
+<div id="forgot" style="margin-top:3px;margin-bottom:3px;">
+<a href="/nterchange/login/forgot">Forgot your password?</a>
+</div>
+{/if}
+{php}
+print '<div style="font-size:9px;color:#CCC;">' . "\n";
+print 'Browser: ' . $_SERVER['HTTP_USER_AGENT'] . "<br />\n";
+print 'IP: ' . $_SERVER['REMOTE_ADDR'] . "\n";
+print "</div>\n";
+{/php}
+</div>
+<div class="bottom">&nbsp;</div>
+</div>
+</div>
+
+<div class="clear">&nbsp;</div>
+<div id="footer">
+<div id="credit">
+<a href="http://nonfiction.ca/"><img src="/nterchange/images/created_by.gif" alt="" width="111" height="13" /></a>
+</div>
+</div>
+</body>
+</html>

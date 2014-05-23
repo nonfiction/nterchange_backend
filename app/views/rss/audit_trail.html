@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>audit trail rss feed - {$_SITE_NAME_}</title>
+ <link href="http://{$smarty.server.SERVER_NAME}/nterchange/rss/audit_trail" rel="self" />
+ <updated>{$smarty.now|date_format:'%Y-%m-%d'}T00:00:00-07:00</updated>
+ <author>
+   <name>nterchange</name>
+   <email>do-not-reply@nterchange.com</email>
+ </author>
+ <id>urn:uuid:{$smarty.server.SERVER_NAME}</id>
+{foreach from=$records item=record}
+<entry>
+  <title>{$record.user.real_name} {$record.action_taken} a {$record.asset_name}</title>
+  <link href="http://{$smarty.server.SERVER_NAME}/nterchange/audit_trail/viewlist"/>
+  <id>urn:uuid:{$smarty.server.SERVER_NAME}:audit_trail{$record.id}</id>
+  <updated>{$record.cms_created}T00:00:00-07:00</updated>
+  <summary>{$record.user_id} {$record.action_taken} a {$record.asset_type} (id: {$record.asset.id}) on {if $record.page ne ''}page {$record.page.title} {/if}from IP address {$record.ip} at {$record.created}</summary>
+</entry>
+{/foreach}
+</feed>

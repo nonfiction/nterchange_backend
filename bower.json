@@ -1,0 +1,22 @@
+{
+  "name": "nterchange",
+  "version": "3.3.0",
+  "dependencies": {
+    "yepnope": "~1.5.4",
+    "yepnope-pathfilter": "~1.0.0",
+    "animate": "~1.0.1",
+    "html5shiv": "~3.7.0",
+    "modernizr-ie": "~1.0.0",
+    "nwmatcher": "~1.3.1",
+    "selectivizr": "suderman/selectivizr",
+    "respond": "~1.4.2",
+    "jquery": "~1.10.2",
+    "jquery-ui": "~1.10.3",
+    "bootstrap": "~3.0.2",
+    "fastclick": "ftlabs/fastclick",
+    "toe.js": "suderman/toe.js",
+    "H5F": "suderman/H5F",
+    "text-shadow": "~1.0.0",
+    "ckeditor": "latest"
+  }
+}

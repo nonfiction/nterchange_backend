@@ -1,0 +1,7 @@
+<div id="assetlist">
+<ul>
+{foreach from=$assets item=asset}
+<li><a href="{url_for controller=$asset.asset}">{$asset.asset_name}</a>
+{/foreach}
+</ul>
+</div>

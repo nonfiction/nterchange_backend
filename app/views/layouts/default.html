@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>nterchange{if $_TITLE_} - {$_TITLE_}{/if}</title>
+	{stylesheet_link_tag href=screen}
+	{stylesheet_link_tag href=handheld media=handheld}
+	{stylesheet_link_tag href=nterchange_custom}
+	<link rel="stylesheet" href="/nterchange/javascripts/datechooser/datechooser.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="/nterchange/javascripts/prototype.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/nterchange/javascripts/scriptaculous.js" type="text/javascript" charset="utf-8"></script>
+	{javascript_include_tag src=workflow}
+	{javascript_include_tag src=page_content}
+	{javascript_include_tag src=page}
+	{javascript_include_tag src=datechooser/datechooser}	
+	{javascript_include_tag src=nterchange}
+	{javascript_include_tag src=ckeditor/ckeditor}
+{$HEADER}
+</head>
+<body>
+<div id="header">
+<div id="logout">
+{if $login_name}You are logged in as <b>{$login_name}</b> {/if}<a href="{php}print $_SERVER['PHP_SELF'] . '?' . ($_SERVER['QUERY_STRING']?$_SERVER['QUERY_STRING'] . '&amp;':''){/php}logout=1">logout</a>
+</div>
+<div id="logo">
+<a href="/nterchange/"><img src="/nterchange/images/nterchange.gif" alt="" width="149" height="29" /></a>
+</div>
+{include file="layouts/navigation.html"}
+</div>
+
+<div id="container">
+<div id="contentbox{if !$SIDEBAR_CONTENT}alone{/if}">
+<div id="content">
+<h1 class="title">{$_TITLE_}</h1>
+{dynamic}
+{if $_FLASH_.notice}
+<div id="notice">
+{$_FLASH_.notice}
+</div>
+{/if}
+{/dynamic}
+{if $subnav}
+{include file="layouts/subnav.html"}
+<div style="border:1px #999 solid;padding:8px;">
+{/if}
+{$MAIN_CONTENT}
+{if $subnav}
+</div>
+{/if}
+</div>
+<div class="bottom">&nbsp;</div>
+</div>
+{if $SIDEBAR_CONTENT}
+<div id="sidebarbox">
+<h1 class="title">{$SIDEBAR_TITLE}</h1>
+{$SIDEBAR_CONTENT}
+</div>
+{/if}
+</div>
+
+<div class="clear">&nbsp;</div>
+<div id="footer"><div id="nterchangeversion">v. {$nterchange_version}</div>
+<div id="credit">
+<a href="http://nonfiction.ca/" rel="blank"><img src="/nterchange/images/created_by.gif" alt="" width="111" height="13" /></a>
+</div>
+</div>
+</body>
+</html>

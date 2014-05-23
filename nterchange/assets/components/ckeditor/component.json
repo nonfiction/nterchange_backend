@@ -1,0 +1,9 @@
+{
+  "name": "ckeditor",
+  "version": "0.0.0",
+  "commit": "1ddd4433d7d3412ec82eb40d11f7c4ac2d75b702",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ckeditor/ckeditor-releases.git"
+  }
+}

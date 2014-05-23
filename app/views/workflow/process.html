@@ -1,0 +1,24 @@
+<h2>&quot;{$workflow_group.workflow_title}&quot; Workflow Group</h2>
+
+<p>
+The workflow for the &quot;{$asset.cms_headline}&quot; {$asset_name} record on the <b>{$page.title}</b> page awaits your Approval.
+</p>
+
+{if $pages}
+<div>
+<span class="highlight"><b>This content will be updated on multiple pages:</b></span>
+</div>
+<ul style="margin-top:0;">
+{foreach from=$pages item=page}
+<li>{link_to href="controller:page;action:preview;id:`$page.id`;" rel=blank text=$page.title}</li>
+{/foreach}
+</ul>
+{/if}
+
+{if $description}
+<p>
+<span class="highlight">{$description}</span>
+</p>
+{/if}
+
+{$form}

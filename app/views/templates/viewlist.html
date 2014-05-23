@@ -1,0 +1,58 @@
+<div class="search" align="right"><form method="get" action="{$smarty.server.REQUEST_URI}">{if $smarty.get.search ne ''} <a href="{$smarty.server.PHP_SELF}">Reset Search</a>&nbsp; {/if}{search_field_list_select asset=`$asset` searched_field=`$search_field`}<input type="text" name="search"{if $smarty.get.search} value="{$smarty.get.search}"{else} value="Search"{/if} onfocus="if(this.value=='Search')this.value='';" onblur="if(this.value=='')this.value='Search';" /></form></div>
+
+<div class="control">
+<a href="{url_for action=create}" class="control">New {$asset_name}</a> {if $rows}| <a href="/nterchange/excel_export/export/{$asset}{if $smarty.get.search_field ne ''}?search_field={$smarty.get.search_field }{/if}{if $smarty.get.search ne ''}{if $smarty.get.search_field ne ''}&amp;{else}?{/if}search={$smarty.get.search}{/if}" class="control">Export {if $smarty.get.search ne ''}Searched Items {/if}to Excel</a>{/if}
+</div>
+
+{if $paginate ne ''}
+<div class="paging_top">
+Items {$paginate.first}-{$paginate.last} out of {$paginate.total} displayed.
+</div>
+{/if}
+
+<div id="assetlist">
+<table cellpadding="10" cellspacing="0" border="0">
+<tr valign="bottom">
+{if $viewlist_fields}
+{foreach from=$viewlist_fields item=field_item}
+<th class="viewlisttitle"><a href="?sort=
+{if $sort_array.field == $field_item && $sort_array.link}{$sort_array.link}{else}{$field_item}_desc{/if}{if $smarty.get.search_field ne ''}&amp;search_field={$smarty.get.search_field }{/if}{if $smarty.get.search ne ''}{if $smarty.get.search_field ne ''}&amp;{/if}search={$smarty.get.search}{/if}">{$field_item|humanize} &nbsp;
+{if $sort_array.field == $field_item && $sort_array.arrow_asc}{image_tag src=/nterchange/images/s_asc.gif}{/if}
+{if $sort_array.field == $field_item && $sort_array.arrow_desc}{image_tag src=/nterchange/images/s_desc.gif}{/if}
+</a></th>
+{/foreach}
+{else}
+<th><a href="?sort=
+{if $smarty.get.sort == 'cms_headline_desc'}cms_headline_asc{else}cms_headline_desc{/if}{if $smarty.get.search_field ne ''}&amp;search_field={$smarty.get.search_field }{/if}{if $smarty.get.search ne ''}{if $smarty.get.search_field ne ''}&amp;{/if}search={$smarty.get.search}{/if}">Headline
+{if $smarty.get.sort == 'cms_headline_desc'}{image_tag src=/nterchange/images/s_desc.gif}{/if}
+{if $smarty.get.sort == 'cms_headline_asc'}{image_tag src=/nterchange/images/s_asc.gif}{/if}
+</a></th>
+{/if}
+<td>&nbsp;</td>
+</tr>
+{foreach from=$rows item=row}
+<tr id="{$asset}_{$row.id}" valign="top">
+{if $viewlist_fields}
+{foreach from=$viewlist_fields item=field_item}
+<td>{$row[$field_item]}</td>
+{/foreach}
+{else}
+<td>{$row._headline}</td>
+{/if}
+<td>
+{link_to href="controller:`$asset`;action:show;id:`$row.id`;" text="Show" class="control"}
+{link_to href="controller:`$asset`;action:edit;id:`$row.id`;" text="Edit" class="control"}
+{if !isset($row._remove_delete) || !$row._remove_delete}
+{link_to href="controller:`$asset`;action:delete;id:`$row.id`;" text="Delete" class="control" confirm="Are you sure?"}
+{/if}
+</td>
+</tr>
+{/foreach}
+</table>
+</div>
+
+{if $paging ne ''}
+<div class="paging_bottom">
+{paginate_prev id="`$asset`"} {paginate_middle id="`$asset`"} {paginate_next id="`$asset`"}
+</div>
+{/if}

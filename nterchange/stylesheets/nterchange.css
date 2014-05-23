@@ -1,0 +1,100 @@
+/*
+-------------------------------------------------
+nterchange - nonfiction studios inc.
+$Id:
+-------------------------------------------------
+*/
+
+/* TITLE
+-------------------------------------------------*/
+h1.title {
+	padding-bottom:8px;
+	border-bottom:1px solid #000;
+	text-align:center;
+}
+h2.title, h3.title {
+	text-decoration:underline;
+	padding-top:8px;
+}
+
+/* FORM HEADERS
+-------------------------------------------------*/
+div.header {
+	color:#000;
+	font-size:1.1em;
+	font-weight:bold;
+	padding:2px;
+}
+form td.header {
+	background-color:#F72;
+}
+form td.header div.header {
+	color:#FFF;
+}
+
+div.formerror {
+	background:#F99;
+	padding:1px 4px;
+}
+span.formerror {
+	color:#F00;
+}
+
+span.notfound {
+	background-color:#f00;
+	color:#fff;
+}
+
+#logout {
+	color:#FFF;
+	padding:10px 20px;
+	float:right;
+}
+#logout a {
+	color:#FFF;
+	text-decoration:underline;
+}
+
+/* CONTROL LINKS (eg.CRUD)
+-------------------------------------------------*/
+div.control {
+	background-color:#EEE;
+	padding:2px;
+	margin:2px 0;
+}
+a.control, a.controlactive {
+	font-size:10px;
+}
+a.control:link, a.control:visited {
+	color:#C00;
+	text-decoration:none;
+	border-bottom:1px #C00 dotted;
+}
+a.control:hover, a.control:active{
+	color:#FFF;
+	background-color:#C00;
+	text-decoration:none;
+	border-bottom:0px;
+}
+a.controlactive:link, a.controlactive:visited {
+	color:#000;
+	background-color:#FC3;
+	text-decoration:none;
+	border-bottom:1px #000 dotted;
+}
+a.controlactive:hover, a.controlactive:active{
+	color:#FFF;
+	text-decoration:none;
+	border-bottom:0px;
+}
+
+#asset {
+	border:1px #EEE solid;
+	padding:6px;
+	margin-top:6px;
+}
+
+.assettype {
+	font-size:.9em;
+	color:#444;
+}

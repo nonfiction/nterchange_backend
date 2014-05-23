@@ -1,0 +1,71 @@
+<div class="page-content" id="page-content-{$page_content_id}" data-page-content="{$page_content_id}">
+	<button class="ntoolbar-toggle btn btn-sm btn-primary" title="Toolbar Toggle">
+		<i class="fa fa-lg fa-cog"></i>
+	</button>
+
+	<div class="ntoolbar btn-toolbar" role="toolbar">
+
+			<div class="btn-group">
+				<button type="button" class="btn btn-sm btn-default edit" data-popover-href="{url_for controller=$asset action='edit' id=$asset_id layout='false'}" data-href="{url_for controller=$asset action='edit' id=$asset_id referer=1 page_content_id=$page_content_id}">
+					<i class="fa fa-lg fa-edit"></i>
+				</button>
+
+				{if $page_content_id}
+				<button type="button" class="btn btn-sm btn-default remove" data-href="{url_for controller='page_content' action='removecontent' id=$page_content_id referer=1}">
+					<i class="fa fa-lg fa-minus-square"></i>
+				</button>
+				{/if}
+			</div>
+
+			{php}$this->assign("grid_sizes", array('xs','sm','md','lg'));{/php}
+			{foreach from=$grid_sizes item=grid}
+				<div class="btn-group visible-{$grid}" data-grid="{$grid}">
+
+					<div class="btn-group col-chooser col-chooser-{$grid}">
+						<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+							<i class="fa fa-lg fa-arrows-h"></i>{*&nbsp;<span class="caret"></span>*}
+						</button>
+						<ul class="dropdown-menu">
+							{if $grid eq 'xs'}
+								<li><a class="full" data-grid="{$grid}" data-col="auto"  href="#">Auto</a>
+							{else}
+								<li><a class="half" data-grid='{$grid}' data-col='inherit' href='#'>Inherit</a>
+								<li><a class="half" data-grid="{$grid}" data-col="auto"  href="#">Auto</a>
+							{/if}
+              {* Loop 1..12 *}
+              {section name=col start=1 loop=13 step=1} 
+							  <li><a data-grid="{$grid}" data-col="{$smarty.section.col.index}" href="#">{$smarty.section.col.index}</a>
+              {/section} 
+						</ul>
+					</div>
+
+					<div class="btn-group row-chooser row-chooser-{$grid}">
+						<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+							<i class="fa fa-lg fa-arrows-v"></i>{*&nbsp;<span class="caret"></span>*}
+						</button>
+						<ul class="dropdown-menu">
+							{if $grid eq 'xs'}
+								<li><a class="full" data-grid="{$grid}" data-row="auto" href="#">Auto</a>
+							{else}
+								<li><a class="half" data-grid='{$grid}' data-row='inherit' href='#'>Inherit</a>
+								<li><a class="half" data-grid="{$grid}" data-row="auto"  href="#">Auto</a>
+							{/if}
+              {* Loop 1..50 *}
+              {section name=row start=1 loop=51 step=1} 
+							  <li><a data-grid="{$grid}" data-row="{$smarty.section.row.index}" href="#">{$smarty.section.row.index}</a>
+              {/section} 
+						</ul>
+					</div>
+
+					<div class="btn-group pull-chooser">
+						<button type="button" data-grid="{$grid}" class="btn btn-sm btn-default pull-left">
+							<i class='fa fa-lg fa-align-left'></i>
+						</button>
+						<button type="button" data-grid="{$grid}" class="btn btn-sm btn-default pull-right">
+							<i class='fa fa-lg fa-align-right'></i>
+						</button>
+					</div>
+
+			</div>
+			{/foreach}
+	</div>

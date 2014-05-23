@@ -1,0 +1,19 @@
+<div class="control">
+{link_to href="controller:`$asset`;action:create;id:`$page_template_id`;" text="New `$asset_name`" class="control"} for template <b>{$page_template_name}</b> - {$page_template_filename}.html {check_template filename=$page_template_filename}
+</div>
+
+{if $notice ne ''}{$notice}{/if}
+
+<div id="assetlist">
+<ul>
+{foreach from=$rows item=row}
+<li id="{$asset}_{$row.id}">{$row._headline} &nbsp; &nbsp; 
+{link_to href="controller:`$asset`;action:edit;id:`$row.id`;" text="Edit" class="control"}
+<a class="control" onclick="javascript:Effect.SwitchOff('page_template_containers_{$row.id}');" href="#">Delete</a>
+{*{if !isset($row._remove_delete) || !$row._remove_delete}
+{link_to href="controller:`$asset`;action:delete;id:`$row.id`;" text="Delete" class="control" confirm="Are you sure?"}
+{/if}*}
+{link_to href="controller:cms_asset_template;action:viewlist;id:`$row.id`;" text="Connected Assets" class="control"}</li>
+{/foreach}
+</ul>
+</div>

@@ -1,0 +1,28 @@
+{if $reorder_link}
+<div id="list_controls_{$template_container_id}" style="margin-bottom:6px;">
+<a bc:active_class="controlactive" bc:active_text="Done reordering" class="control" href="#" id="reorder_list_{$template_container_id}_link" onclick="pagecontent.reorder.toggle({$template_container_id}); return false;" style="display:inline;">Reorder</a>
+</div>
+{/if}
+{if is_array($contents) && !empty($contents)}
+<div class="list">
+<ul id="page_content_list_{$template_container_id}" class="pageContentList">
+{foreach from=$contents item=content name=content}
+<li id="pagecontent_{$content.page_content_id}" class="{if $smarty.foreach.content.iteration%2 == 1}even{else}odd{/if}item">
+ {if !$no_edit}
+ <div id="edit_links_for_{$content.page_content_id}" class="edit_links_for_item">
+ &nbsp; &nbsp; 
+ {link_to href="controller:`$content._asset`;action:edit;id:`$content.id`;page_content_id:`$content.page_content_id`;" text="Edit" class="control" referer=1} | 
+ {link_to href="controller:page_content;action:remove_content;id:`$content.page_content_id`;" text="Remove" class="control" referer=1 confirm="Are you sure?"}
+ </div>
+ {/if}
+ <div id="content_for_{$content.page_content_id}" class="content_for_item">
+ <img src="/nterchange/images/drag.gif" alt="Drag" class="dragger_{$template_container_id} dragger" id="drag_{$content.page_content_id}" width="25" height="11" style="display: none" />
+ {$content.cms_headline} <span class="assettype">({$content._asset_name})</span>
+ </div>
+</li>
+{/foreach}
+</ul>
+</div>
+{/if}
+
+

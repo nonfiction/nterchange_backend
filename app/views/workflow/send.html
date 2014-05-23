@@ -1,0 +1,18 @@
+<h2>&quot;{$workflow_group.workflow_title}&quot; Workflow Group</h2>
+
+<p>
+The workflow for the &quot;{$asset.cms_headline}&quot; {$asset_name} record on the <b>{$page.title}</b> page has been submitted.
+</p>
+
+<div><b>Emails were sent to:</b></div>
+{if !empty($users)}
+<ul>
+{foreach from=$users item=user}
+<li><a href="mailto:{$user.email}">{$user.real_name}</a></li>
+{/foreach}
+</ul>
+{else}
+<p>You were the next/only user in the list, so you have not been emailed.</p>
+{/if}
+
+{link_to href="controller:dashboard;" text="Return to Your Dashboard"}

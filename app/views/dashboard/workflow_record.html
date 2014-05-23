@@ -1,0 +1,29 @@
+{if $page_title}
+<div style="font-weight:bold;font-size:1.1em;">
+{$page_title}
+</div>
+{/if}
+<div style="padding:4px 8px;margin-bottom:3px;border-bottom:1px #CCC solid;">
+<b>&quot;{$row.cms_headline}&quot;</b> {if $asset->page_title}{$asset->page_title}{else}{$asset->name|humanize}{/if} asset on &quot;{if !$page.cms_deleted}<a href="{url_for controller="page" action="surftoedit" id=`$page.id`}" rel="blank">{$page.title}</a>{else}{$page.title}{/if}&quot; was <b>{$action}</b> @ {$workflow.cms_created|date_format:'%b %e, %Y %I:%M:%S %p'}{if $user} by {$user.real_name}{/if}.
+{if !$list_only}
+<div style="padding:0 8px;">
+&nbsp;&nbsp;{link_to href="controller:page;action:surftoedit;id:`$page.id`;" text="Preview Page" rel="blank"}
+{if $process == 'submit'}
+| {link_to href="controller:workflow;action:submit;id:`$workflow.id`;" text="Submit To Workflow"}
+| {link_to href="controller:`$asset->name`;action:edit;id:`$row.id`;" text="Edit Record" referer=1}
+{if $cascade_delete}
+| {link_to href="controller:workflow;action:delete;id:`$workflow.id`;" text="Delete Workflow" referer=1 confirm="Since this content has not yet been published on this page, it will also be removed from the page.\\n\\nAre you sure?"}
+{else}
+| {link_to href="controller:workflow;action:delete;id:`$workflow.id`;" text="Delete Workflow" referer=1 confirm="Are you sure?"}
+{/if}
+{elseif $process == 'editapprove'}
+| {link_to href="controller:workflow;action:process;id:`$workflow.id`;" text="Edit & Approve/Decline"}
+{elseif $process == 'approve'}
+| {link_to href="controller:workflow;action:process;id:`$workflow.id`;" text="Approve/Decline"}
+{elseif $process}
+| {$process}
+{/if}
+</div>
+{/if}
+</div>
+

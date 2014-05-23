@@ -1,0 +1,9 @@
+{if $subnav}
+<div id="subnav">
+<ul>
+{foreach from=$subnav key=k item=nav}
+<li><a href="{url_for controller=$nav.controller action=$nav.action id=$nav.id}"{if $nav.class} class="{$nav.class}"{/if}{if $nav.target} target="{$nav.target}"{/if}>{$nav.title}</a></li>
+{/foreach}
+</ul>
+</div>
+{/if}

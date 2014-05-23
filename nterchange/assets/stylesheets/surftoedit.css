@@ -1,0 +1,351 @@
+button.ntoolbar-toggle {
+  display: block;
+  position: relative;
+  float: left;
+  margin-right: 5px;
+}
+.ntoolbar {
+  display: none;
+  position: relative;
+  float: left;
+}
+.editable-region {
+  clear: both;
+}
+.btn-label,
+.btn-label[disabled] {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  filter: alpha(opacity=100);
+}
+.nform {
+  display: none;
+  font-size: 14px;
+}
+.asset-popover {
+  font-size: 14px;
+}
+.popover-form {
+  font-size: 14px;
+  min-width: 250px;
+}
+.popover-form label {
+  width: 98%;
+  font-weight: normal;
+  font-size: 13px;
+}
+.popover-form label span {
+  font-weight: bold;
+}
+.popover-form input {
+  width: 100%;
+}
+.grid-block .ntoolbar {
+  display: none;
+}
+.grid-block .ui-resizable-handle {
+  display: none !important;
+}
+.grid-block button.ntoolbar-toggle {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  z-index: 100;
+  cursor: pointer;
+  margin: 0;
+}
+.grid-block .page-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 40px;
+}
+.grid-block .editable-region {
+  width: 100%;
+  height: 100%;
+  clear: none;
+}
+.grid-block .grid-block-dimensions {
+  display: none;
+}
+.grid-block .edit-mode {
+  display: none;
+}
+.grid-block[data-col-xs="auto"] button.ntoolbar-toggle {
+  position: relative;
+  right: auto;
+}
+@media only screen and (min-width: 768px) {
+  .grid-block[data-col-sm="auto"] button.ntoolbar-toggle {
+    position: relative;
+    right: auto;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .grid-block[data-col-md="auto"] button.ntoolbar-toggle {
+    position: relative;
+    right: auto;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .grid-block[data-col-lg="auto"] button.ntoolbar-toggle {
+    position: relative;
+    right: auto;
+  }
+}
+.grid-block.edit-mode {
+  -webkit-transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+.grid-block.edit-mode.resizing {
+  -webkit-transition: none;
+  transition: none;
+}
+.grid-block.edit-mode .edit-mode {
+  display: inline-block;
+  cursor: pointer;
+}
+.grid-block.edit-mode .edit-mode-inline {
+  display: inline;
+}
+.grid-block.edit-mode .edit-mode-block {
+  display: block;
+}
+.grid-block.edit-mode .ntoolbar {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  right: 50px;
+  top: 0px;
+}
+.grid-block.edit-mode .ntoolbar .col-chooser li,
+.grid-block.edit-mode .ntoolbar .row-chooser li {
+  float: left;
+}
+.grid-block.edit-mode .ntoolbar .col-chooser li a,
+.grid-block.edit-mode .ntoolbar .row-chooser li a {
+  width: 50px;
+  text-align: center;
+}
+.grid-block.edit-mode .ntoolbar .col-chooser li a.active,
+.grid-block.edit-mode .ntoolbar .row-chooser li a.active {
+  background: #a1aaf8;
+}
+.grid-block.edit-mode .ntoolbar .col-chooser li a.inherit,
+.grid-block.edit-mode .ntoolbar .row-chooser li a.inherit {
+  background: lightgray;
+}
+.grid-block.edit-mode .ntoolbar .col-chooser li a.half {
+  width: 75px;
+}
+.grid-block.edit-mode .ntoolbar .col-chooser li a.full {
+  width: 155px;
+}
+.grid-block.edit-mode .ntoolbar .col-chooser ul.dropdown-menu {
+  left: 0px;
+  min-width: 155px;
+}
+.grid-block.edit-mode .ntoolbar .row-chooser li a.half {
+  width: 129px;
+}
+.grid-block.edit-mode .ntoolbar .row-chooser li a.full {
+  width: 260px;
+}
+.grid-block.edit-mode .ntoolbar .row-chooser ul.dropdown-menu {
+  left: -130px;
+  left: -147px;
+  min-width: 260px;
+}
+.grid-block.edit-mode .ui-resizable-handle {
+  display: block !important;
+  background-color: gray;
+  background-size: 25px 25px;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+  filter: alpha(opacity=50);
+}
+.grid-block.edit-mode .ui-resizable-handle.ui-resizable-e {
+  right: 0;
+  background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.5) 50%);
+}
+.grid-block.edit-mode .ui-resizable-handle.ui-resizable-s {
+  bottom: 0;
+  background-image: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.5) 50%);
+}
+.grid-block.edit-mode[data-col-xs="auto"] .ui-resizable-handle {
+  display: none !important;
+}
+.grid-block.edit-mode[data-col-xs="auto"] .editable-region {
+  clear: left;
+}
+.grid-block.edit-mode[data-col-xs="auto"] .ntoolbar {
+  position: relative;
+  right: auto;
+}
+.grid-block.edit-mode[data-col-xs="auto"] button.ntoolbar-toggle {
+  position: relative;
+  right: auto;
+}
+@media only screen and (min-width: 768px) {
+  .grid-block.edit-mode[data-col-sm="auto"] .ui-resizable-handle {
+    display: none !important;
+  }
+  .grid-block.edit-mode[data-col-sm="auto"] .editable-region {
+    clear: left;
+  }
+  .grid-block.edit-mode[data-col-sm="auto"] .ntoolbar {
+    position: relative;
+    right: auto;
+  }
+  .grid-block.edit-mode[data-col-sm="auto"] button.ntoolbar-toggle {
+    position: relative;
+    right: auto;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .grid-block.edit-mode[data-col-md="auto"] .ui-resizable-handle {
+    display: none !important;
+  }
+  .grid-block.edit-mode[data-col-md="auto"] .editable-region {
+    clear: left;
+  }
+  .grid-block.edit-mode[data-col-md="auto"] .ntoolbar {
+    position: relative;
+    right: auto;
+  }
+  .grid-block.edit-mode[data-col-md="auto"] button.ntoolbar-toggle {
+    position: relative;
+    right: auto;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .grid-block.edit-mode[data-col-lg="auto"] .ui-resizable-handle {
+    display: none !important;
+  }
+  .grid-block.edit-mode[data-col-lg="auto"] .editable-region {
+    clear: left;
+  }
+  .grid-block.edit-mode[data-col-lg="auto"] .ntoolbar {
+    position: relative;
+    right: auto;
+  }
+  .grid-block.edit-mode[data-col-lg="auto"] button.ntoolbar-toggle {
+    position: relative;
+    right: auto;
+  }
+}
+.grid-block.edit-mode .grid-block-dimensions {
+  display: block;
+  position: absolute;
+  z-index: 90;
+  bottom: 0px;
+  right: 0px;
+  padding: 0 15px 5px 10px;
+  font-size: 15px;
+  color: black;
+  background: rgba(128, 128, 128, 0.8);
+}
+.grid-block.edit-mode .grid-block-dimensions i {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  font-style: italic;
+  font-weight: bold;
+}
+.grid-block.edit-mode .grid-block-dimensions .grid-block-x {
+  padding: 0 2px;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+}
+.grid-block.edit-mode .ntoolbar button.pull-left:active,
+.grid-block.edit-mode .ntoolbar button.pull-right:active,
+.grid-block.edit-mode .ntoolbar button.pull-left:focus,
+.grid-block.edit-mode .ntoolbar button.pull-right:focus {
+  background-color: #fff;
+}
+.grid-block.edit-mode .ntoolbar button.pull-left.active,
+.grid-block.edit-mode .ntoolbar button.pull-right.active {
+  background-color: #a1aaf8;
+}
+.grid-block.edit-mode[data-pull-xs="left"] .ntoolbar button.pull-left.inactive[data-grid=sm],
+.grid-block.edit-mode[data-pull-xs="left"] .ntoolbar button.pull-left.inactive[data-grid=md],
+.grid-block.edit-mode[data-pull-xs="left"] .ntoolbar button.pull-left.inactive[data-grid=lg] {
+  color: #a1aaf8;
+}
+.grid-block.edit-mode[data-pull-sm="left"] .ntoolbar button.pull-left.inactive[data-grid=md],
+.grid-block.edit-mode[data-pull-sm="left"] .ntoolbar button.pull-left.inactive[data-grid=lg] {
+  color: #a1aaf8;
+}
+.grid-block.edit-mode[data-pull-md="left"] .ntoolbar button.pull-left.inactive[data-grid=lg] {
+  color: #a1aaf8;
+}
+.grid-block.edit-mode[data-pull-xs="right"] .ntoolbar button.pull-right.inactive[data-grid=sm],
+.grid-block.edit-mode[data-pull-xs="right"] .ntoolbar button.pull-right.inactive[data-grid=md],
+.grid-block.edit-mode[data-pull-xs="right"] .ntoolbar button.pull-right.inactive[data-grid=lg] {
+  color: #a1aaf8;
+}
+.grid-block.edit-mode[data-pull-sm="right"] .ntoolbar button.pull-right.inactive[data-grid=md],
+.grid-block.edit-mode[data-pull-sm="right"] .ntoolbar button.pull-right.inactive[data-grid=lg] {
+  color: #a1aaf8;
+}
+.grid-block.edit-mode[data-pull-md="right"] .ntoolbar button.pull-right.inactive[data-grid=lg] {
+  color: #a1aaf8;
+}
+.grid-block.edit-mode[data-col-sm="inherit"] .col-chooser-sm button {
+  color: #a1aaf8;
+}
+.grid-block.edit-mode[data-col-md="inherit"] .col-chooser-md button {
+  color: #a1aaf8;
+}
+.grid-block.edit-mode[data-col-lg="inherit"] .col-chooser-lg button {
+  color: #a1aaf8;
+}
+.grid-block.edit-mode[data-row-sm="inherit"] .row-chooser-sm button {
+  color: #a1aaf8;
+}
+.grid-block.edit-mode[data-row-md="inherit"] .row-chooser-md button {
+  color: #a1aaf8;
+}
+.grid-block.edit-mode[data-row-lg="inherit"] .row-chooser-lg button {
+  color: #a1aaf8;
+}
+.ntoolbar-main + .ntoolbar-shim {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  position: relative;
+}
+.ntoolbar-main .grid-size {
+  line-height: 20px;
+  margin: 10px 20px;
+}
+@media only screen and (min-width: 768px) {
+  .ntoolbar-main .grid-size {
+    margin: 15px 20px 0 20px !important;
+  }
+}
+.ntoolbar-main .grid-size b {
+  text-transform: uppercase;
+}
+.ntoolbar-main li {
+  float: left;
+}
+.ntoolbar-main ul.navbar-nav {
+  float: left;
+}
+.ntoolbar-main ul.navbar-nav.navbar-right {
+  float: right;
+}
+@media only screen and (min-width: 768px) {
+  .ntoolbar-main ul.navbar-nav {
+    float: left;
+  }
+  .ntoolbar-main ul.navbar-nav.navbar-right {
+    float: right;
+  }
+}

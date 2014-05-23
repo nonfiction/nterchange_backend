@@ -1,0 +1,24 @@
+<div id="workflowuser{$id}">
+&raquo; <b>{$real_name}</b>
+<strong> - Role:</strong>
+{php}
+$role = $this->_tpl_vars['role'];
+switch ($role) {
+	case WORKFLOW_ROLE_AUTHOR:
+		print 'Author';
+		break;
+	case WORKFLOW_ROLE_EDITOR:
+		print 'Editor';
+		break;
+	case WORKFLOW_ROLE_APPROVER:
+		print 'Approver';
+		break;
+	case WORKFLOW_ROLE_ADMIN:
+		print 'Admin';
+		break;
+}
+{/php}
+&nbsp;&nbsp;
+<a href="{url_for controller=workflow_users action=edit id=$id}?_referer=%2Fnterchange%2Fworkflow_group%2Fviewlist" class="control">Edit</a> | 
+<a href="{url_for controller=workflow_users action=delete id=$id}?_referer=%2Fnterchange%2Fworkflow_group%2Fviewlist" class="control" onclick="return confirm('Are you sure?');">Delete</a>
+</div>

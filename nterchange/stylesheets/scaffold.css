@@ -1,0 +1,65 @@
+div.header {
+	color:#000;
+	font-size:1.1em;
+	font-weight:bold;
+	padding:2px;
+}
+form td.header {
+	background-color:#F72;
+}
+form td.header div.header {
+	color:#FFF;
+}
+
+div.control {
+	background-color:#EEE;
+	padding:2px;
+	margin:2px 0;	
+}
+a.control:link, a.control:visited {
+	color:#C00;
+	text-decoration:none;
+	border-bottom:1px #C00 dotted;
+}
+a.control:hover, a.control:active{
+	color:#FFF;
+	background-color:#C00;
+	text-decoration:none;
+	border-bottom:0px;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#ErrorExplanation {
+  width: 400px;
+  border: 2px solid 'red';
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#ErrorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#ErrorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#ErrorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}

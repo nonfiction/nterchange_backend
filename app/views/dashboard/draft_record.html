@@ -1,0 +1,13 @@
+<div style="padding:4px 8px;margin-bottom:3px;border-bottom:1px #CCC solid;">
+You have the {$asset} asset named <b>&quot;{$cms_headline}&quot;</b> saved as a draft.
+<div style="padding:0 8px;">
+&nbsp;&nbsp;{link_to href="controller:`$asset`;action:show;id:`$id`;" text="Show" referer=1}
+| {link_to href="controller:`$asset`;action:edit;id:`$id`;" text="Edit" referer=1}
+{if $cms_draft}
+{assign var="delete_msg" value="Since this content has never been published, it will be completely deleted.\\n\\nAre you sure?"}
+{else}
+{assign var="delete_msg" value="Are you sure?"}
+{/if}
+| {link_to href="controller:cms_drafts;action:delete;id:`$draft.id`;" text="Delete Draft" confirm="`$delete_msg`" referer=1}
+</div>
+</div>

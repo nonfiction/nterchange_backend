@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>nterchange{if $_TITLE_} - {$_TITLE_}{/if}</title>
+	{stylesheet_link_tag href=screen}
+	{stylesheet_link_tag href=handheld media=handheld}
+	{stylesheet_link_tag href=nterchange_custom}
+	<link rel="stylesheet" href="/nterchange/javascripts/datechooser/datechooser.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="/nterchange/javascripts/prototype.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/nterchange/javascripts/scriptaculous.js" type="text/javascript" charset="utf-8"></script>
+	{javascript_include_tag src=datechooser/datechooser}
+	{javascript_include_tag src=nterchange}
+{$HEADER}
+</head>
+<body>
+<div id="header">
+{if $login_name}<div id="logout">
+You are logged in as <b>{$login_name}</b> <a href="{php}print $_SERVER['PHP_SELF'] . '?' . ($_SERVER['QUERY_STRING']?$_SERVER['QUERY_STRING'] . '&amp;':''){/php}logout=1">logout</a>
+</div>{/if}
+<div id="logo">
+<img src="/nterchange/images/nterchange.gif" alt="" width="149" height="29" />
+</div>
+</div>
+
+<div id="container">
+<div id="contentbox{if !$SIDEBAR_CONTENT}alone{/if}">
+<div id="content">
+<h1 class="title">{$_TITLE_}</h1>
+{if $_FLASH_.notice}
+<div id="notice">
+{$_FLASH_.notice}
+</div>
+{/if}
+{$MAIN_CONTENT}
+</div>
+<div class="bottom">&nbsp;</div>
+</div>
+{if $SIDEBAR_CONTENT}
+<div id="sidebarbox">
+{$SIDEBAR_CONTENT}
+</div>
+{/if}
+</div>
+
+<div class="clear">&nbsp;</div>
+<div id="footer">
+<div id="credit">
+<a href="http://nonfiction.ca/"><img src="/nterchange/images/created_by.gif" alt="" width="111" height="13" /></a>
+</div>
+</div>
+</body>
+</html>

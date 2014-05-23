@@ -1,0 +1,7 @@
+{if $page_workflows}
+<div style="margin-bottom:8px;">
+<a href="{url_for controller=workflow action=submit}/{foreach from=$page_workflows item=page_workflow name=page_workflows key=i}
+{$page_workflow}{if !$smarty.foreach.page_workflows.last};{/if}
+{/foreach}">Submit all workflows for the above page</a>
+</div>
+{/if}

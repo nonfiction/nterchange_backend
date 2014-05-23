@@ -1,0 +1,14 @@
+{if $drafts}
+	<h2 class="title">Drafts</h2>
+	{$drafts}
+{/if}
+
+{version_check}
+
+{if $workflow}
+<h2 class="title">Workflow Groups</h2>
+{$workflow}
+{/if}
+
+{* To put client data in the main content area - look in app/views/dashboard/dashboard_client_content.html *}
+{dashboard_client_content}

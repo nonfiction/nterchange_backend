@@ -1,0 +1,18 @@
+.calendar * { margin: 0; padding: 0; border: 0; font-family: Tahoma, serif; font-weight: normal; color: #000; }
+.calendar .invalidday a, .calendar .invalidday a:hover { color: #ccc; background: #fff; cursor: default; }
+.calendar .selectedday { background: #ddd; }
+.calendar .today { font-weight: bold; color: #f00; }
+.calendar a { padding: 0 2px; color: #000; text-decoration: none; }
+.calendar a:hover { background: #bbb; }
+.calendar table { border-collapse: collapse; font-size: 90%; }
+.calendar tbody td { width: 20px; }
+.calendar td, .calendar th { padding: 1px; text-align: center; background: #fff;}
+.calendar thead td { border-bottom: 1px solid #aaa; }
+.calendar thead td { font-weight: bold; }
+.calendar thead th a { font-size: 95%; font-weight: bold; }
+.calendar thead th { padding: 2px 0; vertical-align: middle; background: #ddd; }
+.calendar { padding-bottom: 2px; border: 1px solid #aaa; font-size: small; background: #fff; border: 1px solid;}
+.calendaricon { cursor: pointer; }
+.calendarlink, .calendaricon { margin: 0 3px; }
+.date_chooser span{display: none;}
+.date_chooser{display: block; float: left; width: 20px; height: 20px; background: #fff url(/nterchange/javascripts/datechooser/datechooser.png) left top no-repeat;}

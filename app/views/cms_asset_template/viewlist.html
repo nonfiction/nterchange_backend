@@ -1,0 +1,18 @@
+<div class="control">
+{link_to href="controller:`$asset`;action:create;id:`$page_template_container_id`;" text="New `$asset_name`" class="control"} for container <b>{$page_template_container_name}</b> in template <b>{$page_template_name}</b> - {$page_template_filename}.html {check_template filename=`$page_template_filename`}
+</div>
+
+{if $notice ne ''}{$notice}{/if}
+
+<div id="assetlist">
+<ul>
+{foreach from=$rows item=row}
+<li id="{$asset}_{$row.id}">{$row._headline} &nbsp; &nbsp; 
+{link_to href="controller:`$asset`;action:edit;id:`$row.id`;" text="Edit" class="control"}
+{if !isset($row._remove_delete) || !$row._remove_delete}
+{link_to href="controller:`$asset`;action:delete;id:`$row.id`;" text="Delete" class="control" confirm="Are you sure?"}
+{/if}
+ - {$row.template_filename}.html {check_asset_template filename=$row.template_filename asset=$row.asset} {check_asset_template_use asset=`$row._headline` container_id=`$page_template_container_id`}
+{/foreach}
+</ul>
+</div>

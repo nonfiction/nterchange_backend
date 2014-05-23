@@ -1,0 +1,24 @@
+{*<p><a href="{url_for action='surftoedit' id=$parent_id}" rel="blank"><img src="/nterchange/images/otf/button.php?text=surf+to+edit" alt="Surf to Edit" border="0" /></a></p>*}
+<p><a href="{url_for action='create' referer=1 parent_id=$parent_id}"><img src="/nterchange/images/otf/button.php?text=new+page" alt="New Page" border="0" /></a></p>
+
+{if is_array($pages) && count($pages) > 1}
+<div id="list_controls_{$parent_id}" style="margin-left:12px;margin-bottom:8px;">
+<a bc:active_class="controlactive" bc:active_text="Done reordering" class="control" href="#" id="reorder_list_{$parent_id}_link" onclick="page.reorder.toggle({$parent_id}); return false;" style="display:inline;">Reorder</a>
+</div>
+{/if}
+{if is_array($pages) && count($pages)}
+<div class="list">
+<ul id="page_list_{$parent_id}" class="pageList">
+{foreach from=$pages item=page name=pages}
+<li id="page_{$page.id}" class="{if $smarty.foreach.pages.iteration%2 == 1}even{else}odd{/if}item">
+ <div id="content_for_{$page.id}" class="content_for_item">
+ <img src="/nterchange/images/drag.gif" alt="Drag" class="dragger_{$parent_id} dragger" id="drag_{$page.id}" width="25" height="11" style="display: none" />
+ {if $page.active == 0}{$page.title|string_format:'[%s]'}{elseif $page.visible == 0}{$page.title|string_format:'(%s)'}{else}{$page.title}{/if}
+ </div>
+</li>
+{/foreach}
+</ul>
+</div>
+{/if}
+
+

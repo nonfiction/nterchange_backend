@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>nterchange{if $_TITLE_} - {$_TITLE_}{/if}</title>
+	{stylesheet_link_tag href=screen}
+	{stylesheet_link_tag href=handheld media=handheld}
+	{stylesheet_link_tag href=nterchange_custom}
+	{javascript_include_tag src=prototype}
+	{javascript_include_tag src=scriptaculous}
+	{javascript_include_tag src=workflow}
+	{javascript_include_tag src=page_content}
+	{javascript_include_tag src=nterchange}
+{$HEADER}
+</head>
+<body>
+
+<div id="container" style="min-width:200px;">
+<div id="contentboxalone">
+<div id="content" style="min-height:150px;">
+<h1 class="title">{$_TITLE_}</h1>
+{if $_FLASH_.notice}
+<div id="notice">
+{$_FLASH_.notice}
+</div>
+{/if}
+{$MAIN_CONTENT}
+</div>
+<div class="bottom">&nbsp;</div>
+</div>
+</div>
+<div class="clear">&nbsp;</div>
+
+</body>
+</html>

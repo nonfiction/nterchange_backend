@@ -1,0 +1,28 @@
+<div style="margin:0 0 1em 0;padding:8px;border:#DDD dashed 1px;background:#EEE;">
+
+<div style="font-size:1.15em;font-weight:bold;">
+{$action_taken}
+</div>
+
+{if $asset}
+<div>
+<b>Asset:</b>
+The &quot;{$asset_name}&quot; asset
+{if $asset.cms_deleted == 0}
+{link_to href="controller:`$asset_type`;action:show;id:`$asset.id`;" text=$asset._headline rel="blank"}
+{else}
+{$asset._headline} (deleted)
+{/if}
+</div>
+{/if}
+
+{if $workflow_group}
+<div>
+<b>Workflow Group:</b>
+{$workflow_group.workflow_title}
+</div>
+{/if}
+
+<div style="color:#666;font-style:italic;">{$user.real_name} @ {$created|date_format:'%A, %B %e, %Y'} from the IP address: {$ip}</div>
+
+</div>

@@ -1,0 +1,8 @@
+<h2 class="title">Pages this content belongs to</h2>
+<div id="pagelist">
+<ul>
+{foreach from=$pages item=page}
+<li>{$page.title} &nbsp; &nbsp; {link_to href="/_page`$page.id`" text="View Live" class="control" rel="blank"} | {link_to href="/nterchange/page/preview/`$page.id`" text="Preview" class="control" rel="blank"}
+{/foreach}
+</ul>
+</div>

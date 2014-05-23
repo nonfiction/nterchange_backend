@@ -1,0 +1,44 @@
+/*
+-------------------------------------------------
+nterchange - nonfiction studios inc.
+$Id:
+-------------------------------------------------
+*/
+
+/* BODY
+---------------------------------------------*/
+body {
+	margin:0;
+	background-color:#E5E5E5;
+}
+
+/* IMAGES
+---------------------------------------------*/
+img {
+	border:0;
+}
+
+/* LINKS
+---------------------------------------------*/
+a:link {
+	text-decoration:none;
+	color:#E72;
+}
+a:visited {
+	text-decoration:none;
+	color:#C50;
+}
+a:hover {
+	text-decoration:none;
+	color:#C50;
+}
+a:active {
+	text-decoration:none;
+	color:#E72;
+}
+
+/* SEARCH
+---------------------------------------------*/
+#search {
+	
+}

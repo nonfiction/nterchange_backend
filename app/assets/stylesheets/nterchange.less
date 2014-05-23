@@ -1,0 +1,17 @@
+@import "variables";
+@import "mixins";
+
+// Viewport settings now also go in the CSS
+@-webkit-viewport { width: device-width; }
+@-moz-viewport { width: device-width; }
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
+// Fluid images
+img { max-width: 100%; }
+
+// Grid Block positioning styles
+@grid-row-height: 30px;
+@body-font-size: 18px;
+@import 'grid';

@@ -1,0 +1,32 @@
+{if $surfedit && $page_id}
+<h2 class="title">Surf to Edit</h2>
+{link_to href="controller:page;action:surftoedit;id:`$page_id`;" text="Surf to Edit this page" rel="blank"}
+{/if}
+
+{if $breadcrumbs}
+<h2 class="title">Breadcrumbs</h2>
+<div id="breadcrumbs">
+{foreach from=$breadcrumbs key=k item=crumb}
+{if $k > 0} :: {/if}
+{link_to href="action:`$action`;id:`$crumb.id`;" text=$crumb.title}
+{/foreach}
+:: {$page_title}
+</div>
+{/if}
+
+{if $children}
+<h2 class="title">Child Pages</h2>
+<div id="children">
+{foreach from=$children key=k item=child}
+{if $k > 0} | {/if}
+{assign var=title value=$child.title}
+{if $child.visible == 0}{assign var=title value="(`$child.title`)"}{/if}
+{if $child.active == 0}{assign var=title value="[`$child.title`]"}{/if}
+{link_to href="action:`$action`;id:`$child.id`;" text=$title}
+{/foreach}
+</div>
+{/if}
+
+<h2 class="title">Utilities</h2>
+<p>{link_to href="controller:audit_trail;action:page;id:`$page_id`;" text="Page History"}</p>
+<p>{link_to href="controller:page;action:delete_page_cache;id:`$page_id`;" text="Delete Page Cache"}</p>

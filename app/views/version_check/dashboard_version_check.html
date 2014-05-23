@@ -1,0 +1,11 @@
+<h2 class="title">Version Check</h2>
+{if $upgrade ne ''}
+<p><b>Current Version:</b> {$upgrade.version} - <a href="{$upgrade.distribution}">Download</a> - <a href="{$upgrade.changelog}">Changelog</a> - {$upgrade.release_date}</p>
+
+<p><b>Your Version:</b> {$nterchange_version}</p>
+
+<p>To update, please visit <a href="{$upgrade.website}">our website.</a></p>
+{else if $uptodate ne ''}
+<p>Congratulations, your nterchange installation is up to date.</p>
+{/if}
+

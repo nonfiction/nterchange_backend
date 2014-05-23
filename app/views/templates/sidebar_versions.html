@@ -1,0 +1,30 @@
+<h2 class="title">Versions for this content</h2>
+<div id="versionlist">
+{if $cms_modified}
+<h3>Current version</h3>
+<div id="currentversion">
+<ul>
+<li><span style="font-weight:bold;">{$user.real_name|default:'Unknown'}</span><br />
+{$cms_modified|date_format:'%b %e, %Y %H:%M:%S'}</li>
+</ul>
+</div>
+{/if}
+
+{if $versions}
+<h3>Previous version(s)</h3>
+<ul>
+{foreach from=$versions item=version}
+<li><span style="font-weight:bold;">{$version.user.real_name|default:'Unknown'}</span><br />
+{$version.cms_modified|date_format:'%b %e, %Y %H:%M:%S'} &nbsp; &nbsp;
+{link_to href="/nterchange/version/view/`$version.id`" text="View" class="control" rel="blank" referer=1} |
+{link_to href="/nterchange/version/reinstate/`$version.id`" text="Reinstate" class="control" confirm="Are you sure you want to reinstate this version?" referer=1}
+{/foreach}
+</ul>
+<p>{link_to href="/nterchange/version/delete_all/`$version.id`" text="Delete ALL OLD Versions and Uploaded Files" class="control" confirm="Are you sure you want to delete all old versions and uploaded files?" referer=1}</p>
+{else}
+<p>
+There are no versions created for this content.
+</p>
+{/if}
+
+</div>

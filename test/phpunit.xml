@@ -1,0 +1,14 @@
+<phpunit bootstrap="environment.php"
+         colors="false"
+         convertErrorsToExceptions="false"
+         convertNoticesToExceptions="false"
+         convertWarningsToExceptions="false"
+         strict="false"
+         backupGlobals="false">
+
+  <testsuites>
+    <testsuite name="Nterchange Lib">
+      <directory>unit</directory>
+    </testsuite>
+</testsuites>
+</phpunit>

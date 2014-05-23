@@ -1,0 +1,13 @@
+<h1>Show {$asset_name}</h1>
+{if $headline}<h2>{$headline}</h2>{/if}
+<div id="showasset">
+{foreach from=$row key=key item=val}
+<b>{$key|humanize}</b>: {$val}<br />
+{/foreach}
+</div>
+
+<p>
+<a href="{url_for action=edit id=$asset_id}">Edit</a> | 
+<a href="{url_for action=viewlist}">List</a> |
+<a href="{url_for action=create}">Create</a>
+</p>

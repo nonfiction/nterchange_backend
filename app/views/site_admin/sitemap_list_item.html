@@ -1,0 +1,19 @@
+<li id="page_{$id}" class="{$odd_or_even}item">
+ <div id="edit_links_for_{$id}" class="edit_links_for_item">
+  {* Disabled because it's not useful and sort of broken with code_callers *}
+  {*{link_to href="controller:page;action:preview;id:`$id`;" text="Preview" class="control" rel="blank"}*}
+  {if $surfedit}{link_to href="controller:page;action:surftoedit;id:`$id`;" text="Surf to Edit" class="control" rel="blank"}{/if}
+  {if $page_edit}
+  | {link_to href="controller:page;action:edit;id:`$id`;" text="Edit" class="control" referer=1}
+  | {link_to href="controller:page;action:content;id:`$id`;" text="Content" class="control"}
+  | {link_to href="controller:page;action:children;id:`$id`;" text="Children" class="control"}
+  | {link_to href="controller:page;action:delete;id:`$id`;" text="Delete" class="control" confirm="Are you sure?"}
+  {/if}
+ </div>
+ <div id="content_for_{$id}" class="content_for_item">
+ <img src="/nterchange/images/drag.gif" alt="Drag" class="dragger_{$id} dragger" id="drag_{$id}" width="25" height="11" style="display:none;" />
+  {if $active == 0}{$title|string_format:'[%s]'}{elseif $visible == 0}{$title|string_format:'(%s)'}{else}{$title}{/if}
+  {if $workflow} <span class="highlight">({$workflow})</span>{/if}
+ </div>
+ &nbsp;
+</li>

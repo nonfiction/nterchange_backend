@@ -1,0 +1,58 @@
+﻿2.3
+April 4, 2007
+- Fixed dc-dateformat bug using markup interface
+
+2.2
+April 3, 2007
+- Minor code optimizations
+
+2.0
+March 23, 2007
+- Added setSelectedDate() method
+- Added updateFields() method
+- Provided a way to call DateChooser without needing to use javascript
+	- Specify class="datechooser" on any input field, along with other optional parameters
+	- see examples 5 and 6 on the example page
+- Changed license to CC Attribution 2.0
+
+1.9.3
+March 9, 2007
+- Included better algorithm for determining DateChooser positioning (Thanks: Adam Seabridge)
+- Fixed secure/insecure items warning in IE6 (SSL pages only)
+
+1.9.2
+December 19, 2006
+- Added td.invalidday class for all dates out of range
+- Updated datechooser.css to show user allowed dates
+
+1.9.1
+December 6, 2006
+- Added setWeekStartDay() method
+	- Changes starting day of each week
+	- Defaults to 0 (Sunday)
+
+1.9
+October 24, 2006
+- Fixed javascript errors in Safari (thanks to Jason Read for testing/debugging help)
+- Changed license to CC NoDerivs
+
+1.8
+October 2, 2006
+- Made several fixes for XHTML compatibility
+- Fixed javascript errors in IE5 and IE5.5
+
+1.7
+September 12, 2006
+- Fixed onmousedown bug introduced in 1.6
+- Added setEarliestDate(), setLatestDate(), and setAllowedDays() methods
+- Added capability for setUpdateField() method to also accept an object as its only parameter: { sFieldName1:sFormattedPHPDate1, ... }
+- displayPosition() no longer forces pixels as the unit. Unit should now be specified at call time.
+- Some minor code cleanup
+
+1.6
+September 11, 2006
+- Added iframe hacks to keep select boxes from "shining through" the calendar
+
+1.5
+May 11, 2006
+- Initial public release

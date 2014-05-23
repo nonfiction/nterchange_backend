@@ -17,6 +17,23 @@ $title = 'nterchange status';
   <h1><?= $title ?></h1>
   <table>
     <tr>
+      <td>ENVIRONMENT</td>
+      <td><?= ENVIRONMENT ?></td>
+    </tr>
+    <tr>
+      <td>DOCUMENT_ROOT</td>
+      <td><?= DOCUMENT_ROOT ?></td>
+    </tr>
+    <tr><td>DEFAULT_PAGE_EXTENSION</td><td><?= DEFAULT_PAGE_EXTENSION ?></td></tr>
+    <tr><td>GZIP_COMPRESSION</td><td><?= GZIP_COMPRESSION ?></td></tr>
+    <tr><td>CONF_DIR</td><td><?= CONF_DIR ?></td></tr>
+    <tr><td>ROOT_DIR</td><td><?= ROOT_DIR ?></td></tr>
+    <tr><td>CACHE_DIR</td><td><?= CACHE_DIR ?></td></tr>
+    <tr><td>APP_NAME</td><td><?= APP_NAME ?></td></tr>
+    <tr><td>APP_DIR</td><td><?= APP_DIR ?></td></tr>
+    <tr><td>BASE_DIR</td><td><?= BASE_DIR ?></td></tr>
+
+    <tr>
       <?php
         $db = NDB::connect();
       ?>
@@ -32,3 +49,4 @@ $title = 'nterchange status';
   </table>
 </body>
 </html>
+

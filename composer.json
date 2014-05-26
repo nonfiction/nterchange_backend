@@ -20,7 +20,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "git@github.com:nonfiction/nterchange_pear.git"
+      "url": "/Users/andy/projects/nterchange_pear"
     }
   ]
 }

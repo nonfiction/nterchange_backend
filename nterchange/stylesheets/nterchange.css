@@ -98,3 +98,9 @@ a.controlactive:hover, a.controlactive:active{
 	font-size:.9em;
 	color:#444;
 }
+
+tr.grid[class*="_xs"] { background: #fefefe; }
+tr.grid[class*="_sm"] { background: #efeff2; }
+tr.grid[class*="_md"] { background: #fefefe; }
+tr.grid[class*="_lg"] { background: #efeff2; }
+

@@ -177,7 +177,7 @@ class PageContent extends NModel {
 
     $offset_col = array(
       'inherit' => 'Inherit', 
-      '0'       => '0 col', 
+      '0'       => '0 cols', 
       '1'       => '1 col', 
       '2'       => '2 cols',
       '3'       => '3 cols',
@@ -191,7 +191,7 @@ class PageContent extends NModel {
       '11'      => '11 cols', 
       '12'      => '12 cols');
     $offset_col_xs = array(
-      '0'       => '0 col', 
+      '0'       => '0 cols', 
       '1'       => '1 col', 
       '2'       => '2 cols',
       '3'       => '3 cols',

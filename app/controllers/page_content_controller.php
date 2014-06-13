@@ -170,10 +170,10 @@ class PageContentController extends nterchangeController {
 
 		$el = $form->addElement('select', 'col_lg', 'Width (lg)', $page_content_model->grid_options('col'));
     $el->setLabel(array($el->_label, "col_lg grid"));
-		$el = $form->addElement('select', 'row_lg', 'Height (lg)', $page_content_model->grid_options('row'));
-    $el->setLabel(array($el->_label, "row_lg grid"));
 		$el = $form->addElement('select', 'offset_col_lg', 'Offset Width (lg)', $page_content_model->grid_options('offset_col'));
     $el->setLabel(array($el->_label, "offset_col_lg grid"));
+		$el = $form->addElement('select', 'row_lg', 'Height (lg)', $page_content_model->grid_options('row'));
+    $el->setLabel(array($el->_label, "row_lg grid"));
 		$el = $form->addElement('select', 'offset_row_lg', 'Offset Height (lg)', $page_content_model->grid_options('offset_row'));
     $el->setLabel(array($el->_label, "offset_row_lg grid"));
 		$el = $form->addElement('select', 'pull_lg', 'Pull (lg)', $page_content_model->grid_options('pull'));

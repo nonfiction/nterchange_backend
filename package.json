@@ -1,0 +1,12 @@
+{
+  "name": "nterchange",
+  "version": "1.0.0",
+  "dependencies": {
+    "importer": "^0.7.2",
+    "less": "~1.7.0",
+    "uglifyjs": "~2.3.6"
+  },
+  "scripts": {
+    "compile-coffee": "importer app/assets/javascripts/surftoedit.js.coffee nterchange/assets/javascripts/surftoedit.js"
+  }
+}

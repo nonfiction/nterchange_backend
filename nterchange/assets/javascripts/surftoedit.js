@@ -857,8 +857,10 @@ var docElement            = doc.documentElement,
     if ($field.data('ui') === 'inline') {
       if ($field.data('type') === 'textarea') {
         if (editing) {
+          $asset.data(fieldId, window.CKEDITOR.inline(fieldId, {
+            customConfig: '/javascripts/ckeditor_inline_config.js'
+          }));
           $field.attr('contenteditable', 'true');
-          $asset.data(fieldId, window.CKEDITOR.inline(fieldId));
           $field.data('original-value', n.cleanValue($field));
         } else {
           $field.removeAttr('contenteditable');
@@ -1004,7 +1006,9 @@ var docElement            = doc.documentElement,
       id: $gb.data('asset-id'),
       cms_headline: $gb.data('asset-headline'),
       __submit__: true,
-      __skip_versioning__: skipVersioning
+      __skip_versioning__: skipVersioning,
+      __ajax__: true,
+      inline_editing: true
     };
     fieldHTML = $field.html().replace(/\/nterchange\/page\/surftoedit\//g, '/_page');
     if ($field.data('type') === 'textarea') {

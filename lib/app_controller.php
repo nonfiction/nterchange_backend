@@ -479,6 +479,14 @@ class AppController extends NController {
             'row_sm'           => $page_content_model->row_sm,
             'row_md'           => $page_content_model->row_md,
             'row_lg'           => $page_content_model->row_lg,
+            'offset_col_xs'    => $page_content_model->offset_col_xs,
+            'offset_col_sm'    => $page_content_model->offset_col_sm,
+            'offset_col_md'    => $page_content_model->offset_col_md,
+            'offset_col_lg'    => $page_content_model->offset_col_lg,
+            'offset_row_xs'    => $page_content_model->offset_row_xs,
+            'offset_row_sm'    => $page_content_model->offset_row_sm,
+            'offset_row_md'    => $page_content_model->offset_row_md,
+            'offset_row_lg'    => $page_content_model->offset_row_lg,
             'pull_xs'          => $page_content_model->pull_xs,
             'pull_sm'          => $page_content_model->pull_sm,
             'pull_md'          => $page_content_model->pull_md,
@@ -509,10 +517,10 @@ class AppController extends NController {
 
         // Add col_xs, col_md, etc
         $grid = array(
-          'col_xs', 'col_sm', 'col_md', 'col_lg',
-          'row_xs', 'row_sm', 'row_md', 'row_lg',
-          'pull_xs', 'pull_sm', 'pull_md', 'pull_lg',
-          'gutter_xs', 'gutter_sm', 'gutter_md', 'gutter_lg'
+          'col_xs', 'offset_col_xs', 'row_xs', 'offset_row_xs', 'pull_xs', 'gutter_xs', 
+          'col_sm', 'offset_col_sm', 'row_sm', 'offset_row_sm', 'pull_sm', 'gutter_sm', 
+          'col_md', 'offset_col_md', 'row_md', 'offset_row_md', 'pull_md', 'gutter_md', 
+          'col_lg', 'offset_col_lg', 'row_lg', 'offset_row_lg', 'pull_lg', 'gutter_lg'
         );
         foreach($grid as $field) {
           $el = &ControllerForm::addElement($field, $form, $page_content_model);

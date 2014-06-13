@@ -137,6 +137,7 @@ class PageContentController extends nterchangeController {
     $el->setLabel(array($el->_label, "col_md grid"));
 		$el = $form->addElement('select', 'col_lg', 'Width (lg)', $page_content_model->grid_options('col'));
     $el->setLabel(array($el->_label, "col_lg grid"));
+
 		$el = $form->addElement('select', 'row_xs', 'Height (xs)', $page_content_model->grid_options('row_xs'));
     $el->setLabel(array($el->_label, "row_xs grid"));
 		$el = $form->addElement('select', 'row_sm', 'Height (sm)', $page_content_model->grid_options('row'));
@@ -145,6 +146,25 @@ class PageContentController extends nterchangeController {
     $el->setLabel(array($el->_label, "row_md grid"));
 		$el = $form->addElement('select', 'row_lg', 'Height (lg)', $page_content_model->grid_options('row'));
     $el->setLabel(array($el->_label, "row_lg grid"));
+
+		$el = $form->addElement('select', 'offset_col_xs', 'Offset Width (xs)', $page_content_model->grid_options('offset_col_xs'));
+    $el->setLabel(array($el->_label, "offset_col_xs grid"));
+		$el = $form->addElement('select', 'offset_col_sm', 'Offset Width (sm)', $page_content_model->grid_options('offset_col'));
+    $el->setLabel(array($el->_label, "offset_col_sm grid"));
+		$el = $form->addElement('select', 'offset_col_md', 'Offset Width (md)', $page_content_model->grid_options('offset_col'));
+    $el->setLabel(array($el->_label, "offset_col_md grid"));
+		$el = $form->addElement('select', 'offset_col_lg', 'Offset Width (lg)', $page_content_model->grid_options('offset_col'));
+    $el->setLabel(array($el->_label, "offset_col_lg grid"));
+
+		$el = $form->addElement('select', 'offset_row_xs', 'Offset Height (xs)', $page_content_model->grid_options('offset_row_xs'));
+    $el->setLabel(array($el->_label, "offset_row_xs grid"));
+		$el = $form->addElement('select', 'offset_row_sm', 'Offset Height (sm)', $page_content_model->grid_options('offset_row'));
+    $el->setLabel(array($el->_label, "offset_row_sm grid"));
+		$el = $form->addElement('select', 'offset_row_md', 'Offset Height (md)', $page_content_model->grid_options('offset_row'));
+    $el->setLabel(array($el->_label, "offset_row_md grid"));
+		$el = $form->addElement('select', 'offset_row_lg', 'Offset Height (lg)', $page_content_model->grid_options('offset_row'));
+    $el->setLabel(array($el->_label, "offset_row_lg grid"));
+
 		$el = $form->addElement('select', 'pull_xs', 'Pull (xs)', $page_content_model->grid_options('pull_xs'));
     $el->setLabel(array($el->_label, "pull_xs grid"));
 		$el = $form->addElement('select', 'pull_sm', 'Pull (sm)', $page_content_model->grid_options('pull'));
@@ -153,6 +173,7 @@ class PageContentController extends nterchangeController {
     $el->setLabel(array($el->_label, "pull_md grid"));
 		$el = $form->addElement('select', 'pull_lg', 'Pull (lg)', $page_content_model->grid_options('pull'));
     $el->setLabel(array($el->_label, "pull_lg grid"));
+
 		$el = $form->addElement('text', 'gutter_xs', 'Gutter (xs)');
     $el->setLabel(array($el->_label, "gutter_xs grid"));
 		$el = $form->addElement('text', 'gutter_sm', 'Gutter (sm)');
@@ -350,6 +371,7 @@ class PageContentController extends nterchangeController {
     $el->setLabel(array($el->_label, "col_md grid"));
 		$el = $form->addElement('select', 'col_lg', 'Width (lg)', $page_content_model->grid_options('col'));
     $el->setLabel(array($el->_label, "col_lg grid"));
+
 		$el = $form->addElement('select', 'row_xs', 'Height (xs)', $page_content_model->grid_options('row_xs'));
     $el->setLabel(array($el->_label, "row_xs grid"));
 		$el = $form->addElement('select', 'row_sm', 'Height (sm)', $page_content_model->grid_options('row'));
@@ -358,6 +380,25 @@ class PageContentController extends nterchangeController {
     $el->setLabel(array($el->_label, "row_md grid"));
 		$el = $form->addElement('select', 'row_lg', 'Height (lg)', $page_content_model->grid_options('row'));
     $el->setLabel(array($el->_label, "row_lg grid"));
+
+		$el = $form->addElement('select', 'offset_col_xs', 'Offset Width (xs)', $page_content_model->grid_options('offset_col_xs'));
+    $el->setLabel(array($el->_label, "offset_col_xs grid"));
+		$el = $form->addElement('select', 'offset_col_sm', 'Offset Width (sm)', $page_content_model->grid_options('offset_col'));
+    $el->setLabel(array($el->_label, "offset_col_sm grid"));
+		$el = $form->addElement('select', 'offset_col_md', 'Offset Width (md)', $page_content_model->grid_options('offset_col'));
+    $el->setLabel(array($el->_label, "offset_col_md grid"));
+		$el = $form->addElement('select', 'offset_col_lg', 'Offset Width (lg)', $page_content_model->grid_options('offset_col'));
+    $el->setLabel(array($el->_label, "offset_col_lg grid"));
+
+		$el = $form->addElement('select', 'offset_row_xs', 'Offset Height (xs)', $page_content_model->grid_options('offset_row_xs'));
+    $el->setLabel(array($el->_label, "offset_row_xs grid"));
+		$el = $form->addElement('select', 'offset_row_sm', 'Offset Height (sm)', $page_content_model->grid_options('offset_row'));
+    $el->setLabel(array($el->_label, "offset_row_sm grid"));
+		$el = $form->addElement('select', 'offset_row_md', 'Offset Height (md)', $page_content_model->grid_options('offset_row'));
+    $el->setLabel(array($el->_label, "offset_row_md grid"));
+		$el = $form->addElement('select', 'offset_row_lg', 'Offset Height (lg)', $page_content_model->grid_options('offset_row'));
+    $el->setLabel(array($el->_label, "offset_row_lg grid"));
+
 		$el = $form->addElement('select', 'pull_xs', 'Pull (xs)', $page_content_model->grid_options('pull_xs'));
     $el->setLabel(array($el->_label, "pull_xs grid"));
 		$el = $form->addElement('select', 'pull_sm', 'Pull (sm)', $page_content_model->grid_options('pull'));
@@ -366,6 +407,7 @@ class PageContentController extends nterchangeController {
     $el->setLabel(array($el->_label, "pull_md grid"));
 		$el = $form->addElement('select', 'pull_lg', 'Pull (lg)', $page_content_model->grid_options('pull'));
     $el->setLabel(array($el->_label, "pull_lg grid"));
+
 		$el = $form->addElement('text', 'gutter_xs', 'Gutter (xs)');
     $el->setLabel(array($el->_label, "gutter_xs grid"));
 		$el = $form->addElement('text', 'gutter_sm', 'Gutter (sm)');

@@ -16,11 +16,21 @@
   .make-row(@row: 0) {
     height: @row + 0em;
     .grid-block-content { overflow: hidden; }
-   }
+    }
 
-   .set-top-gutter(@gutter: @grid-gutter-width) {
-     padding-top: (@gutter / 2);
-   }
+  .make-row-offset(@row: 0) {
+    margin-top: @row + 0em;
+    .grid-block-content { overflow: hidden; }
+    }
+
+  // Missing from bootstrap mixin.less
+  .make-xs-column-offset(@columns) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+
+  .set-top-gutter(@gutter: @grid-gutter-width) {
+    padding-top: (@gutter / 2);
+  }
 
    .set-right-gutter(@gutter: @grid-gutter-width) {
      padding-right: (@gutter / 2);
@@ -344,6 +354,279 @@
     &[data-row-lg="48"] { .make-row(48); }
     &[data-row-lg="49"] { .make-row(49); }
     &[data-row-lg="50"] { .make-row(50); }
+  }
+
+  // Column Offsets for all sizes
+  &[data-offset-col-xs]      { .make-xs-column-offset(0);  }
+  &[data-offset-col-xs="0"]  { .make-xs-column-offset(0);  }
+  &[data-offset-col-xs="1"]  { .make-xs-column-offset(1);  }
+  &[data-offset-col-xs="2"]  { .make-xs-column-offset(2);  }
+  &[data-offset-col-xs="3"]  { .make-xs-column-offset(3);  }
+  &[data-offset-col-xs="4"]  { .make-xs-column-offset(4);  }
+  &[data-offset-col-xs="5"]  { .make-xs-column-offset(5);  }
+  &[data-offset-col-xs="6"]  { .make-xs-column-offset(6);  }
+  &[data-offset-col-xs="7"]  { .make-xs-column-offset(7);  }
+  &[data-offset-col-xs="8"]  { .make-xs-column-offset(8);  }
+  &[data-offset-col-xs="9"]  { .make-xs-column-offset(9);  }
+  &[data-offset-col-xs="10"] { .make-xs-column-offset(10); }
+  &[data-offset-col-xs="11"] { .make-xs-column-offset(11); }
+  &[data-offset-col-xs="12"] { .make-xs-column-offset(12); }
+
+  &[data-offset-col-sm="0"]  { .make-sm-column-offset(0);  }
+  &[data-offset-col-sm="1"]  { .make-sm-column-offset(1);  }
+  &[data-offset-col-sm="2"]  { .make-sm-column-offset(2);  }
+  &[data-offset-col-sm="3"]  { .make-sm-column-offset(3);  }
+  &[data-offset-col-sm="4"]  { .make-sm-column-offset(4);  }
+  &[data-offset-col-sm="5"]  { .make-sm-column-offset(5);  }
+  &[data-offset-col-sm="6"]  { .make-sm-column-offset(6);  }
+  &[data-offset-col-sm="7"]  { .make-sm-column-offset(7);  }
+  &[data-offset-col-sm="8"]  { .make-sm-column-offset(8);  }
+  &[data-offset-col-sm="9"]  { .make-sm-column-offset(9);  }
+  &[data-offset-col-sm="10"] { .make-sm-column-offset(10); }
+  &[data-offset-col-sm="11"] { .make-sm-column-offset(11); }
+  &[data-offset-col-sm="12"] { .make-sm-column-offset(12); }
+
+  &[data-offset-col-md="0"]  { .make-md-column-offset(0);  }
+  &[data-offset-col-md="1"]  { .make-md-column-offset(1);  }
+  &[data-offset-col-md="2"]  { .make-md-column-offset(2);  }
+  &[data-offset-col-md="3"]  { .make-md-column-offset(3);  }
+  &[data-offset-col-md="4"]  { .make-md-column-offset(4);  }
+  &[data-offset-col-md="5"]  { .make-md-column-offset(5);  }
+  &[data-offset-col-md="6"]  { .make-md-column-offset(6);  }
+  &[data-offset-col-md="7"]  { .make-md-column-offset(7);  }
+  &[data-offset-col-md="8"]  { .make-md-column-offset(8);  }
+  &[data-offset-col-md="9"]  { .make-md-column-offset(9);  }
+  &[data-offset-col-md="10"] { .make-md-column-offset(10); }
+  &[data-offset-col-md="11"] { .make-md-column-offset(11); }
+  &[data-offset-col-md="12"] { .make-md-column-offset(12); }
+
+  &[data-offset-col-lg="0"]  { .make-lg-column-offset(0);  }
+  &[data-offset-col-lg="1"]  { .make-lg-column-offset(1);  }
+  &[data-offset-col-lg="2"]  { .make-lg-column-offset(2);  }
+  &[data-offset-col-lg="3"]  { .make-lg-column-offset(3);  }
+  &[data-offset-col-lg="4"]  { .make-lg-column-offset(4);  }
+  &[data-offset-col-lg="5"]  { .make-lg-column-offset(5);  }
+  &[data-offset-col-lg="6"]  { .make-lg-column-offset(6);  }
+  &[data-offset-col-lg="7"]  { .make-lg-column-offset(7);  }
+  &[data-offset-col-lg="8"]  { .make-lg-column-offset(8);  }
+  &[data-offset-col-lg="9"]  { .make-lg-column-offset(9);  }
+  &[data-offset-col-lg="10"] { .make-lg-column-offset(10); }
+  &[data-offset-col-lg="11"] { .make-lg-column-offset(11); }
+  &[data-offset-col-lg="12"] { .make-lg-column-offset(12); }
+
+  // Row Offsets for all sizes
+  &[data-offset-row-xs="0"]   { .make-row-offset(0);   }
+  &[data-offset-row-xs="1"]   { .make-row-offset(1);   }
+  &[data-offset-row-xs="2"]   { .make-row-offset(2);   }
+  &[data-offset-row-xs="3"]   { .make-row-offset(3);   }
+  &[data-offset-row-xs="4"]   { .make-row-offset(4);   }
+  &[data-offset-row-xs="5"]   { .make-row-offset(5);   }
+  &[data-offset-row-xs="6"]   { .make-row-offset(6);   }
+  &[data-offset-row-xs="7"]   { .make-row-offset(7);   }
+  &[data-offset-row-xs="8"]   { .make-row-offset(8);   }
+  &[data-offset-row-xs="9"]   { .make-row-offset(9);   }
+  &[data-offset-row-xs="10"]  { .make-row-offset(10);  }
+  &[data-offset-row-xs="11"]  { .make-row-offset(11);  }
+  &[data-offset-row-xs="12"]  { .make-row-offset(12);  }
+  &[data-offset-row-xs="13"]  { .make-row-offset(13);  }
+  &[data-offset-row-xs="14"]  { .make-row-offset(14);  }
+  &[data-offset-row-xs="15"]  { .make-row-offset(15);  }
+  &[data-offset-row-xs="16"]  { .make-row-offset(16);  }
+  &[data-offset-row-xs="17"]  { .make-row-offset(17);  }
+  &[data-offset-row-xs="18"]  { .make-row-offset(18);  }
+  &[data-offset-row-xs="19"]  { .make-row-offset(19);  }
+  &[data-offset-row-xs="20"]  { .make-row-offset(20);  }
+  &[data-offset-row-xs="21"]  { .make-row-offset(21);  }
+  &[data-offset-row-xs="22"]  { .make-row-offset(22);  }
+  &[data-offset-row-xs="23"]  { .make-row-offset(23);  }
+  &[data-offset-row-xs="24"]  { .make-row-offset(24);  }
+  &[data-offset-row-xs="25"]  { .make-row-offset(25);  }
+  &[data-offset-row-xs="-1"]  { .make-row-offset(-1);  }
+  &[data-offset-row-xs="-2"]  { .make-row-offset(-2);  }
+  &[data-offset-row-xs="-3"]  { .make-row-offset(-3);  }
+  &[data-offset-row-xs="-4"]  { .make-row-offset(-4);  }
+  &[data-offset-row-xs="-5"]  { .make-row-offset(-5);  }
+  &[data-offset-row-xs="-6"]  { .make-row-offset(-6);  }
+  &[data-offset-row-xs="-7"]  { .make-row-offset(-7);  }
+  &[data-offset-row-xs="-8"]  { .make-row-offset(-8);  }
+  &[data-offset-row-xs="-9"]  { .make-row-offset(-9);  }
+  &[data-offset-row-xs="-10"] { .make-row-offset(-10); }
+  &[data-offset-row-xs="-11"] { .make-row-offset(-11); }
+  &[data-offset-row-xs="-12"] { .make-row-offset(-12); }
+  &[data-offset-row-xs="-13"] { .make-row-offset(-13); }
+  &[data-offset-row-xs="-14"] { .make-row-offset(-14); }
+  &[data-offset-row-xs="-15"] { .make-row-offset(-15); }
+  &[data-offset-row-xs="-16"] { .make-row-offset(-16); }
+  &[data-offset-row-xs="-17"] { .make-row-offset(-17); }
+  &[data-offset-row-xs="-18"] { .make-row-offset(-18); }
+  &[data-offset-row-xs="-19"] { .make-row-offset(-19); }
+  &[data-offset-row-xs="-20"] { .make-row-offset(-20); }
+  &[data-offset-row-xs="-21"] { .make-row-offset(-21); }
+  &[data-offset-row-xs="-22"] { .make-row-offset(-22); }
+  &[data-offset-row-xs="-23"] { .make-row-offset(-23); }
+  &[data-offset-row-xs="-24"] { .make-row-offset(-24); }
+  &[data-offset-row-xs="-25"] { .make-row-offset(-25); }
+
+  @media @sm { 
+    &[data-offset-row-sm="0"]   { .make-row-offset(0);   }
+    &[data-offset-row-sm="1"]   { .make-row-offset(1);   }
+    &[data-offset-row-sm="2"]   { .make-row-offset(2);   }
+    &[data-offset-row-sm="3"]   { .make-row-offset(3);   }
+    &[data-offset-row-sm="4"]   { .make-row-offset(4);   }
+    &[data-offset-row-sm="5"]   { .make-row-offset(5);   }
+    &[data-offset-row-sm="6"]   { .make-row-offset(6);   }
+    &[data-offset-row-sm="7"]   { .make-row-offset(7);   }
+    &[data-offset-row-sm="8"]   { .make-row-offset(8);   }
+    &[data-offset-row-sm="9"]   { .make-row-offset(9);   }
+    &[data-offset-row-sm="10"]  { .make-row-offset(10);  }
+    &[data-offset-row-sm="11"]  { .make-row-offset(11);  }
+    &[data-offset-row-sm="12"]  { .make-row-offset(12);  }
+    &[data-offset-row-sm="13"]  { .make-row-offset(13);  }
+    &[data-offset-row-sm="14"]  { .make-row-offset(14);  }
+    &[data-offset-row-sm="15"]  { .make-row-offset(15);  }
+    &[data-offset-row-sm="16"]  { .make-row-offset(16);  }
+    &[data-offset-row-sm="17"]  { .make-row-offset(17);  }
+    &[data-offset-row-sm="18"]  { .make-row-offset(18);  }
+    &[data-offset-row-sm="19"]  { .make-row-offset(19);  }
+    &[data-offset-row-sm="20"]  { .make-row-offset(20);  }
+    &[data-offset-row-sm="21"]  { .make-row-offset(21);  }
+    &[data-offset-row-sm="22"]  { .make-row-offset(22);  }
+    &[data-offset-row-sm="23"]  { .make-row-offset(23);  }
+    &[data-offset-row-sm="24"]  { .make-row-offset(24);  }
+    &[data-offset-row-sm="25"]  { .make-row-offset(25);  }
+    &[data-offset-row-sm="-1"]  { .make-row-offset(-1);  }
+    &[data-offset-row-sm="-2"]  { .make-row-offset(-2);  }
+    &[data-offset-row-sm="-3"]  { .make-row-offset(-3);  }
+    &[data-offset-row-sm="-4"]  { .make-row-offset(-4);  }
+    &[data-offset-row-sm="-5"]  { .make-row-offset(-5);  }
+    &[data-offset-row-sm="-6"]  { .make-row-offset(-6);  }
+    &[data-offset-row-sm="-7"]  { .make-row-offset(-7);  }
+    &[data-offset-row-sm="-8"]  { .make-row-offset(-8);  }
+    &[data-offset-row-sm="-9"]  { .make-row-offset(-9);  }
+    &[data-offset-row-sm="-10"] { .make-row-offset(-10); }
+    &[data-offset-row-sm="-11"] { .make-row-offset(-11); }
+    &[data-offset-row-sm="-12"] { .make-row-offset(-12); }
+    &[data-offset-row-sm="-13"] { .make-row-offset(-13); }
+    &[data-offset-row-sm="-14"] { .make-row-offset(-14); }
+    &[data-offset-row-sm="-15"] { .make-row-offset(-15); }
+    &[data-offset-row-sm="-16"] { .make-row-offset(-16); }
+    &[data-offset-row-sm="-17"] { .make-row-offset(-17); }
+    &[data-offset-row-sm="-18"] { .make-row-offset(-18); }
+    &[data-offset-row-sm="-19"] { .make-row-offset(-19); }
+    &[data-offset-row-sm="-20"] { .make-row-offset(-20); }
+    &[data-offset-row-sm="-21"] { .make-row-offset(-21); }
+    &[data-offset-row-sm="-22"] { .make-row-offset(-22); }
+    &[data-offset-row-sm="-23"] { .make-row-offset(-23); }
+    &[data-offset-row-sm="-24"] { .make-row-offset(-24); }
+    &[data-offset-row-sm="-25"] { .make-row-offset(-25); }
+  }
+
+  @media @md { 
+    &[data-offset-row-md="0"]   { .make-row-offset(0);   }
+    &[data-offset-row-md="1"]   { .make-row-offset(1);   }
+    &[data-offset-row-md="2"]   { .make-row-offset(2);   }
+    &[data-offset-row-md="3"]   { .make-row-offset(3);   }
+    &[data-offset-row-md="4"]   { .make-row-offset(4);   }
+    &[data-offset-row-md="5"]   { .make-row-offset(5);   }
+    &[data-offset-row-md="6"]   { .make-row-offset(6);   }
+    &[data-offset-row-md="7"]   { .make-row-offset(7);   }
+    &[data-offset-row-md="8"]   { .make-row-offset(8);   }
+    &[data-offset-row-md="9"]   { .make-row-offset(9);   }
+    &[data-offset-row-md="10"]  { .make-row-offset(10);  }
+    &[data-offset-row-md="11"]  { .make-row-offset(11);  }
+    &[data-offset-row-md="12"]  { .make-row-offset(12);  }
+    &[data-offset-row-md="13"]  { .make-row-offset(13);  }
+    &[data-offset-row-md="14"]  { .make-row-offset(14);  }
+    &[data-offset-row-md="15"]  { .make-row-offset(15);  }
+    &[data-offset-row-md="16"]  { .make-row-offset(16);  }
+    &[data-offset-row-md="17"]  { .make-row-offset(17);  }
+    &[data-offset-row-md="18"]  { .make-row-offset(18);  }
+    &[data-offset-row-md="19"]  { .make-row-offset(19);  }
+    &[data-offset-row-md="20"]  { .make-row-offset(20);  }
+    &[data-offset-row-md="21"]  { .make-row-offset(21);  }
+    &[data-offset-row-md="22"]  { .make-row-offset(22);  }
+    &[data-offset-row-md="23"]  { .make-row-offset(23);  }
+    &[data-offset-row-md="24"]  { .make-row-offset(24);  }
+    &[data-offset-row-md="25"]  { .make-row-offset(25);  }
+    &[data-offset-row-md="-1"]  { .make-row-offset(-1);  }
+    &[data-offset-row-md="-2"]  { .make-row-offset(-2);  }
+    &[data-offset-row-md="-3"]  { .make-row-offset(-3);  }
+    &[data-offset-row-md="-4"]  { .make-row-offset(-4);  }
+    &[data-offset-row-md="-5"]  { .make-row-offset(-5);  }
+    &[data-offset-row-md="-6"]  { .make-row-offset(-6);  }
+    &[data-offset-row-md="-7"]  { .make-row-offset(-7);  }
+    &[data-offset-row-md="-8"]  { .make-row-offset(-8);  }
+    &[data-offset-row-md="-9"]  { .make-row-offset(-9);  }
+    &[data-offset-row-md="-10"] { .make-row-offset(-10); }
+    &[data-offset-row-md="-11"] { .make-row-offset(-11); }
+    &[data-offset-row-md="-12"] { .make-row-offset(-12); }
+    &[data-offset-row-md="-13"] { .make-row-offset(-13); }
+    &[data-offset-row-md="-14"] { .make-row-offset(-14); }
+    &[data-offset-row-md="-15"] { .make-row-offset(-15); }
+    &[data-offset-row-md="-16"] { .make-row-offset(-16); }
+    &[data-offset-row-md="-17"] { .make-row-offset(-17); }
+    &[data-offset-row-md="-18"] { .make-row-offset(-18); }
+    &[data-offset-row-md="-19"] { .make-row-offset(-19); }
+    &[data-offset-row-md="-20"] { .make-row-offset(-20); }
+    &[data-offset-row-md="-21"] { .make-row-offset(-21); }
+    &[data-offset-row-md="-22"] { .make-row-offset(-22); }
+    &[data-offset-row-md="-23"] { .make-row-offset(-23); }
+    &[data-offset-row-md="-24"] { .make-row-offset(-24); }
+    &[data-offset-row-md="-25"] { .make-row-offset(-25); }
+  }
+
+  @media @lg { 
+    &[data-offset-row-lg="0"]   { .make-row-offset(0);   }
+    &[data-offset-row-lg="1"]   { .make-row-offset(1);   }
+    &[data-offset-row-lg="2"]   { .make-row-offset(2);   }
+    &[data-offset-row-lg="3"]   { .make-row-offset(3);   }
+    &[data-offset-row-lg="4"]   { .make-row-offset(4);   }
+    &[data-offset-row-lg="5"]   { .make-row-offset(5);   }
+    &[data-offset-row-lg="6"]   { .make-row-offset(6);   }
+    &[data-offset-row-lg="7"]   { .make-row-offset(7);   }
+    &[data-offset-row-lg="8"]   { .make-row-offset(8);   }
+    &[data-offset-row-lg="9"]   { .make-row-offset(9);   }
+    &[data-offset-row-lg="10"]  { .make-row-offset(10);  }
+    &[data-offset-row-lg="11"]  { .make-row-offset(11);  }
+    &[data-offset-row-lg="12"]  { .make-row-offset(12);  }
+    &[data-offset-row-lg="13"]  { .make-row-offset(13);  }
+    &[data-offset-row-lg="14"]  { .make-row-offset(14);  }
+    &[data-offset-row-lg="15"]  { .make-row-offset(15);  }
+    &[data-offset-row-lg="16"]  { .make-row-offset(16);  }
+    &[data-offset-row-lg="17"]  { .make-row-offset(17);  }
+    &[data-offset-row-lg="18"]  { .make-row-offset(18);  }
+    &[data-offset-row-lg="19"]  { .make-row-offset(19);  }
+    &[data-offset-row-lg="20"]  { .make-row-offset(20);  }
+    &[data-offset-row-lg="21"]  { .make-row-offset(21);  }
+    &[data-offset-row-lg="22"]  { .make-row-offset(22);  }
+    &[data-offset-row-lg="23"]  { .make-row-offset(23);  }
+    &[data-offset-row-lg="24"]  { .make-row-offset(24);  }
+    &[data-offset-row-lg="25"]  { .make-row-offset(25);  }
+    &[data-offset-row-lg="-1"]  { .make-row-offset(-1);  }
+    &[data-offset-row-lg="-2"]  { .make-row-offset(-2);  }
+    &[data-offset-row-lg="-3"]  { .make-row-offset(-3);  }
+    &[data-offset-row-lg="-4"]  { .make-row-offset(-4);  }
+    &[data-offset-row-lg="-5"]  { .make-row-offset(-5);  }
+    &[data-offset-row-lg="-6"]  { .make-row-offset(-6);  }
+    &[data-offset-row-lg="-7"]  { .make-row-offset(-7);  }
+    &[data-offset-row-lg="-8"]  { .make-row-offset(-8);  }
+    &[data-offset-row-lg="-9"]  { .make-row-offset(-9);  }
+    &[data-offset-row-lg="-10"] { .make-row-offset(-10); }
+    &[data-offset-row-lg="-11"] { .make-row-offset(-11); }
+    &[data-offset-row-lg="-12"] { .make-row-offset(-12); }
+    &[data-offset-row-lg="-13"] { .make-row-offset(-13); }
+    &[data-offset-row-lg="-14"] { .make-row-offset(-14); }
+    &[data-offset-row-lg="-15"] { .make-row-offset(-15); }
+    &[data-offset-row-lg="-16"] { .make-row-offset(-16); }
+    &[data-offset-row-lg="-17"] { .make-row-offset(-17); }
+    &[data-offset-row-lg="-18"] { .make-row-offset(-18); }
+    &[data-offset-row-lg="-19"] { .make-row-offset(-19); }
+    &[data-offset-row-lg="-20"] { .make-row-offset(-20); }
+    &[data-offset-row-lg="-21"] { .make-row-offset(-21); }
+    &[data-offset-row-lg="-22"] { .make-row-offset(-22); }
+    &[data-offset-row-lg="-23"] { .make-row-offset(-23); }
+    &[data-offset-row-lg="-24"] { .make-row-offset(-24); }
+    &[data-offset-row-lg="-25"] { .make-row-offset(-25); }
   }
 
   // Gutters for all sizes

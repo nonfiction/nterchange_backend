@@ -21,26 +21,26 @@ yepnope.paths =
   'stylesheets'  : "/nterchange/assets/stylesheets"
 
 # Ensure we got jQuery
-yepnope test: (window.jQuery), nope: [ 
-  'components/jquery/jquery.min.js' 
-], complete: -> 
+yepnope test: (window.jQuery), nope: [
+  'components/jquery/jquery.min.js'
+], complete: ->
 
   # Ensure we got jQuery UI
-  yepnope test: (window.jQuery.ui), nope: [ 
+  yepnope test: (window.jQuery.ui), nope: [
     'javascripts/jquery-ui.js'
     'components/jquery-ui/themes/smoothness/jquery-ui.min.css'
   ], complete: -> window.n.init()
 
   # Ensure we got noty
-  yepnope test: (window.jQuery.noty), nope: [ 
+  yepnope test: (window.jQuery.noty), nope: [
     'javascripts/noty.js'
   ], complete: -> window.n.init()
 
   # Ensure we got ckeditor
-  yepnope test: (window.CKEDITOR), nope: [ 
+  yepnope test: (window.CKEDITOR), nope: [
     'components/ckeditor/ckeditor.js'
     'components/ckeditor/adapters/jquery.js'
-  ], complete: -> 
+  ], complete: ->
     CKEDITOR.config.customConfig = '/javascripts/ckeditor_config.js'
     window.n.init()
 
@@ -66,7 +66,7 @@ n.init = ->
   n.surfToEdit()
 
 #
-n.grids = 
+n.grids =
   'xs': ['sm', 'md', 'lg']
   'sm': ['md', 'lg']
   'md': ['lg']
@@ -94,7 +94,7 @@ n.surfToEdit = ->
     n.gb.classify(this)
 
     # Col/Row chooser
-    $(this).find('.ntoolbar .col-chooser a, .ntoolbar .row-chooser a').on 'click', (event) -> 
+    $(this).find('.ntoolbar .col-chooser a, .ntoolbar .row-chooser a').on 'click', (event) ->
       event.preventDefault()
       $a = $(event.target)
       n.gb.grid($a, true)
@@ -107,8 +107,8 @@ n.surfToEdit = ->
     n.gb.resizable(this)
 
 
-# 
-n.columnToPercentage = (col) -> 
+#
+n.columnToPercentage = (col) ->
   "#{Math.round(((col / 12) * 100))}%"
 
 #
@@ -116,14 +116,14 @@ n.id = (element) ->
   $element = $(element)
   unless $element.attr('id')
     id = [
-      $element.prop("tagName").toLowerCase(), 
+      $element.prop("tagName").toLowerCase(),
       $element.prop("className").split(' ').join('-'),
       new Date().getTime()
     ].join('-')
     $element.attr('id', id)
   $element.attr('id')
 
-# 
+#
 n.cleanValue = (element) ->
   if $(element).data('value')
     value = $(element).data('value')
@@ -134,7 +134,7 @@ n.cleanValue = (element) ->
                       .html()
   value.replace(/[\n\r]/g, '').trim()
 
-# 
+#
 n.cleanLabel = (element, count=2) ->
   return "" if count <= 1
   if $(element).data('label')
@@ -159,13 +159,13 @@ n.breakpoints = ->
   grid = 'xs'
   if width >= window.sm
     grid = 'sm'
-    $('html').addClass(grid) 
+    $('html').addClass(grid)
   if width >= window.md
     grid = 'md'
-    $('html').addClass(grid) 
+    $('html').addClass(grid)
   if width >= window.lg
     grid = 'lg'
-    $('html').addClass(grid) 
+    $('html').addClass(grid)
 
   $('html').data('grid', grid)
 
@@ -221,14 +221,14 @@ n.toolbar = (cog) ->
   # $toolbar.find('button.edit').on 'contextmenu', (event) -> window.open($(this).data('href'), '_blank', 'width=800,height=600,toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes,scrollbars=yes,copyhistory=yes, resizable=yes'); return false
 
   # In development
-  $toolbar.find('button.edit').on 'contextmenu', (event) -> 
+  $toolbar.find('button.edit').on 'contextmenu', (event) ->
     url = $(this).data('popover-href')
-    $.get url, (response) -> 
+    $.get url, (response) ->
       $toolbar.append('<div class=nform></div>')
       $form = $toolbar.find('.nform').html(response)
       $form.dialog(
         height: 'auto'
-        width: 800 
+        width: 800
         modal: true
         title: 'Editing Asset'
       )
@@ -243,21 +243,21 @@ n.field = (field, asset, editing) ->
   fieldId = n.id($field)
   assetId = n.id($asset)
 
-  # Inline 
+  # Inline
   if $field.data('ui') is 'inline'
 
     # Text Areas
     if $field.data('type') is 'textarea'
 
       if editing
+        $asset.data fieldId, window.CKEDITOR.inline(fieldId, {customConfig: '/javascripts/ckeditor_inline_config.js'})
         $field.attr('contenteditable', 'true')
-        $asset.data fieldId, window.CKEDITOR.inline(fieldId)
-        $field.data 'original-value', n.cleanValue($field) 
+        $field.data 'original-value', n.cleanValue($field)
 
       else
         $field.removeAttr('contenteditable')
         $asset.data(fieldId).destroy() if $asset.data(fieldId)
-        n.gb.updateField($field) if $field.data('original-value') isnt n.cleanValue($field) 
+        n.gb.updateField($field) if $field.data('original-value') isnt n.cleanValue($field)
 
 
     # Text Inputs
@@ -265,10 +265,10 @@ n.field = (field, asset, editing) ->
 
         if editing
           $field.attr('contenteditable', 'true')
-          $field.data 'original-value', n.cleanValue($field) 
+          $field.data 'original-value', n.cleanValue($field)
         else
           $field.removeAttr('contenteditable')
-          n.gb.updateField($field) if $field.data('original-value') isnt n.cleanValue($field) 
+          n.gb.updateField($field) if $field.data('original-value') isnt n.cleanValue($field)
 
 
   # PopOver
@@ -283,16 +283,16 @@ n.field = (field, asset, editing) ->
         html: true
         container: 'body'
         title: n.cleanLabel($field)
-        content: "<div id='#{fieldId}-popover' class='popover-form'>#{n.popoverHTML($field)}</div>" 
+        content: "<div id='#{fieldId}-popover' class='popover-form'>#{n.popoverHTML($field)}</div>"
 
 
       # Build a form when the popover is opened
-      ).on('shown.bs.popover', -> 
+      ).on('shown.bs.popover', ->
         $("##{fieldId}-popover").html(n.popoverHTML($field))
 
 
       # Update the values when the popover is closed
-      ).on('hide.bs.popover', -> 
+      ).on('hide.bs.popover', ->
 
         # Each popover value
         $("##{fieldId}-popover .popover-value").each ->
@@ -312,10 +312,10 @@ n.field = (field, asset, editing) ->
 
         # Text Inputs
         if $f.data('type') is 'text'
-          n.gb.updateField($field) if $f.data('original-value') isnt n.cleanValue($f) 
+          n.gb.updateField($field) if $f.data('original-value') isnt n.cleanValue($f)
 
 
-# 
+#
 n.popoverHTML = ($field) ->
   popoverHTML = ''
 
@@ -329,7 +329,7 @@ n.popoverHTML = ($field) ->
 
     # Text Inputs
     if $f.data('type') is 'text'
-      $f.data 'original-value', n.cleanValue($f) 
+      $f.data 'original-value', n.cleanValue($f)
       popoverHTML += """
         <label>
           <span>#{n.cleanLabel($f, $field.data('fields').length)}</span>
@@ -373,17 +373,19 @@ n.gb.findInherited = ($a) ->
   $a.closest(".#{type}-chooser").find("a[data-#{type}=#{i}]")
 
 
-# 
+#
 n.gb.updateField = ($field, skipVersioning=false) ->
   noty layout: 'bottomRight', type: 'alert', timeout: 2000, text: 'Saving...'
 
   # Basic asset info
   $gb = $field.closest('.grid-block')
-  asset = 
+  asset =
     id: $gb.data('asset-id')
     cms_headline: $gb.data('asset-headline')
     __submit__: true
     __skip_versioning__: skipVersioning
+    __ajax__: true
+    inline_editing: true        # a bit of a hack
 
   # Inline editing can mess up page id links. Don't let surftoedit links get saved:
   fieldHTML = $field.html().replace(/\/nterchange\/page\/surftoedit\//g, '/_page')
@@ -393,10 +395,10 @@ n.gb.updateField = ($field, skipVersioning=false) ->
     asset[$field.data('field')] = fieldHTML
 
   if $field.data('type') is 'text'
-    asset[$field.data('field')] = fieldHTML 
+    asset[$field.data('field')] = fieldHTML
 
   # Post the changes and notify
-  $.post("/nterchange/#{$gb.data('asset')}/edit/#{$gb.data('asset-id')}", asset).done -> 
+  $.post("/nterchange/#{$gb.data('asset')}/edit/#{$gb.data('asset-id')}", asset).done ->
     noty layout: 'bottomRight', type: 'success', timeout: 1000, text: 'Changes Saved!'
     $field.trigger 'update'
 
@@ -406,7 +408,7 @@ n.gb.updatePageContent = ($gb) ->
   # noty layout: 'bottomRight', type: 'alert', timeout: 2000, text: 'Saving...'
 
   # Basic block info
-  gb = 
+  gb =
     id: $gb.data('id')
     __submit__: true
 
@@ -426,7 +428,7 @@ n.gb.updatePageContent = ($gb) ->
   gb['content_order'] = $gb.data('content-order')
 
   # Post the changes and notify
-  $.post("/nterchange/page_content/edit/#{$gb.data('id')}", gb).done -> 
+  $.post("/nterchange/page_content/edit/#{$gb.data('id')}", gb).done ->
     noty layout: 'bottomRight', type: 'success', timeout: 1000, text: 'Changes Saved!'
 
 
@@ -472,14 +474,14 @@ n.gb.resizable = (gb) ->
   $gb.find('.grid-block-content').resizable(
     handles: 's, e'
 
-    start: (event, ui) -> 
+    start: (event, ui) ->
       $gb = ui.element.closest('.grid-block')
       resize = 'horizontal' if $(event.toElement).hasClass('ui-resizable-e')
       resize = 'vertical'   if $(event.toElement).hasClass('ui-resizable-s')
       $gb.data('resize', resize).addClass('resizing')
 
-    # stop: (event, ui) -> 
-    resize: (event, ui) -> 
+    # stop: (event, ui) ->
+    resize: (event, ui) ->
       grid = $('html').data('grid')
       $gb = ui.element.closest('.grid-block')
 
@@ -501,7 +503,7 @@ n.gb.resizable = (gb) ->
       n.gb.grid $gb.find($gb.data('grid-selector')), false
 
 
-    stop: (event, ui) -> 
+    stop: (event, ui) ->
       $gb = ui.element.closest('.grid-block')
       $gb.removeClass('resizing')
       # Save the changes
@@ -542,7 +544,7 @@ n.gb.grid = ($a, update=false) ->
   # Save the changes
   $gb.data("#{type}-#{grid}", val).attr("data-#{type}-#{grid}", val)
   $gb.find('.grid-block-content').attr('style','')
-  if update then n.gb.updatePageContent($gb) 
+  if update then n.gb.updatePageContent($gb)
 
   # Show the changes right now
   $ch.find('a.active').removeClass('active')
@@ -584,4 +586,5 @@ n.gb.pull = (event) ->
 
   # Save the changes
   n.gb.updatePageContent($gb)
+
 

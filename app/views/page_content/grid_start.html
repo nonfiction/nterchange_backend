@@ -1,41 +1,78 @@
 <div class="grid-block grid-block-{$asset}" 
 
-     {if $_SURFTOEDIT_}
-       data-id="{$id}" 
-       data-content-order="{$content_order}" 
-       data-asset="{$asset}"
-       data-asset-id="{$asset_id}"
-       data-asset-headline="{$asset_headline}"
-     {/if}
+  {* Include all markup for surftoedit mode *}
+  {if $_SURFTOEDIT_}
 
-     data-col-xs="{$col_xs}"
-     data-col-sm="{$col_sm}"
-     data-col-md="{$col_md}"
-     data-col-lg="{$col_lg}"
+    data-id="{$id}" 
+    data-content-order="{$content_order}" 
+    data-asset="{$asset}"
+    data-asset-id="{$asset_id}"
+    data-asset-headline="{$asset_headline}"
 
-     data-row-xs="{$row_xs}" 
-     data-row-sm="{$row_sm}" 
-     data-row-md="{$row_md}" 
-     data-row-lg="{$row_lg}" 
+    data-col-xs="{$col_xs}"
+    data-col-sm="{$col_sm}"
+    data-col-md="{$col_md}"
+    data-col-lg="{$col_lg}"
 
-     data-offset-col-xs="{$offset_col_xs}"
-     data-offset-col-sm="{$offset_col_sm}"
-     data-offset-col-md="{$offset_col_md}"
-     data-offset-col-lg="{$offset_col_lg}"
+    data-row-xs="{$row_xs}" 
+    data-row-sm="{$row_sm}"
+    data-row-md="{$row_md}"
+    data-row-lg="{$row_lg}"
 
-     data-offset-row-xs="{$offset_row_xs}" 
-     data-offset-row-sm="{$offset_row_sm}" 
-     data-offset-row-md="{$offset_row_md}" 
-     data-offset-row-lg="{$offset_row_lg}" 
+    data-offset-col-xs="{$offset_col_xs}"
+    data-offset-col-sm="{$offset_col_sm}"
+    data-offset-col-md="{$offset_col_md}"
+    data-offset-col-lg="{$offset_col_lg}"
 
-     data-pull-xs="{$pull_xs}" 
-     data-pull-sm="{$pull_sm}" 
-     data-pull-md="{$pull_md}" 
-     data-pull-lg="{$pull_lg}"
+    data-offset-row-xs="{$offset_row_xs}" 
+    data-offset-row-sm="{$offset_row_sm}"
+    data-offset-row-md="{$offset_row_md}"
+    data-offset-row-lg="{$offset_row_lg}"
 
-     data-gutter-xs="{$gutter_xs}" 
-     data-gutter-sm="{$gutter_sm}" 
-     data-gutter-md="{$gutter_md}" 
-     data-gutter-lg="{$gutter_lg}" 
+    data-pull-xs="{$pull_xs}" 
+    data-pull-sm="{$pull_sm}"
+    data-pull-md="{$pull_md}"
+    data-pull-lg="{$pull_lg}"
+
+    data-gutter-xs="{$gutter_xs}" 
+    data-gutter-sm="{$gutter_sm}" 
+    data-gutter-md="{$gutter_md}" 
+    data-gutter-lg="{$gutter_lg}" 
+
+  
+  {* Minimal markup for non-surftoedit mode *}
+  {else}
+
+    data-col-xs="{$col_xs}"
+    {if $col_sm ne "inherit"}data-col-sm="{$col_sm}"{/if}
+    {if $col_md ne "inherit"}data-col-md="{$col_md}"{/if}
+    {if $col_lg ne "inherit"}data-col-lg="{$col_lg}"{/if}
+
+    data-row-xs="{$row_xs}" 
+    {if $row_sm ne "inherit"}data-row-sm="{$row_sm}"{/if}
+    {if $row_md ne "inherit"}data-row-md="{$row_md}"{/if}
+    {if $row_lg ne "inherit"}data-row-lg="{$row_lg}"{/if}
+
+    {if $offset_col_xs ne "0"}data-offset-row-xs="{$offset_col_xs}"{/if}
+    {if $offset_col_sm ne "inherit"}data-offset-col-sm="{$offset_col_sm}"{/if}
+    {if $offset_col_md ne "inherit"}data-offset-col-md="{$offset_col_md}"{/if}
+    {if $offset_col_lg ne "inherit"}data-offset-col-lg="{$offset_col_lg}"{/if}
+
+    {if $offset_row_xs ne "0"}data-offset-row-xs="{$offset_row_xs}"{/if} 
+    {if $offset_row_sm ne "inherit"}data-offset-row-sm="{$offset_row_sm}"{/if}
+    {if $offset_row_md ne "inherit"}data-offset-row-md="{$offset_row_md}"{/if}
+    {if $offset_row_lg ne "inherit"}data-offset-row-lg="{$offset_row_lg}"{/if}
+
+    data-pull-xs="{$pull_xs}" 
+    {if $pull_sm ne "inherit"}data-pull-sm="{$pull_sm}"{/if}
+    {if $pull_md ne "inherit"}data-pull-md="{$pull_md}"{/if}
+    {if $pull_lg ne "inherit"}data-pull-lg="{$pull_lg}"{/if}
+
+    {if $gutter_xs ne ""}data-gutter-xs="{$gutter_xs}"{/if} 
+    {if $gutter_sm ne ""}data-gutter-sm="{$gutter_sm}"{/if} 
+    {if $gutter_md ne ""}data-gutter-md="{$gutter_md}"{/if} 
+    {if $gutter_lg ne ""}data-gutter-lg="{$gutter_lg}"{/if} 
+
+  {/if}
 >
 

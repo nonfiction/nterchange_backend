@@ -31,4 +31,11 @@ class NConfig {
     }
     return true;
   }
+
+  /**
+   * Set the default timezone
+   */
+  public static function setTimezone($tz) {
+    date_default_timezone_set($tz);
+  }
 }

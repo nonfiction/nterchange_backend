@@ -18,30 +18,10 @@
  * @link       	http://www.nterchange.com/
  * @since      	File available since Release 3.0
  */
-if (substr(phpversion(),0,1) == 4) {
-	class Object {
-		function Object() {
-			$args = func_get_args();
-			// register_shutdown_function(array(&$this, '__destruct'));
-			call_user_func_array(array(&$this, '__construct'), $args);
-		}
+class Object {
+	function __construct(){}
 
-		function __construct() {
-		}
-
-		function __destruct() {
-		}
-
-		function toString() {
-			return get_class($this);
-		}
-	}
-} else {
-	class Object {
-		function __construct(){}
-
-		function toString() {
-			return get_class($this);
-		}
+	function toString() {
+		return get_class($this);
 	}
 }

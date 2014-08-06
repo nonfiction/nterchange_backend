@@ -1,6 +1,4 @@
 <?php
-require_once 'Smarty.class.php';
-require_once 'SmartyPaginate/SmartyPaginate.class.php';
 require_once 'view/helper.php';
 require_once 'n_debug.php';
 /**

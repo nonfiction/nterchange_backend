@@ -14,6 +14,8 @@ if (!defined('SMARTY_DIR')) define('SMARTY_DIR', VENDOR_DIR . '/Smarty/libs/');
 if (!defined('NTERCHANGE_VERSION')) define('NTERCHANGE_VERSION', '3.2.0');
 if (!defined('DEFAULT_PAGE_EXTENSION')) define('DEFAULT_PAGE_EXTENSION', 'html');
 if (!defined('APP_NAME')) define('APP_NAME', 'nterchange');
+if (!defined('SITE_WORKFLOW')) define('SITE_WORKFLOW', false);
+
 ini_set('session.use_cookies', 1);
 ini_set('session.cache_expire', 10);
 ini_set('session.use_trans_sid', 0);

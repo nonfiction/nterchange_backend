@@ -26,7 +26,7 @@ class PageContentController extends nterchangeController {
     $this->public_actions = array('select_content_type', 'add_new_content', 'add_existing_content', 'remove_content', 'reorder');
     // set user level allowed to access the actions with required login
     $this->user_level_required = N_USER_NORIGHTS;
-    $this->base_view_dir = BASE_DIR;
+    $this->base_view_dir = ROOT_DIR;
   }
 
   function selectContentType($parameter) {

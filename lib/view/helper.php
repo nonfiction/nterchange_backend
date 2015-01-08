@@ -150,7 +150,7 @@ class ViewHelper {
 	function _loadPostfilter(&$view, &$helper, $method) {
 		$view->register_postfilter(array(&$helper, $method));
 	}
-	function _loadOutputfilter(&$helper, $method) {
+	function _loadOutputfilter(&$view, &$helper, $method) {
 		$view->register_outputfilter(array(&$helper, $method));
 	}
 

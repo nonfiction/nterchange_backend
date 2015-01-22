@@ -25,7 +25,7 @@ class PhpinfoController extends AppController {
 	
 	function index() {
 		$this->auto_render = false;
-		phpinfo();
+		phpinfo(INFO_ALL ^ INFO_ENVIRONMENT);
 	}
 }
 ?>

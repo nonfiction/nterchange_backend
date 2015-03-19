@@ -357,14 +357,23 @@ class NView extends Smarty {
 		return $filename;
 	}
 
+	/**
+	 * $view->_getLayoutFileName
+	 *
+	 * Resolves the path to the layout file in the following order:
+	 * 1. Relative to application root /app/views/layouts/$layout.html
+	 * 2. Relative to $this->template_dir
+	 * 3. Relative to nterchange root /vendor/nterchange/app/views/layouts/$layout.html
+	 */
+
 	function _getLayoutFileName($layout) {
-		$filename = null;
-		if (file_exists($this->template_dir . '/layouts/' . $layout. '.html')) {
-			$filename = $this->template_dir . '/layouts/' . $layout. '.html';
-		} else if (file_exists(BASE_DIR . '/app/views/layouts/' . $layout . '.html')) {
-			$filename = BASE_DIR . '/app/views/layouts/' . $layout . '.html';
-		}
-		return $filename;
+		$root_path     = ROOT_DIR . "/app/views/layouts/$layout.html";
+		$template_path = $this->template_dir . "/layouts/$layout.html";
+		$base_path     = BASE_DIR . "/app/views/layouts/$layout.html";
+
+		if      (file_exists($root_path))     { return $root_path;     }
+		else if (file_exists($template_path)) { return $template_path; }
+		else if (file_exists($base_path))     { return $base_path;     }
 	}
 
 	function __destruct() {

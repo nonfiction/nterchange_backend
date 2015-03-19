@@ -1,106 +1,123 @@
 /*
--------------------------------------------------
-nterchange - nonfiction studios inc.
-$Id:
--------------------------------------------------
+	nterchange - nonfiction studios inc.
 */
 
-/* TITLE
--------------------------------------------------*/
 h1.title {
-	padding-bottom:8px;
-	border-bottom:1px solid #aaa;
-	text-align:center;
-	font-size: 1.4em;
-	text-transform: uppercase;
-	color: #555;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #aaa;
+  text-align: center;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  color: #555;
 }
 
-h2.title, h3.title {
-	padding-top:8px;
+h2.title,
+h3.title {
+  padding-top: 8px;
 }
 
-/* FORM HEADERS
--------------------------------------------------*/
 div.header {
-	color:#444;
-	font-size:1.1em;
-	font-weight:bold;
-	padding:2px;
+  color: #444;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 2px;
 }
+
 form td.header {
-	background-color:#E85;
+  background-color: #E85;
 }
+
 form td.header div.header {
-	color:#FFF;
+  color: #FFF;
 }
 
 div.formerror {
-	background:#F99;
-	padding:1px 4px;
+  background: #F99;
+  padding: 1px 4px;
 }
+
 span.formerror {
-	color:#F00;
+  color: #F00;
 }
 
 span.notfound {
-	background-color:#E33;
-	color:#fff;
+  background-color: #E33;
+  color: #fff;
 }
 
 #logout {
-	color:#FFF;
-	padding:10px 20px;
-	float:right;
-}
-#logout a {
-	color:#FFF;
-	text-decoration:underline;
+  color: #FFF;
+  padding: 10px 20px;
+  float: right;
 }
 
-/* CONTROL LINKS (eg.CRUD)
--------------------------------------------------*/
-div.control {
-	background-color:#EEE;
-	padding:2px;
-	margin:2px 0;
+#logout a {
+  color: #FFF;
+  text-decoration: underline;
 }
-a.control, a.controlactive {
-	font-size:12px;
+
+div.control {
+  background-color: #EEE;
+  padding: 2px;
+  margin: 2px 0;
+}
+
+a.control,
+a.controlactive {
+  font-size: 12px;
   padding: 0 2px;
 }
-a.control:link, a.control:visited {
-	color:#E72;
-	text-decoration:none;
+
+a.control:link,
+a.control:visited {
+  color: #E72;
+  text-decoration: none;
 }
-a.control:hover, a.control:active{
-	color:#FFF;
-	background-color:#E72;
-	text-decoration:none;
+
+a.control:hover,
+a.control:active {
+  color: #FFF;
+  background-color: #E72;
+  text-decoration: none;
 }
-a.controlactive:link, a.controlactive:visited {
-	color:#444;
-	background-color:#FC3;
-	text-decoration:none;
+
+a.controlactive:link,
+a.controlactive:visited {
+  color: #444;
+  background-color: #FC3;
+  text-decoration: none;
 }
-a.controlactive:hover, a.controlactive:active{
-	color:#FFF;
-	text-decoration:none;
+
+a.controlactive:hover,
+a.controlactive:active {
+  color: #FFF;
+  text-decoration: none;
 }
 
 #asset {
-	border:1px #EEE solid;
-	padding:6px;
-	margin-top:6px;
+  border: 1px #EEE solid;
+  padding: 6px;
+  margin-top: 6px;
 }
 
 .assettype {
-	font-size:.9em;
-	color:#444;
+  font-size: .9em;
+  color: #444;
 }
 
-tr.grid[class*="_xs"] { background: #fefefe; }
-tr.grid[class*="_sm"] { background: #efeff2; }
-tr.grid[class*="_md"] { background: #fefefe; }
-tr.grid[class*="_lg"] { background: #efeff2; }
+tr.grid[class*="_xs"] {
+  background: #fefefe;
+}
+
+tr.grid[class*="_sm"] {
+  background: #efeff2;
+}
+
+tr.grid[class*="_md"] {
+  background: #fefefe;
+}
+
+tr.grid[class*="_lg"] {
+  background: #efeff2;
+}
 

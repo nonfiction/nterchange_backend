@@ -1,31 +1,37 @@
 div.header {
-	color:#000;
-	font-size:1.1em;
-	font-weight:bold;
-	padding:2px;
+  color: #000;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 2px;
 }
+
 form td.header {
-	background-color:#F72;
+  background-color: #F72;
 }
+
 form td.header div.header {
-	color:#FFF;
+  color: #FFF;
 }
 
 div.control {
-	background-color:#EEE;
-	padding:2px;
-	margin:2px 0;
+  background-color: #EEE;
+  padding: 2px;
+  margin: 2px 0;
 }
-a.control:link, a.control:visited {
-	color:#E72;
-	text-decoration:none;
-	border-bottom:1px #E72 dotted;
+
+a.control:link,
+a.control:visited {
+  color: #E72;
+  text-decoration: none;
+  border-bottom: 1px #E72 dotted;
 }
-a.control:hover, a.control:active{
-	color:#FFF;
-	background-color:#F94;
-	text-decoration:none;
-	border-bottom:0px;
+
+a.control:hover,
+a.control:active {
+  color: #FFF;
+  background-color: #F94;
+  text-decoration: none;
+  border-bottom: 0px;
 }
 
 .fieldWithErrors {
@@ -63,3 +69,4 @@ a.control:hover, a.control:active{
   font-size: 12px;
   list-style: square;
 }
+

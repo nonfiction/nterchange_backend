@@ -1,140 +1,140 @@
-/* BODY
----------------------------------------------*/
 body {
-	margin:0;
-	background:#FFF;
+  margin: 0;
+  background: #FFF;
 }
 
-/* IMAGES
----------------------------------------------*/
 img {
-	border:0;
+  border: 0;
 }
 
-/* LINKS
----------------------------------------------*/
 a {
-	color:#E72;
+  color: #E72;
 }
+
 a:link {
-	color:#E72;
+  color: #E72;
 }
+
 a:visited {
-	color:#C50;
+  color: #C50;
 }
+
 a:hover {
-	color:#C50;
+  color: #C50;
 }
+
 a:active {
-	color:#E72;
+  color: #E72;
 }
 
-/* SEARCH
----------------------------------------------*/
-#search {
-	
-}
+#search {}
 
-/* LAYOUT
----------------------------------------------*/
 #header {
-	padding:8px;
-	background:#AAA;
+  padding: 8px;
+  background: #AAA;
 }
+
 #logo {
-	padding:0;
+  padding: 0;
 }
+
 #navigation {
-	font-size:10px;
-	color:#000;
-	padding:0 32px 0 20px;
+  font-size: 10px;
+  color: #000;
+  padding: 0 32px 0 20px;
 }
 
 #container {
-	padding:10px 15px 15px 20px;
-	background-color:#FFF;
+  padding: 10px 15px 15px 20px;
+  background-color: #FFF;
 }
 
 #contentbox {
-	width:69%;
-	float:left;
+  width: 69%;
+  float: left;
 }
+
 #sidebarbox {
-	width:29%;
-	float:right;
+  width: 29%;
+  float: right;
 }
 
 #contentboxalone {
-	width:100%;
-	float:left;
+  width: 100%;
+  float: left;
 }
 
-#contentbox .bottom, #contentboxalone .bottom {
-	height:8px;
-	margin:0 8px 0 0;
-	background:#FFF;
+#contentbox .bottom,
+#contentboxalone .bottom {
+  height: 8px;
+  margin: 0 8px 0 0;
+  background: #FFF;
 }
+
 #content {
-	background:#FFF;
-	margin:0 8px 0 0;
-	padding:20px;
+  background: #FFF;
+  margin: 0 8px 0 0;
+  padding: 20px;
 }
 
 #loginbox {
-	width:61.8%;
-	margin:10px auto;
+  width: 61.8%;
+  margin: 10px auto;
 }
+
 #login {
-	background:#FFF;
-	margin:0 8px 0 0;
-	padding:20px;
+  background: #FFF;
+  margin: 0 8px 0 0;
+  padding: 20px;
 }
+
 #loginbox .bottom {
-	height:8px;
-	margin:0 8px 0 0;
-	background:#FFF;
+  height: 8px;
+  margin: 0 8px 0 0;
+  background: #FFF;
 }
 
 #notice {
-	background-color:#F99;
-	font-size:1.25em;
-	font-weight:bold;
-	padding:.5em;
-	margin-bottom:.5em;
+  background-color: #F99;
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: .5em;
+  margin-bottom: .5em;
 }
 
 #footer {
-	margin-top:15px;
-	height:38px;
-	width:100%;
-	background:#AAA;
+  margin-top: 15px;
+  height: 38px;
+  width: 100%;
+  background: #AAA;
 }
+
 #credit {
-	width:125px;
-	padding:12px 10px;
+  width: 125px;
+  padding: 12px 10px;
 }
 
 div.clear {
-	clear:both;
-	font-size:0;
-	height:0;
+  clear: both;
+  font-size: 0;
+  height: 0;
 }
-/*
-ALERTS
-------------------------------------*/
+
 .alertgood {
-	font-size:10px;
-	color:#363;
-	padding:4px;
+  font-size: 10px;
+  color: #363;
+  padding: 4px;
 }
 
 .alerterror {
-	font-size:10px;
-	color:#363;
-	padding:4px;
+  font-size: 10px;
+  color: #363;
+  padding: 4px;
 }
+
 .alertinfo {
-	font-size:10px;
-	color:#363;
-	padding:4px;
+  font-size: 10px;
+  color: #363;
+  padding: 4px;
 }
+

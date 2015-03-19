@@ -1,129 +1,133 @@
 /*
--------------------------------------------------
-nterchange - nonfiction studios inc.
-$Id:
--------------------------------------------------
+	nterchange - nonfiction studios inc.
 */
 
 #header {
-	height:96px;
-	background-color: #afafaf;
+  height: 96px;
+  background-color: #afafaf;
 }
+
 #logo {
-	padding:20px 20px 18px 20px;
+  padding: 20px 20px 18px 20px;
 }
 
 #container {
-	padding:10px 15px 15px 20px;
-	min-width:84em;
+  padding: 10px 15px 15px 20px;
+  min-width: 84em;
 }
 
 #contentbox {
-	width:69%;
-	float:left;
+  width: 69%;
+  float: left;
 }
+
 #sidebarbox {
-	min-height:300px;
-	width:29%;
-	float:right;
-	padding-top: 20px;
+  min-height: 300px;
+  width: 29%;
+  float: right;
+  padding-top: 20px;
 }
 
 #contentboxalone {
-	width:100%;
-	float:left;
+  width: 100%;
+  float: left;
 }
 
-#contentbox .bottom, #contentboxalone .bottom {
-	height:8px;
-	margin:0 8px 0 0;
-	background:#FFF;
-	background:url('/nterchange/images/shadow_b.gif') top right no-repeat;
+#contentbox .bottom,
+#contentboxalone .bottom {
+  height: 8px;
+  margin: 0 8px 0 0;
+  background: #FFF;
+  background: url('/nterchange/images/shadow_b.gif') top right no-repeat;
 }
+
 #content {
-	min-height:300px;
-	background:#FFF url('/nterchange/images/shadow_r.gif') right repeat-y;
-	margin:0 8px 0 0;
-	padding:20px;
+  min-height: 300px;
+  background: #FFF url('/nterchange/images/shadow_r.gif') right repeat-y;
+  margin: 0 8px 0 0;
+  padding: 20px;
 }
 
 #loginbox {
-	width:61.8%;
-	margin:10px auto;
+  width: 61.8%;
+  margin: 10px auto;
 }
+
 #login {
-	min-height:100px;
-	background:#FFF url('/nterchange/images/shadow_r.gif') right repeat-y;
-	margin:0 8px 0 0;
-	padding:20px;
+  min-height: 100px;
+  background: #FFF url('/nterchange/images/shadow_r.gif') right repeat-y;
+  margin: 0 8px 0 0;
+  padding: 20px;
 }
+
 #loginbox .bottom {
-	height:8px;
-	margin:0 8px 0 0;
-	background:#FFF;
-	background:url('/nterchange/images/shadow_b.gif') top right no-repeat;
+  height: 8px;
+  margin: 0 8px 0 0;
+  background: #FFF;
+  background: url('/nterchange/images/shadow_b.gif') top right no-repeat;
 }
 
 #notice {
-	background-color:#F99;
-	font-size:1.25em;
-	font-weight:bold;
-	padding:.5em;
-	margin-bottom:.5em;
+  background-color: #F99;
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: .5em;
+  margin-bottom: .5em;
 }
 
 #footer {
-	margin-top:15px;
-	height:38px;
-	width:100%;
-	background-color: #afafaf;
+  margin-top: 15px;
+  height: 38px;
+  width: 100%;
+  background-color: #afafaf;
 }
+
 #credit {
-	width:125px;
-	padding:12px 10px;
-	float:right;
+  width: 125px;
+  padding: 12px 10px;
+  float: right;
 }
+
 #nterchangeversion {
-	float:left;
-	padding:12px 0 0 10px;
-	color:#666;
+  float: left;
+  padding: 12px 0 0 10px;
+  color: #666;
 }
 
 div.clear {
-	clear:both;
-	font-size:0;
-	height:0;
+  clear: both;
+  font-size: 0;
+  height: 0;
 }
 
-/*
-ALERTS
-------------------------------------*/
 .alertgood {
-	text-align: left;
-	border-top: 1px solid #9c9;
-	border-bottom: 1px solid #9c9;
-	padding: 5px 5px 5px 30px;
-	font-size: 11px;
-	margin: 0 20px 15px 20px;
-	color: #060;
-	background: url(/nterchange/images/alertgood_icon.gif) #E2F9E3 left no-repeat;
+  text-align: left;
+  border-top: 1px solid #9c9;
+  border-bottom: 1px solid #9c9;
+  padding: 5px 5px 5px 30px;
+  font-size: 11px;
+  margin: 0 20px 15px 20px;
+  color: #060;
+  background: url(/nterchange/images/alertgood_icon.gif) #E2F9E3 left no-repeat;
 }
 
 .alerterror {
-	border-top:1px #999 solid;
-	border-bottom:1px #999 solid;
-	background:url(/nterchange/images/icon_error.png) no-repeat #E72;
-	font-size:11px;
-	margin-bottom:10px;
-	padding:7px 7px 6px 28px;
-	color:#FFF;
+  border-top: 1px #999 solid;
+  border-bottom: 1px #999 solid;
+  background: url(/nterchange/images/icon_error.png) no-repeat #E72;
+  font-size: 11px;
+  margin-bottom: 10px;
+  padding: 7px 7px 6px 28px;
+  color: #FFF;
 }
+
 .alertinfo {
-	border-top:1px #9C9 solid;
-	border-bottom:1px #9C9 solid;
-	background:url(/nterchange/images/icon_alert.png) no-repeat #EFE;
-	font-size:11px;
-	margin-bottom:10px;
-	padding:7px 7px 6px 28px;
-	color:#363;
+  border-top: 1px #9C9 solid;
+  border-bottom: 1px #9C9 solid;
+  background: url(/nterchange/images/icon_alert.png) no-repeat #EFE;
+  font-size: 11px;
+  margin-bottom: 10px;
+  padding: 7px 7px 6px 28px;
+  color: #363;
 }
+

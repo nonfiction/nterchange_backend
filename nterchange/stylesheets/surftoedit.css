@@ -1,31 +1,35 @@
 div.editableRegion:hover {
-	background:#EEE;
-	outline:1px #DDD dashed;
+  background: #EEE;
+  outline: 1px #DDD dashed;
 }
 
-#workflow, div.workflow, div.draft {
-	background-color:#F99;
-	color: #FFF;
-	border:1px #DDD dashed;
-	font-weight:bold;
-	padding:4px;
+#workflow,
+div.workflow,
+div.draft {
+  background-color: #F99;
+  color: #FFF;
+  border: 1px #DDD dashed;
+  font-weight: bold;
+  padding: 4px;
 }
 
 div.pageContentAdd {
-	font-size:9px;
-	color:#888;
+  font-size: 9px;
+  color: #888;
 }
+
 div.pageContentAdd:hover {
-	background:#EEE;
+  background: #EEE;
 }
 
 div.timedcontent {
-	background:#666;
-	border:1px dashed #C00;
-	padding:4px;
-	margin:1px;
-	font-family:verdana, arial, helvetica, sans-serif;
-	font-size:10px;
-	font-weight:bold;
-	color:#FFF;
+  background: #666;
+  border: 1px dashed #C00;
+  padding: 4px;
+  margin: 1px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFF;
 }
+

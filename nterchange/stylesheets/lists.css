@@ -86,42 +86,52 @@ div.list ul.pageList li, div.list ul.pageContentList li {
 
 /* NAVIGATION
 -------------------------------------------------*/
+#navigation {
+	font-size:11px;
+	line-height: 11px;
+	color:#000;
+	padding:0 32px 0 20px;
+}
+
 #navigation ul {
-	height:27px;
 	margin:0;
 	padding:0;
 }
+
 #navigation ul li {
 	display:inline;
 	list-style-type:none;
 }
-#navigation ul li a, #navigation ul li a:link, #navigation ul li a:visited, #navigation ul li a:hover {
+
+#navigation ul li a,
+#navigation ul li a:link,
+#navigation ul li a:visited,
+#navigation ul li a:hover {
 	text-decoration:none;
 	color:#333;
 }
+
 #navigation ul li a {
-	width:70px;
-	margin:1px -1px 0px 2px;
-	padding: 7px 3px 5px 3px;
-	border:0;
-	border-top: 1px solid #d4d4d4;
-	position:relative;
-	top:0;
-	z-index:1;
-	display:block;
-	float:left;
-	font-size: 11px;
+	min-width: 75px;
+	margin: -2px 0px 0px 1px;
+	padding: 7px 3px;
+	border: 1px solid #d0d0d0;
+	border-width: 1px 0;
+	position: relative;
+	top: 0;
+	z-index: 1;
+	display: block;
+	float: left;
 	font-family: "Helvetica Neue", sans-serif;
-	line-height: 1em;
-	color:#444;
-	text-align:center;
-	text-decoration:none;
-	white-space:nowrap;
+	color: #444;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
 }
 
 #navigation ul li a:link,
 #navigation ul li a:visited {
-	background-color: #d4d4d4;
+	background-color: #d0d0d0;
 }
 
 #navigation ul li a:hover,
@@ -134,11 +144,10 @@ div.list ul.pageList li, div.list ul.pageContentList li {
 }
 
 #navigation ul li a.current {
-	width:72px;
-	border-color: #F37722;
+	border-top-color: #F37722;
+	border-bottom-color: #e5e5e5;
 	background-color: #e5e5e5;
 	z-index:3;
-	padding-bottom: 6px;
 	top:0px;
 }
 

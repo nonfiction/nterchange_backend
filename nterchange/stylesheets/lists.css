@@ -249,3 +249,16 @@ form dd {
   padding: 0 0 0 4px;
 }
 
+.btn,
+a.btn {
+  background-color: #E72;
+  color: white;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 3px 6px;
+  border: 1px solid #ddd;
+}
+
+.btn-small {
+  font-size: 10px;
+}

@@ -33,16 +33,16 @@ class nterchangeController extends AppController {
 		}
 		if (is_null($this->name))
 			$this->name = 'nterchange';
-		if (is_null($this->base_view_dir)) 
+		if (is_null($this->base_view_dir))
 			$this->base_view_dir = BASE_DIR;
 		if (!defined('IN_NTERCHANGE')) define('IN_NTERCHANGE', preg_match('|^/' . APP_DIR . '|',  NServer::env('REQUEST_URI'))?true:false);
 		parent::__construct();
 	}
-	
+
 	function navigation($current_section) {
 		if (!isset($this->_auth)) return;
 		$current_user_level = $this->_auth->getAuthData('user_level');
-		// need to loop through other constructors and see 
+		// need to loop through other constructors and see
 		// if they belong in the navigation tabs
 		$navigation = array();
 		$navigation[] = array('title'=>'Dashboard', 'controller'=>'dashboard', 'class'=>'');
@@ -53,7 +53,6 @@ class nterchangeController extends AppController {
 		if (SITE_WORKFLOW) {
 			$navigation[] = array('title'=>'Workflow', 'controller'=>'workflow_group', 'class'=>'');
 		}
-		$navigation[] = array('title'=>'Settings', 'controller'=>'settings', 'class'=>'right');
 		$navigation[] = array('title'=>'Admin', 'controller'=>'admin', 'class'=>'right');
 		if ($current_user_level < N_USER_ADMIN) {
 			$navigation[] = array('title'=>'User', 'controller'=>'users', 'class'=>'right');
@@ -72,4 +71,3 @@ class nterchangeController extends AppController {
 		return $navigation;
 	}
 }
-?>

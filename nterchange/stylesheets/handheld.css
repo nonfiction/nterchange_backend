@@ -64,17 +64,11 @@ a:active {
   float: left;
 }
 
-#contentbox .bottom,
-#contentboxalone .bottom {
-  height: 8px;
-  margin: 0 8px 0 0;
-  background: #FFF;
-}
-
 #content {
   background: #FFF;
   margin: 0 8px 0 0;
   padding: 20px;
+  border: 1px solid #D4D4D4;
 }
 
 #loginbox {
@@ -86,12 +80,6 @@ a:active {
   background: #FFF;
   margin: 0 8px 0 0;
   padding: 20px;
-}
-
-#loginbox .bottom {
-  height: 8px;
-  margin: 0 8px 0 0;
-  background: #FFF;
 }
 
 #notice {

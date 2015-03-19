@@ -12,7 +12,7 @@
 }
 
 #container {
-  padding: 10px 15px 15px 20px;
+  padding: 10px 20px;
   min-width: 84em;
 }
 
@@ -33,19 +33,11 @@
   float: left;
 }
 
-#contentbox .bottom,
-#contentboxalone .bottom {
-  height: 8px;
-  margin: 0 8px 0 0;
-  background: #FFF;
-  background: url('/nterchange/images/shadow_b.gif') top right no-repeat;
-}
-
 #content {
   min-height: 300px;
-  background: #FFF url('/nterchange/images/shadow_r.gif') right repeat-y;
-  margin: 0 8px 0 0;
+  background-color: #FFF;
   padding: 20px;
+  border: 1px solid #D4D4D4;
 }
 
 #loginbox {
@@ -58,13 +50,6 @@
   background: #FFF url('/nterchange/images/shadow_r.gif') right repeat-y;
   margin: 0 8px 0 0;
   padding: 20px;
-}
-
-#loginbox .bottom {
-  height: 8px;
-  margin: 0 8px 0 0;
-  background: #FFF;
-  background: url('/nterchange/images/shadow_b.gif') top right no-repeat;
 }
 
 #notice {

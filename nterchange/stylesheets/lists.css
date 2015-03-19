@@ -92,8 +92,8 @@ div.list ul.pageList li, div.list ul.pageContentList li {
 	padding:0;
 }
 #navigation ul li {
-	display:inline; 
-	list-style-type:none; 
+	display:inline;
+	list-style-type:none;
 }
 #navigation ul li a, #navigation ul li a:link, #navigation ul li a:visited, #navigation ul li a:hover {
 	text-decoration:none;
@@ -102,40 +102,50 @@ div.list ul.pageList li, div.list ul.pageContentList li {
 #navigation ul li a {
 	width:70px;
 	margin:1px -1px 0px 2px;
-	padding:7px 0px 5px 0px;
+	padding: 7px 3px 5px 3px;
 	border:0;
-
+	border-top: 1px solid #d4d4d4;
 	position:relative;
 	top:0;
 	z-index:1;
 	display:block;
 	float:left;
-
-	font:10px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-family: "Helvetica Neue", sans-serif;
+	line-height: 1em;
 	color:#444;
 	text-align:center;
 	text-decoration:none;
 	white-space:nowrap;
 }
-#navigation ul li a:link, #navigation ul li a:visited {
-	background:url(/nterchange/images/tab_off.gif) no-repeat;
+
+#navigation ul li a:link,
+#navigation ul li a:visited {
+	background-color: #d4d4d4;
 }
-#navigation ul li a:hover, #navigation ul li a:active {
-	background:url(/nterchange/images/tab_over.gif) no-repeat;
+
+#navigation ul li a:hover,
+#navigation ul li a:active {
+	background-color: #dedede;
 }
+
 #navigation ul li a.right {
 	float:right;
 }
+
 #navigation ul li a.current {
 	width:72px;
-	background:url(/nterchange/images/tab_on.gif) no-repeat transparent;
+	border-color: #F37722;
+	background-color: #e5e5e5;
 	z-index:3;
-	margin:1px -1px -3px 2px;
-	padding:7px 0px 6px 0px;
+	padding-bottom: 6px;
 	top:0px;
 }
-#navigation ul li a.current:visited, #navigation ul li a.current:hover, #navigation ul li a.current:active {
-	background:url(/nterchange/images/tab_on.gif) no-repeat transparent;
+
+#navigation ul li a.current:visited,
+#navigation ul li a.current:hover,
+#navigation ul li a.current:active {
+	background-color: #e5e5e5;
 }
 
 /* SUBNAV
@@ -145,46 +155,57 @@ div.list ul.pageList li, div.list ul.pageContentList li {
 	margin:0;
 	padding:0;
 }
+
 #subnav ul li {
-	display:inline; 
-	list-style-type:none; 
+	display:inline;
+	list-style-type:none;
 }
-#subnav ul li a, #subnav ul li a:link, #subnav ul li a:visited, #subnav ul li a:hover {
+
+#subnav ul li a,
+#subnav ul li a:link,
+#subnav ul li a:visited,
+#subnav ul li a:hover {
 	text-decoration:none;
 	color:#333;
 }
+
 #subnav ul li a {
 	width:70px;
 	margin:1px 1px 0px 0px;
-	padding:5px 0px 5px 0px;
+	padding:5px 0px 4px 0px;
 	border:0;
-
 	position:relative;
 	top:0;
 	z-index:1;
 	display:block;
 	float:left;
-
-	font:10px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 11px;
+	font-family: "Helvetica Neue", sans-serif;
 	color:#444;
 	text-align:center;
 	text-decoration:none;
 	white-space:nowrap;
 }
+
 #subnav ul li a:link, #subnav ul li a:visited {
-	background:url(/nterchange/images/subtab_off.gif) no-repeat;
+	background-color: #d4d4d4;
 }
+
 #subnav ul li a:hover, #subnav ul li a:active {
-	background:url(/nterchange/images/subtab_over.gif) no-repeat;
+	background-color: #dedede;
 }
+
 #subnav ul li a.right {
 	float:right;
 }
+
 #subnav ul li a.current {
-	background:url(/nterchange/images/subtab_on.gif) no-repeat transparent;
+	background-color: #e5e5e5;
 }
+
 #subnav ul li a.current:visited, #subnav ul li a.current:hover, #subnav ul li a.current:active {
-	background:url(/nterchange/images/subtab_on.gif) no-repeat transparent;
+	background-color: #e5e5e5;
 }
 
 /* FORMS

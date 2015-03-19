@@ -9,7 +9,7 @@ $Id:
 -------------------------------------------------*/
 h1.title {
 	padding-bottom:8px;
-	border-bottom:1px solid #000;
+	border-bottom:1px solid #444;
 	text-align:center;
 }
 h2.title, h3.title {
@@ -20,7 +20,7 @@ h2.title, h3.title {
 /* FORM HEADERS
 -------------------------------------------------*/
 div.header {
-	color:#000;
+	color:#444;
 	font-size:1.1em;
 	font-weight:bold;
 	padding:2px;
@@ -63,7 +63,7 @@ div.control {
 	margin:2px 0;
 }
 a.control, a.controlactive {
-	font-size:10px;
+	font-size:12px;
 }
 a.control:link, a.control:visited {
 	color:#C00;
@@ -77,10 +77,10 @@ a.control:hover, a.control:active{
 	border-bottom:0px;
 }
 a.controlactive:link, a.controlactive:visited {
-	color:#000;
+	color:#444;
 	background-color:#FC3;
 	text-decoration:none;
-	border-bottom:1px #000 dotted;
+	border-bottom:1px #444 dotted;
 }
 a.controlactive:hover, a.controlactive:active{
 	color:#FFF;

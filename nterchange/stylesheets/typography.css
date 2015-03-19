@@ -5,7 +5,10 @@ $Id:
 -------------------------------------------------
 */
 body {
-	font: 62.5%/1.4em "Lucida Grande","Lucida Sans Unicode",Verdana,Geneva,sans-serif;
+	font-size: 12px;
+	font-family: "Helvetica Neue", sans-serif;
+	line-height: 14px;
+	color: #444;
 }
 
 p {

@@ -14,16 +14,16 @@ form td.header div.header {
 div.control {
 	background-color:#EEE;
 	padding:2px;
-	margin:2px 0;	
+	margin:2px 0;
 }
 a.control:link, a.control:visited {
-	color:#C00;
+	color:#E72;
 	text-decoration:none;
-	border-bottom:1px #C00 dotted;
+	border-bottom:1px #E72 dotted;
 }
 a.control:hover, a.control:active{
 	color:#FFF;
-	background-color:#C00;
+	background-color:#F94;
 	text-decoration:none;
 	border-bottom:0px;
 }

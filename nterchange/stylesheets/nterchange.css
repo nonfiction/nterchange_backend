@@ -9,11 +9,14 @@ $Id:
 -------------------------------------------------*/
 h1.title {
 	padding-bottom:8px;
-	border-bottom:1px solid #444;
+	border-bottom:1px solid #aaa;
 	text-align:center;
+	font-size: 1.4em;
+	text-transform: uppercase;
+	color: #555;
 }
+
 h2.title, h3.title {
-	text-decoration:underline;
 	padding-top:8px;
 }
 
@@ -26,7 +29,7 @@ div.header {
 	padding:2px;
 }
 form td.header {
-	background-color:#F72;
+	background-color:#E85;
 }
 form td.header div.header {
 	color:#FFF;
@@ -41,7 +44,7 @@ span.formerror {
 }
 
 span.notfound {
-	background-color:#f00;
+	background-color:#E33;
 	color:#fff;
 }
 
@@ -64,28 +67,25 @@ div.control {
 }
 a.control, a.controlactive {
 	font-size:12px;
+  padding: 0 2px;
 }
 a.control:link, a.control:visited {
-	color:#C00;
+	color:#E72;
 	text-decoration:none;
-	border-bottom:1px #C00 dotted;
 }
 a.control:hover, a.control:active{
 	color:#FFF;
-	background-color:#C00;
+	background-color:#E72;
 	text-decoration:none;
-	border-bottom:0px;
 }
 a.controlactive:link, a.controlactive:visited {
 	color:#444;
 	background-color:#FC3;
 	text-decoration:none;
-	border-bottom:1px #444 dotted;
 }
 a.controlactive:hover, a.controlactive:active{
 	color:#FFF;
 	text-decoration:none;
-	border-bottom:0px;
 }
 
 #asset {

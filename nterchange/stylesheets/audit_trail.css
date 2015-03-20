@@ -1,0 +1,30 @@
+.audit-trail-record {
+  margin: 0 0 4px 0;
+  padding: 4px 8px;
+  border: #e2e2e2 solid 1px;
+  background: #f2f2f2;
+}
+
+.audit-trail-userinfo {
+  color: #666;
+  font-style: italic;
+  font-size: 0.95em;
+  line-height: 1.3em;
+}
+
+.audit-trail-action {
+  font-size: 1.15em;
+  font-weight: bold;
+}
+
+.audit-trail-search {
+  background: #f2f2f2;
+  border: 1px solid #e2e2e2;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.audit-trail-search h3 {
+  margin-top: 0;
+  padding-top: 0;
+}

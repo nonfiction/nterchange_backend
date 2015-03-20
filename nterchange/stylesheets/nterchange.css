@@ -57,7 +57,8 @@ span.notfound {
 }
 
 div.control {
-  background-color: #EEE;
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #eee;
   padding: 2px;
   margin: 2px 0;
 }

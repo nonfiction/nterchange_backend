@@ -227,8 +227,19 @@ div.list ul.pageContentList li {
   background-color: #e5e5e5;
 }
 
+.pane {
+  border: 1px solid #D4D4D4;
+  padding: 8px;
+}
+
 form dl {
   display: block;
+}
+
+form dl:after {
+  content: '';
+  display: table;
+  width: 100%;
 }
 
 form dt {

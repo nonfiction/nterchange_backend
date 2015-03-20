@@ -1,10 +1,16 @@
 /*
-	nterchange - nonfiction studios inc.
+  nterchange - nonfiction studios inc.
 */
+
+#header,
+#container,
+#footer {
+  min-width: 600px;
+}
 
 #header {
   height: 96px;
-  background-color: #afafaf;
+  background-color: #999;
 }
 
 #logo {
@@ -13,7 +19,6 @@
 
 #container {
   padding: 10px 20px;
-  min-width: 84em;
 }
 
 #contentbox {
@@ -64,7 +69,7 @@
   margin-top: 15px;
   height: 38px;
   width: 100%;
-  background-color: #afafaf;
+  background-color: #999;
 }
 
 #credit {
@@ -115,4 +120,3 @@ div.clear {
   padding: 7px 7px 6px 28px;
   color: #363;
 }
-

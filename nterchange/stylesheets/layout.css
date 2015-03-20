@@ -9,12 +9,26 @@
 }
 
 #header {
-  height: 96px;
-  background-color: #999;
+  height: 76px;
+  background-color: #b2b2b2;
 }
 
 #logo {
-  padding: 20px 20px 18px 20px;
+  font-size: 21px;
+  padding: 15px 20px;
+  line-height: 21px;
+  letter-spacing: 0.03em;
+  font-style: italic;
+  margin-right: 20px;
+  font-weight: 300;
+}
+
+#logo a {
+  color: #fff;
+}
+
+.n-orange {
+  color: #F71;
 }
 
 #container {
@@ -69,19 +83,25 @@
   margin-top: 15px;
   height: 38px;
   width: 100%;
-  background-color: #999;
+  background-color: #b2b2b2;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+#footer a {
+  color: inherit;
 }
 
 #credit {
-  width: 125px;
+  width: 155px;
   padding: 12px 10px;
   float: right;
 }
 
 #nterchangeversion {
   float: left;
-  padding: 12px 0 0 10px;
-  color: #666;
+  padding: 12px 0 0 20px;
 }
 
 div.clear {

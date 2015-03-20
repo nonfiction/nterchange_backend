@@ -1,11 +1,9 @@
-<div class="control">
-<a href="{url_for action=create}" class="control">New {$asset_name}</a>
-</div>
+<a href="{url_for action=create}" class="btn btn-sm">New {$asset_name}</a>
 
 <div id="assetlist">
 <ul>
 {foreach from=$rows item=row}
-<li id="{$asset}_{$row.id}">{$row._headline} &nbsp; &nbsp; 
+<li id="{$asset}_{$row.id}">{$row._headline} &nbsp; &nbsp;
 {link_to href="controller:`$asset`;action:show;id:`$row.id`;" text="Show" class="control"}
 {link_to href="controller:`$asset`;action:edit;id:`$row.id`;" text="Edit" class="control"}
 {if !isset($row._remove_delete) || !$row._remove_delete}

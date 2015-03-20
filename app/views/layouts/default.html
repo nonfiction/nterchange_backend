@@ -24,7 +24,9 @@
 {if $login_name}You are logged in as <b>{$login_name}</b> {/if}<a href="{php}print $_SERVER['PHP_SELF'] . '?' . ($_SERVER['QUERY_STRING']?$_SERVER['QUERY_STRING'] . '&amp;':''){/php}logout=1">logout</a>
 </div>
 <div id="logo">
-<a href="/nterchange/"><img src="/nterchange/images/nterchange.gif" alt="" width="149" height="29" /></a>
+<a href="/nterchange/">
+	nter<span class="n-orange">change</span>
+</a>
 </div>
 {include file="layouts/navigation.html"}
 </div>
@@ -60,10 +62,11 @@
 </div>
 
 <div class="clear">&nbsp;</div>
-<div id="footer"><div id="nterchangeversion">v. {$nterchange_version}</div>
-<div id="credit">
-<a href="http://nonfiction.ca/" rel="blank"><img src="/nterchange/images/created_by.gif" alt="" width="111" height="13" /></a>
-</div>
+<div id="footer">
+	<div id="nterchangeversion">v. {$nterchange_version}</div>
+	<div id="credit">
+		<a href="http://nonfiction.ca/" rel="blank">created by non<span class="n-orange">fiction</span></a>
+	</div>
 </div>
 </body>
 </html>

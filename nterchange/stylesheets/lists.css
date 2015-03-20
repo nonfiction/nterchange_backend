@@ -1,5 +1,5 @@
 /*
-	nterchange - nonfiction studios inc.
+  nterchange - nonfiction studios inc.
 */
 
 div.list {
@@ -50,9 +50,12 @@ div.list ul li.evenitem:hover {
 }
 
 #assetlist ul li {
-  border: 1px #EEE solid;
-  padding: 6px;
-  margin-top: 6px;
+  border-bottom: 1px #EEE solid;
+  padding: 9px 2px;
+}
+
+#assetlist ul li:last-child {
+  border: none;
 }
 
 div.list ul.siteAdminList {
@@ -237,13 +240,13 @@ a.btn {
   color: white;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  padding: 3px 6px;
+  padding: 4px 6px;
   border: 1px solid #ddd;
   margin-right: 2px;
 }
 
 .btn-sm {
-  font-size: 10px;
+  font-size: 9.5px;
 }
 
 .btn i {

@@ -11,7 +11,7 @@ if (!defined('VENDOR_DIR')) define('VENDOR_DIR', realpath(BASE_DIR . '/vendor'))
 if (!defined('TEST_DIR')) define('TEST_DIR', realpath(BASE_DIR . '/test'));
 if (!defined('PEAR_DIR')) define('PEAR_DIR', (is_dir(LIB_DIR . '/pear/php')?LIB_DIR . '/pear/php':'/usr/local/lib/php'));
 if (!defined('SMARTY_DIR')) define('SMARTY_DIR', VENDOR_DIR . '/Smarty/libs/');
-if (!defined('NTERCHANGE_VERSION')) define('NTERCHANGE_VERSION', '3.2.0');
+if (!defined('NTERCHANGE_VERSION')) define('NTERCHANGE_VERSION', '4.1.0');
 if (!defined('DEFAULT_PAGE_EXTENSION')) define('DEFAULT_PAGE_EXTENSION', 'html');
 if (!defined('APP_NAME')) define('APP_NAME', 'nterchange');
 if (!defined('SITE_WORKFLOW')) define('SITE_WORKFLOW', false);

@@ -1,0 +1,45 @@
+form dl {
+  display: block;
+}
+
+form dl:after {
+  content: '';
+  display: table;
+  width: 100%;
+}
+
+form dt {
+  display: block;
+  clear: both;
+  float: left;
+  width: 120px;
+  text-align: right;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+form dd {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0 0 0 4px;
+}
+
+form td {
+  line-height: 22px;
+}
+
+input {
+  font-size: 12px;
+  padding: 2px 3px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+input[type=submit] {
+  padding: 4px 8px;
+  font-size: 13px;
+  cursor: pointer;
+}

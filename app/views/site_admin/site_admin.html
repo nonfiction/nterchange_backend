@@ -1,10 +1,16 @@
 <p>
 {if $page_edit}
-<a class="btn btn-small" href="{url_for controller='page' action='surftoedit' id=1}" rel="blank">Surf To Edit</a>
-<a class="btn btn-small" href="{url_for controller='page' action='create' referer=1}">New Page</a>
+<a class="btn btn-sm" href="{url_for controller='page' action='surftoedit' id=1}" rel="blank">
+  <i>&#x25F0;</i> Surf To Edit
+</a>
+<a class="btn btn-sm" href="{url_for controller='page' action='create' referer=1}">
+  <i>+</i> New Page
+</a>
 {/if}
 {if $user_level >= 2}
-<a class="btn btn-small" href="{url_for action='clear_all_cache'}">Clear All Caches</a>
+<a class="btn btn-sm" href="{url_for action='clear_all_cache'}">
+  <i>&#x21ba;</i> Clear All Caches
+</a>
 {/if}
 </p>
 {$content}

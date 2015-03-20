@@ -2,6 +2,10 @@
 	nterchange - nonfiction studios inc.
 */
 
+div.list {
+  margin-top: 0.5em;
+}
+
 div.list ul {
   list-style-type: none;
   padding-left: 0;
@@ -9,11 +13,8 @@ div.list ul {
 }
 
 div.list ul li {
-  background-image: url(/nterchange/images/listarrow.gif);
-  background-repeat: no-repeat;
-  background-position: 0 .4em;
-  padding: 0 0 0 14px;
-  margin: 0 0 3px 14px;
+  padding: 0 0 0 4px;
+  margin: 0;
   clear: both;
 }
 
@@ -22,7 +23,7 @@ div.list ul li.odditem {
 }
 
 div.list ul li.evenitem {
-  background-color: #EEE;
+  background-color: #f0f0f0;
 }
 
 div.list ul li div.edit_links_for_item {
@@ -39,7 +40,7 @@ div.list ul li div.content_for_item {
 
 div.list ul li.odditem:hover,
 div.list ul li.evenitem:hover {
-  background-color: #FFC;
+  background-color: #f9f9f9;
 }
 
 #assetlist ul {
@@ -56,35 +57,33 @@ div.list ul li.evenitem:hover {
 
 div.list ul.siteAdminList {
   list-style: none;
-  padding-left: 0px;
-  margin-left: 12px;
+  border-left: 1px solid #eee;
+  margin-left: 16px;
 }
 
-div.list>ul.siteAdminList {
-  border-bottom: 1px #DDD dotted;
-  background: url(/nterchange/images/site_admin_bg.gif);
-}
-
-div.list ul.siteAdminList li {
-  margin: 1px 0;
-  padding: 2px 0 2px 12px;
-  border-top: 1px #DDD dotted;
+div.list > ul.siteAdminList {
+  margin-left: 0;
 }
 
 div.list ul.siteAdminList li.odditem,
 div.list ul.siteAdminList li.evenitem {
   background-color: transparent;
+  border-bottom: 1px solid #fafafa;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 div.list ul.siteAdminList li.odditem:hover,
 div.list ul.siteAdminList li.evenitem:hover {
-  background-color: #FFC;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ddd;
 }
 
 div.list ul.pageList li,
 div.list ul.pageContentList li {
   margin-bottom: 2px;
   padding-bottom: 3px;
+  padding-top: 3px;
 }
 
 #navigation {
@@ -232,34 +231,6 @@ div.list ul.pageContentList li {
   padding: 8px;
 }
 
-form dl {
-  display: block;
-}
-
-form dl:after {
-  content: '';
-  display: table;
-  width: 100%;
-}
-
-form dt {
-  display: block;
-  clear: both;
-  float: left;
-  width: 120px;
-  text-align: right;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-}
-
-form dd {
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0 0 0 4px;
-}
-
 .btn,
 a.btn {
   background-color: #E72;
@@ -268,8 +239,15 @@ a.btn {
   text-transform: uppercase;
   padding: 3px 6px;
   border: 1px solid #ddd;
+  margin-right: 2px;
 }
 
-.btn-small {
+.btn-sm {
   font-size: 10px;
+}
+
+.btn i {
+  font-style: normal;
+  font-size: 1.3em;
+  line-height: 10px;
 }

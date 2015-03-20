@@ -27,7 +27,7 @@
 }
 
 #sidebarbox {
-  min-height: 300px;
+  min-height: 420px;
   width: 29%;
   float: right;
   padding-top: 20px;
@@ -39,7 +39,7 @@
 }
 
 #content {
-  min-height: 300px;
+  min-height: 420px;
   background-color: #FFF;
   padding: 20px;
   border: 1px solid #D4D4D4;
@@ -51,7 +51,7 @@
 }
 
 #login {
-  min-height: 100px;
+  min-height: 280px;
   background: #FFF url('/nterchange/images/shadow_r.gif') right repeat-y;
   margin: 0 8px 0 0;
   padding: 20px;

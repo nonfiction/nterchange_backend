@@ -86,14 +86,18 @@ class CodeCallerController extends AssetController {
 	function dynamicPHP(&$obj, $method, $include_file, $params=array()) {
 		$ret = '';
 		if (is_object($obj) && method_exists($obj, $method)) {
-			$ret .= "<?php\n" .
-				'include_once \'' . $include_file . '\';' . "\n" .
-				'$obj = unserialize(\'' . str_replace('\'', '\\\'', serialize($obj)) . '\');' . "\n" .
-				'$params = unserialize(\'' . str_replace('\'', '\\\'', serialize($params)) . '\');' . "\n" .
-				'print $obj->' . $method . '($params);' . "\n" .
-				"?>\n";
+			$ret .= '<?php include_once \'' . $include_file . '\';';
+			$ret .= '$obj = '    . $this->wrapSanitizedSerializer($obj)   . ';';
+			$ret .= '$params = ' . $this->wrapSanitizedSerializer($param) . ';';
+			$ret .= 'print $obj->' . $method . '($params);';
+			$ret .= '?>';
 		}
 		return $ret;
+	}
+
+	private function wrapSanitizedSerializer($obj) {
+		$encoded_serialized_string = base64_encode(serialize($obj));
+		return "unserialize(base64_decode('$encoded_serialized_string'))";
 	}
 }
 ?>

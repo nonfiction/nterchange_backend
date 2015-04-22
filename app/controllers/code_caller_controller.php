@@ -87,8 +87,8 @@ class CodeCallerController extends AssetController {
 		$ret = '';
 		if (is_object($obj) && method_exists($obj, $method)) {
 			$ret .= '<?php include_once \'' . $include_file . '\';';
-			$ret .= '$obj = '    . $this->wrapSanitizedSerializer($obj)   . ';';
-			$ret .= '$params = ' . $this->wrapSanitizedSerializer($param) . ';';
+			$ret .= '$obj = '    . $this->wrapSanitizedSerializer($obj)    . ';';
+			$ret .= '$params = ' . $this->wrapSanitizedSerializer($params) . ';';
 			$ret .= 'print $obj->' . $method . '($params);';
 			$ret .= '?>';
 		}

@@ -254,3 +254,7 @@ a.btn {
   font-size: 1.3em;
   line-height: 10px;
 }
+
+.btn-toolbar {
+  margin-bottom: 10px;
+}

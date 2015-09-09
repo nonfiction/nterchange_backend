@@ -1,35 +1,88 @@
-div.editableRegion:hover {
-  background: #EEE;
-  outline: 1px #DDD dashed;
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-#workflow,
-div.workflow,
-div.draft {
-  background-color: #F99;
-  color: #FFF;
-  border: 1px #DDD dashed;
-  font-weight: bold;
-  padding: 4px;
+.fa-edit:after {
+  content: 'edit';
+  font-style: normal;
 }
 
-div.pageContentAdd {
+.fa-minus-square:after {
+  content: 'delete';
+  font-style: normal;
+}
+
+.ntoolbar-toggle,
+.btn-group.row-chooser,
+.btn-group.pull-chooser,
+.btn-group.col-chooser {
+  display: none;
+}
+
+.ntoolbar.btn-toolbar .btn-sm,
+.ntoolbar-page .btn-sm {
+}
+
+.ntoolbar.btn-toolbar .btn-default,
+.ntoolbar-page .btn-default {
   font-size: 9px;
-  color: #888;
+  padding: 1px 6px;
+  background-color: #e2e2e2;
+  border: 1px solid #ddd;
+  color: #000;
+  text-transform: uppercase;
+  font-family: 'Verdana', sans-serif;
+  text-decoration: none;
 }
 
-div.pageContentAdd:hover {
-  background: #EEE;
+.btn-group {
+  margin-bottom: 6px;
 }
 
-div.timedcontent {
-  background: #666;
-  border: 1px dashed #C00;
-  padding: 4px;
-  margin: 1px;
-  font-family: verdana, arial, helvetica, sans-serif;
+.page-content:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.page-edit {
+  position: relative;
+  z-index: 9999;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e7e7e7;
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  text-transform: uppercase;
   font-size: 10px;
-  font-weight: bold;
-  color: #FFF;
 }
 
+.page-edit a {
+  color: #777777;
+  padding: 4px 8px 4px 0;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.page-edit .surftoedit-logo {
+  font-size: 1.4em;
+  text-transform: none;
+  color: #777777;
+  letter-spacing: 0.03em;
+  font-style: italic;
+  margin-right: 20px;
+}
+
+.surftoedit-white {
+  color: #777777;
+}
+.surftoedit-reverse {
+  -webkit-transform: rotateY(180deg); /* Chrome, Safari, Opera */
+  transform: rotateY(180deg);
+}
+
+.timedcontent {
+  background-color: #999;
+  font-size: 0.75em;
+  color: white;
+  padding: 5px;
+  border: 1px solid #a55;
+}

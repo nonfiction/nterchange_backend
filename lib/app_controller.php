@@ -468,66 +468,16 @@ class AppController extends NController {
 				if ($owned_content && $user_rights & WORKFLOW_RIGHT_EDIT && $workflow_model) {
 					$form->setDefaults(array('timed_start'=>$workflow_model->timed_start, 'timed_end'=>$workflow_model->timed_end));
 				} else if ($page_content_id) {
-          $form->setDefaults(array(
-            'timed_start'      => $page_content_model->timed_start,
-            'timed_end'        => $page_content_model->timed_end,
-            'col_xs'           => $page_content_model->col_xs,
-            'col_sm'           => $page_content_model->col_sm,
-            'col_md'           => $page_content_model->col_md,
-            'col_lg'           => $page_content_model->col_lg,
-            'row_xs'           => $page_content_model->row_xs,
-            'row_sm'           => $page_content_model->row_sm,
-            'row_md'           => $page_content_model->row_md,
-            'row_lg'           => $page_content_model->row_lg,
-            'offset_col_xs'    => $page_content_model->offset_col_xs,
-            'offset_col_sm'    => $page_content_model->offset_col_sm,
-            'offset_col_md'    => $page_content_model->offset_col_md,
-            'offset_col_lg'    => $page_content_model->offset_col_lg,
-            'offset_row_xs'    => $page_content_model->offset_row_xs,
-            'offset_row_sm'    => $page_content_model->offset_row_sm,
-            'offset_row_md'    => $page_content_model->offset_row_md,
-            'offset_row_lg'    => $page_content_model->offset_row_lg,
-            'pull_xs'          => $page_content_model->pull_xs,
-            'pull_sm'          => $page_content_model->pull_sm,
-            'pull_md'          => $page_content_model->pull_md,
-            'pull_lg'          => $page_content_model->pull_lg,
-            'gutter_xs'        => $page_content_model->gutter_xs,
-            'gutter_sm'        => $page_content_model->gutter_sm,
-            'gutter_md'        => $page_content_model->gutter_md,
-            'gutter_lg'        => $page_content_model->gutter_lg
-          ));
+          $form->setDefaults(array('timed_start'=>$page_content_model->timed_start, 'timed_end'=>$page_content_model->timed_end));
 				}
 				$page_content_model = &NModel::factory('page_content');
-        $submit = $form->elementExists('__submit_workflow__')?'__submit_workflow__':'__submit__';
-
-        // Timed Content
-				$el = &ControllerForm::addElement('timed_start', $form, $page_content_model);
-				if ($el) $form->insertElementBefore($form->removeElement('timed_start'), $submit);
-
-				$el = &ControllerForm::addElement('timed_end', $form, $page_content_model);
-				if ($el) $form->insertElementBefore($form->removeElement('timed_end'), $submit); 
-
-        // TODO: Move this style/behaviour out of inline once we update the backend with bootstrap
-        $style = "color: #fff; float: right;";
-        $onclick = "if (typeof Prototype !== 'undefined') { $$('tr.grid').invoke('toggle');return false; }";
-        $onload = "if (typeof Prototype !== 'undefined') { Event.observe(window, 'load', function(){ $$('tr.grid').invoke('toggle'); }); }";
-
-		    $form->addElement('header', 'grid_id', "Grid <a href='#' style='{$style}' onclick=\"{$onclick}\">[Toggle]</a><script>{$onload}</script>");
-				if ($el) $form->insertElementBefore($form->removeElement('grid_id'), $submit); 
-
-        // Add col_xs, col_md, etc
-        $grid = array(
-          'col_xs', 'offset_col_xs', 'row_xs', 'offset_row_xs', 'pull_xs', 'gutter_xs', 
-          'col_sm', 'offset_col_sm', 'row_sm', 'offset_row_sm', 'pull_sm', 'gutter_sm', 
-          'col_md', 'offset_col_md', 'row_md', 'offset_row_md', 'pull_md', 'gutter_md', 
-          'col_lg', 'offset_col_lg', 'row_lg', 'offset_row_lg', 'pull_lg', 'gutter_lg'
-        );
-        foreach($grid as $field) {
-          $el = &ControllerForm::addElement($field, $form, $page_content_model);
-          if ($el) {
-            $el->setLabel(array($el->_label, "{$field} grid"));
-            $form->insertElementBefore($form->removeElement($field), $submit);
-          }
+        $timed_start_el = &ControllerForm::addElement('timed_start', $form, $page_content_model);
+        $timed_end_el = &ControllerForm::addElement('timed_end', $form, $page_content_model);
+        if ($timed_start_el) {
+          $form->insertElementBefore($form->removeElement('timed_start'), ($form->elementExists('__submit_workflow__')?'__submit_workflow__':'__submit__'));
+        }
+        if ($timed_end_el) {
+          $form->insertElementBefore($form->removeElement('timed_end'), ($form->elementExists('__submit_workflow__')?'__submit_workflow__':'__submit__'));
         }
 			}
 			// assign the info and render

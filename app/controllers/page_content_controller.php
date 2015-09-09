@@ -118,69 +118,6 @@ class PageContentController extends nterchangeController {
       }
       unset($workflow);
     }
-
-    // grid settings
-    $page_content_model = &$this->loadModel('page_content');
-
-    // TODO: Move this style/behaviour out of inline once we update the backend with bootstrap
-    $style = "color: #fff; float: right;";
-    $onclick = "if (typeof Prototype !== 'undefined') { $$('tr.grid').invoke('toggle');return false; }";
-    $onload = "if (typeof Prototype !== 'undefined') { Event.observe(window, 'load', function(){ $$('tr.grid').invoke('toggle'); }); }";
-    $form->addElement('header', null, "Grid <a href='#' style='{$style}' onclick=\"{$onclick}\">[Toggle]</a><script>{$onload}</script>");
-
-    // grid fields
-    $el = $form->addElement('select', 'col_xs', 'Width (xs)', $page_content_model->grid_options('col_xs'));
-    $el->setLabel(array($el->_label, "col_xs grid"));
-    $el = $form->addElement('select', 'offset_col_xs', 'Offset Width (xs)', $page_content_model->grid_options('offset_col_xs'));
-    $el->setLabel(array($el->_label, "offset_col_xs grid"));
-    $el = $form->addElement('select', 'row_xs', 'Height (xs)', $page_content_model->grid_options('row_xs'));
-    $el->setLabel(array($el->_label, "row_xs grid"));
-    $el = $form->addElement('select', 'offset_row_xs', 'Offset Height (xs)', $page_content_model->grid_options('offset_row_xs'));
-    $el->setLabel(array($el->_label, "offset_row_xs grid"));
-    $el = $form->addElement('select', 'pull_xs', 'Pull (xs)', $page_content_model->grid_options('pull_xs'));
-    $el->setLabel(array($el->_label, "pull_xs grid"));
-    $el = $form->addElement('text', 'gutter_xs', 'Gutter (xs)');
-    $el->setLabel(array($el->_label, "gutter_xs grid"));
-
-    $el = $form->addElement('select', 'col_sm', 'Width (sm)', $page_content_model->grid_options('col'));
-    $el->setLabel(array($el->_label, "col_sm grid"));
-    $el = $form->addElement('select', 'offset_col_sm', 'Offset Width (sm)', $page_content_model->grid_options('offset_col'));
-    $el->setLabel(array($el->_label, "offset_col_sm grid"));
-    $el = $form->addElement('select', 'row_sm', 'Height (sm)', $page_content_model->grid_options('row'));
-    $el->setLabel(array($el->_label, "row_sm grid"));
-    $el = $form->addElement('select', 'offset_row_sm', 'Offset Height (sm)', $page_content_model->grid_options('offset_row'));
-    $el->setLabel(array($el->_label, "offset_row_sm grid"));
-    $el = $form->addElement('select', 'pull_sm', 'Pull (sm)', $page_content_model->grid_options('pull'));
-    $el->setLabel(array($el->_label, "pull_sm grid"));
-    $el = $form->addElement('text', 'gutter_sm', 'Gutter (sm)');
-    $el->setLabel(array($el->_label, "gutter_sm grid"));
-
-    $el = $form->addElement('select', 'col_md', 'Width (md)', $page_content_model->grid_options('col'));
-    $el->setLabel(array($el->_label, "col_md grid"));
-    $el = $form->addElement('select', 'offset_col_md', 'Offset Width (md)', $page_content_model->grid_options('offset_col'));
-    $el->setLabel(array($el->_label, "offset_col_md grid"));
-    $el = $form->addElement('select', 'row_md', 'Height (md)', $page_content_model->grid_options('row'));
-    $el->setLabel(array($el->_label, "row_md grid"));
-    $el = $form->addElement('select', 'offset_row_md', 'Offset Height (md)', $page_content_model->grid_options('offset_row'));
-    $el->setLabel(array($el->_label, "offset_row_md grid"));
-    $el = $form->addElement('select', 'pull_md', 'Pull (md)', $page_content_model->grid_options('pull'));
-    $el->setLabel(array($el->_label, "pull_md grid"));
-    $el = $form->addElement('text', 'gutter_md', 'Gutter (md)');
-    $el->setLabel(array($el->_label, "gutter_md grid"));
-
-    $el = $form->addElement('select', 'col_lg', 'Width (lg)', $page_content_model->grid_options('col'));
-    $el->setLabel(array($el->_label, "col_lg grid"));
-    $el = $form->addElement('select', 'offset_col_lg', 'Offset Width (lg)', $page_content_model->grid_options('offset_col'));
-    $el->setLabel(array($el->_label, "offset_col_lg grid"));
-    $el = $form->addElement('select', 'row_lg', 'Height (lg)', $page_content_model->grid_options('row'));
-    $el->setLabel(array($el->_label, "row_lg grid"));
-    $el = $form->addElement('select', 'offset_row_lg', 'Offset Height (lg)', $page_content_model->grid_options('offset_row'));
-    $el->setLabel(array($el->_label, "offset_row_lg grid"));
-    $el = $form->addElement('select', 'pull_lg', 'Pull (lg)', $page_content_model->grid_options('pull'));
-    $el->setLabel(array($el->_label, "pull_lg grid"));
-    $el = $form->addElement('text', 'gutter_lg', 'Gutter (lg)');
-    $el->setLabel(array($el->_label, "gutter_lg grid"));
-
     // timed content
     $form->addElement('header', null, 'Make it timed content?');
     $timed_options = array('format'=>'Y-m-d H:i', 'minYear'=>date('Y'), 'maxYear'=>date('Y')+4, 'addEmptyOption'=>true);
@@ -235,23 +172,6 @@ class PageContentController extends nterchangeController {
         $model->page_template_container_id = $values['template_container_id'];
         $model->content_asset = $values['asset'];
         $model->content_asset_id = $asset_id;
-        // insert grid values
-        $model->col_xs    = $values['col_xs'];
-        $model->col_sm    = $values['col_sm'];
-        $model->col_md    = $values['col_md'];
-        $model->col_lg    = $values['col_lg'];
-        $model->row_xs    = $values['row_xs'];
-        $model->row_sm    = $values['row_sm'];
-        $model->row_md    = $values['row_md'];
-        $model->row_lg    = $values['row_lg'];
-        $model->pull_xs   = $values['pull_xs'];
-        $model->pull_sm   = $values['pull_sm'];
-        $model->pull_md   = $values['pull_md'];
-        $model->pull_lg   = $values['pull_lg'];
-        $model->gutter_xs = $values['gutter_xs'];
-        $model->gutter_sm = $values['gutter_sm'];
-        $model->gutter_md = $values['gutter_md'];
-        $model->gutter_lg = $values['gutter_lg'];
         // prep the timed content values if they exist
         if (isset($values['timed_start'])) {
           $values['timed_start'] = NDate::arrayToDate($values['timed_start']);
@@ -350,71 +270,6 @@ class PageContentController extends nterchangeController {
     }
     // finish up
     $form->addElement('submit', '__submit__', 'Add Content');
-
-    // grid settings
-    $page_content_model = &$this->loadModel('page_content');
-
-    // TODO: Move this style/behaviour out of inline once we update the backend with bootstrap
-    $style = "color: #fff; float: right;";
-    $onclick = "if (typeof Prototype !== 'undefined') { $$('tr.grid').invoke('toggle');return false; }";
-    $onload = "if (typeof Prototype !== 'undefined') { Event.observe(window, 'load', function(){ $$('tr.grid').invoke('toggle'); }); }";
-    $form->addElement('header', null, "Grid <a href='#' style='{$style}' onclick=\"{$onclick}\">[Toggle]</a><script>{$onload}</script>");
-
-    // grid fields
-    $el = $form->addElement('select', 'col_xs', 'Width (xs)', $page_content_model->grid_options('col_xs'));
-    $el->setLabel(array($el->_label, "col_xs grid"));
-    $el = $form->addElement('select', 'col_sm', 'Width (sm)', $page_content_model->grid_options('col'));
-    $el->setLabel(array($el->_label, "col_sm grid"));
-    $el = $form->addElement('select', 'col_md', 'Width (md)', $page_content_model->grid_options('col'));
-    $el->setLabel(array($el->_label, "col_md grid"));
-    $el = $form->addElement('select', 'col_lg', 'Width (lg)', $page_content_model->grid_options('col'));
-    $el->setLabel(array($el->_label, "col_lg grid"));
-
-    $el = $form->addElement('select', 'row_xs', 'Height (xs)', $page_content_model->grid_options('row_xs'));
-    $el->setLabel(array($el->_label, "row_xs grid"));
-    $el = $form->addElement('select', 'row_sm', 'Height (sm)', $page_content_model->grid_options('row'));
-    $el->setLabel(array($el->_label, "row_sm grid"));
-    $el = $form->addElement('select', 'row_md', 'Height (md)', $page_content_model->grid_options('row'));
-    $el->setLabel(array($el->_label, "row_md grid"));
-    $el = $form->addElement('select', 'row_lg', 'Height (lg)', $page_content_model->grid_options('row'));
-    $el->setLabel(array($el->_label, "row_lg grid"));
-
-    $el = $form->addElement('select', 'offset_col_xs', 'Offset Width (xs)', $page_content_model->grid_options('offset_col_xs'));
-    $el->setLabel(array($el->_label, "offset_col_xs grid"));
-    $el = $form->addElement('select', 'offset_col_sm', 'Offset Width (sm)', $page_content_model->grid_options('offset_col'));
-    $el->setLabel(array($el->_label, "offset_col_sm grid"));
-    $el = $form->addElement('select', 'offset_col_md', 'Offset Width (md)', $page_content_model->grid_options('offset_col'));
-    $el->setLabel(array($el->_label, "offset_col_md grid"));
-    $el = $form->addElement('select', 'offset_col_lg', 'Offset Width (lg)', $page_content_model->grid_options('offset_col'));
-    $el->setLabel(array($el->_label, "offset_col_lg grid"));
-
-    $el = $form->addElement('select', 'offset_row_xs', 'Offset Height (xs)', $page_content_model->grid_options('offset_row_xs'));
-    $el->setLabel(array($el->_label, "offset_row_xs grid"));
-    $el = $form->addElement('select', 'offset_row_sm', 'Offset Height (sm)', $page_content_model->grid_options('offset_row'));
-    $el->setLabel(array($el->_label, "offset_row_sm grid"));
-    $el = $form->addElement('select', 'offset_row_md', 'Offset Height (md)', $page_content_model->grid_options('offset_row'));
-    $el->setLabel(array($el->_label, "offset_row_md grid"));
-    $el = $form->addElement('select', 'offset_row_lg', 'Offset Height (lg)', $page_content_model->grid_options('offset_row'));
-    $el->setLabel(array($el->_label, "offset_row_lg grid"));
-
-    $el = $form->addElement('select', 'pull_xs', 'Pull (xs)', $page_content_model->grid_options('pull_xs'));
-    $el->setLabel(array($el->_label, "pull_xs grid"));
-    $el = $form->addElement('select', 'pull_sm', 'Pull (sm)', $page_content_model->grid_options('pull'));
-    $el->setLabel(array($el->_label, "pull_sm grid"));
-    $el = $form->addElement('select', 'pull_md', 'Pull (md)', $page_content_model->grid_options('pull'));
-    $el->setLabel(array($el->_label, "pull_md grid"));
-    $el = $form->addElement('select', 'pull_lg', 'Pull (lg)', $page_content_model->grid_options('pull'));
-    $el->setLabel(array($el->_label, "pull_lg grid"));
-
-    $el = $form->addElement('text', 'gutter_xs', 'Gutter (xs)');
-    $el->setLabel(array($el->_label, "gutter_xs grid"));
-    $el = $form->addElement('text', 'gutter_sm', 'Gutter (sm)');
-    $el->setLabel(array($el->_label, "gutter_sm grid"));
-    $el = $form->addElement('text', 'gutter_md', 'Gutter (md)');
-    $el->setLabel(array($el->_label, "gutter_md grid"));
-    $el = $form->addElement('text', 'gutter_lg', 'Gutter (lg)');
-    $el->setLabel(array($el->_label, "gutter_lg grid"));
-
     // rules
     defined('SITE_WORKFLOW') && SITE_WORKFLOW?$form->addRule('asset_id', 'You must select a record.', 'required'):$form->addGroupRule('asset_id', 'You must select a record.', 'required');
     $form->addRule('asset', '', 'required');

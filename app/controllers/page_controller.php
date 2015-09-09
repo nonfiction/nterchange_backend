@@ -929,59 +929,6 @@ class PageController extends SiteAdminController {
               $values['_EDIT_START_'] = trim(preg_replace('/\s+/', ' ', $values['_EDIT_START_']));
               $values['_EDIT_END_']   = trim(preg_replace('/\s+/', ' ', $values['_EDIT_END_']));
 
-              $page_content_controller = &NController::factory('page_content');
-              $page_content_controller->_auth = &$this->_auth;
-              $page_content_controller->set(array(
-                'id'             => $page_content_model->id,
-                'content_order'  => $page_content_model->content_order,
-                'col_xs'         => $page_content_model->col_xs,
-                'col_sm'         => $page_content_model->col_sm,
-                'col_md'         => $page_content_model->col_md,
-                'col_lg'         => $page_content_model->col_lg,
-                'row_xs'         => $page_content_model->row_xs,
-                'row_sm'         => $page_content_model->row_sm,
-                'row_md'         => $page_content_model->row_md,
-                'row_lg'         => $page_content_model->row_lg,
-                'offset_col_xs'  => $page_content_model->offset_col_xs,
-                'offset_col_sm'  => $page_content_model->offset_col_sm,
-                'offset_col_md'  => $page_content_model->offset_col_md,
-                'offset_col_lg'  => $page_content_model->offset_col_lg,
-                'offset_row_xs'  => $page_content_model->offset_row_xs,
-                'offset_row_sm'  => $page_content_model->offset_row_sm,
-                'offset_row_md'  => $page_content_model->offset_row_md,
-                'offset_row_lg'  => $page_content_model->offset_row_lg,
-                'pull_xs'        => $page_content_model->pull_xs,
-                'pull_sm'        => $page_content_model->pull_sm,
-                'pull_md'        => $page_content_model->pull_md,
-                'pull_lg'        => $page_content_model->pull_lg,
-                'gutter_xs'      => $page_content_model->gutter_xs,
-                'gutter_sm'      => $page_content_model->gutter_sm,
-                'gutter_md'      => $page_content_model->gutter_md,
-                'gutter_lg'      => $page_content_model->gutter_lg,
-                'asset_id'       => (($content_model->id) ? $content_model->id : '1'),
-                'asset_headline' => (($content_model->cms_headline) ? $content_model->cms_headline : 'headline'),
-                'asset'          => strtolower(get_class($content_model))
-              ));
-              if (isset($values['_SURFTOEDIT_'])) {
-                $page_content_controller->set(array('_SURFTOEDIT_' => true));
-              }
-
-              $grid_start         = $page_content_controller->render(array('action'=>'grid_start', 'return'=>true));
-              $grid_end           = $page_content_controller->render(array('action'=>'grid_end', 'return'=>true));
-              $grid_content_start = $page_content_controller->render(array('action'=>'grid_content_start', 'return'=>true));
-              $grid_content_end   = $page_content_controller->render(array('action'=>'grid_content_end', 'return'=>true));
-              unset($page_content_controller);
-
-              // Remove extra whitespace/newlines
-              $grid_start         = trim(preg_replace('/\s+/', ' ', $grid_start));
-              $grid_end           = trim(preg_replace('/\s+/', ' ', $grid_end));
-              $grid_content_start = trim(preg_replace('/\s+/', ' ', $grid_content_start));
-              $grid_content_end   = trim(preg_replace('/\s+/', ' ', $grid_content_end));
-
-              // Combine edit_start/end with grid_start/end
-              $values['_GRID_START_'] = "\n" . $grid_start . $values['_EDIT_START_'] . $grid_content_start. "\n";
-              $values['_GRID_END_']   = "\n" . $grid_content_end . $values['_EDIT_END_'] . $grid_end . "\n";
-
               // Render the content
               $content_controller->set($values);
               $content .= $content_controller->render(array('action'=>$template, 'return'=>true));

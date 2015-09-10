@@ -1,9 +1,21 @@
-{if $navigation}
-<div id="navigation">
-<ul>
-{foreach from=$navigation key=k item=nav}
-<li><a href="{url_for controller=$nav.controller action=$nav.action id=$nav.id}"{if $nav.class} class="{$nav.class}"{/if}{if $nav.target} target="{$nav.target}"{/if}>{$nav.title}</a></li>
-{/foreach}
-</ul>
+<div id="header">
+  <div id="logout">
+    {if $login_name}You are logged in as <b>{$login_name}</b> {/if}<a href="{php}print $_SERVER['PHP_SELF'] . '?' . ($_SERVER['QUERY_STRING']?$_SERVER['QUERY_STRING'] . '&amp;':''){/php}logout=1">logout</a>
+  </div>
+
+  <div id="logo">
+    <a href="/nterchange/">nter<span class="n-orange">change</span></a>
+  </div>
+
+  {if $navigation}
+  <div id="navigation"><ul>
+  {foreach from=$navigation key=k item=nav}
+  <li><a href="{url_for controller=$nav.controller action=$nav.action id=$nav.id}"{if $nav.class} class="{$nav.class}"{/if}{if $nav.target} target="{$nav.target}"{/if}>{$nav.title}</a></li>
+  {/foreach}
+  </ul></div>
+  {/if}
 </div>
+
+{if $_FLASH_.notice}
+<div id="notice">{$_FLASH_.notice}</div>
 {/if}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>nterchange{if $_TITLE_} - {$_TITLE_}{/if}</title>
+
+  {stylesheet_link_tag href=screen}
+  {stylesheet_link_tag href=handheld media=handheld}
+  {stylesheet_link_tag href=nterchange_custom}
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/prototype/1.7.2/prototype.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/scriptaculous/1.9.0/builder.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/scriptaculous/1.9.0/effects.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/scriptaculous/1.9.0/dragdrop.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/scriptaculous/1.9.0/slider.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/scriptaculous/1.9.0/controls.min.js"></script>
+
+  {if $layout eq 'simple'}
+  {javascript_include_tag src=workflow}
+  {javascript_include_tag src=page_content}
+  {javascript_include_tag src=nterchange}
+  {/if}
+
+  {if $layout eq 'default' || $layout eq 'plain'}
+  <link rel="stylesheet" href="/nterchange/javascripts/datechooser/datechooser.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  {javascript_include_tag src=datechooser/datechooser}
+  {javascript_include_tag src=nterchange}
+  {/if}
+
+  {if $layout eq 'default'}
+  {javascript_include_tag src=utils}
+  {javascript_include_tag src=application}
+  {javascript_include_tag src=workflow}
+  {javascript_include_tag src=page_content}
+  {javascript_include_tag src=page}
+  {javascript_include_tag src=ckeditor/ckeditor}
+  {/if}
+
+  {$HEADER}
+</head>
+
+<body class="{$layout}">

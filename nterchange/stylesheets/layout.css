@@ -66,7 +66,8 @@
 
 #login {
   min-height: 280px;
-  background: #FFF url('/nterchange/images/shadow_r.gif') right repeat-y;
+  background: #FFF url('/nterchange/images/shadow_r.gif') right repeat-y; 
+  background: #fff;
   margin: 0 8px 0 0;
   padding: 20px;
 }

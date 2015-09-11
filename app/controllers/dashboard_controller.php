@@ -25,6 +25,7 @@ class DashboardController extends nterchangeController {
 		// set user level allowed to access the actions with required login
 		$this->user_level_required = N_USER_NORIGHTS;
 		$this->login_required = true;
+		$this->base_view_dir = ROOT_DIR;
 		parent::__construct();
 	}
 

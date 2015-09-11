@@ -1,24 +1,20 @@
-{assign var="layouts" value=$smarty.template|dirname}{include file="$layouts/head.html" layout="plain"}
-{include file="$layouts/navigation.html"}
+{include file="layouts/head" layout="plain"}
+{include file="layouts/navigation"}
 
 <div id="container">
-<div id="contentbox{if !$SIDEBAR_CONTENT}alone{/if}">
-<div id="content">
-<h1 class="title">{$_TITLE_}</h1>
-{if $_FLASH_.notice}
-<div id="notice">
-{$_FLASH_.notice}
-</div>
-{/if}
-{$MAIN_CONTENT}
-</div>
-<div class="bottom">&nbsp;</div>
-</div>
-{if $SIDEBAR_CONTENT}
-<div id="sidebarbox">
-{$SIDEBAR_CONTENT}
-</div>
-{/if}
+  <div id="contentbox{if !$SIDEBAR_CONTENT}alone{/if}">
+    <div id="content">
+      <h1 class="title">{$_TITLE_}</h1>
+      {if $_FLASH_.notice}<div id="notice">{$_FLASH_.notice}</div>{/if}
+      {$MAIN_CONTENT}
+    </div>
+    <div class="bottom">&nbsp;</div>
+  </div>
+  {if $SIDEBAR_CONTENT}
+  <div id="sidebarbox">
+    {$SIDEBAR_CONTENT}
+  </div>
+  {/if}
 </div>
 
-{include file="$layouts/tail.html"}
+{include file="layouts/tail"}

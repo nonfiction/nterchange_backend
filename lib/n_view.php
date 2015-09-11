@@ -48,7 +48,9 @@ class NView extends Smarty {
 		// Smarty setup
 		$this->Smarty();
 		if (is_object($controller)) {
-			$this->template_dir = $controller->base_view_dir . '/app/views';
+      // Find templates in /app/views directory, first checking front-end, then back-end
+      $this->template_dir = array($controller->base_view_dir . '/app/views', $controller->base_view_dir . '/vendor/nterchange/app/views');
+			// $this->template_dir = $controller->base_view_dir . '/app/views';
 		}
 		if (is_dir(BASE_DIR . '/vendor/SmartyPaginate/plugins')) {
 			$this->plugins_dir[] = BASE_DIR . '/vendor/SmartyPaginate/plugins';
@@ -126,6 +128,7 @@ class NView extends Smarty {
 		if (!isset($filename) || !is_file($filename)) {
 			// get the default filename
 			$filename = $this->_getViewFileName(Inflector::underscore($action));
+      // var_dump($filename);
 		}
 		if (!$filename && !isset($options['layout'])) {
 			// TODO: raise an error here - no file exists for the action/file specified
@@ -387,5 +390,26 @@ class NView extends Smarty {
 		}
 		NDebug::debug($message, $debug_type, $log_level, $ident);
 	}
+
+  // This function is called by Smarty templates when including a file.
+  // It looks at the file path and appends .html if neccessary and prepends page/ if no folder is specified.
+  // It will first check if a file exists at app/views, or at vendor/nterchange/app/views and then
+  // update the file path to its full absolute path before calling the original Smarty include function.
+  function _smarty_include($params) {
+    $filename = '/app/views/' . $params['smarty_include_tpl_file'] . '.html';
+    $filename = str_replace(array('//','.html.html'), array('/','.html'), $filename);
+
+    if (file_exists(ROOT_DIR . $filename)) {
+      $params['smarty_include_tpl_file'] = ROOT_DIR . $filename;
+    } else if (file_exists(BASE_DIR . $filename)) {
+      $params['smarty_include_tpl_file'] = BASE_DIR . $filename;
+    } else if (file_exists(ROOT_DIR . 'page/' . $filename)) {
+      $params['smarty_include_tpl_file'] = ROOT_DIR. 'page/' . $filename;
+    } else if (file_exists(BASE_DIR . 'page/' . $filename)) {
+      $params['smarty_include_tpl_file'] = BASE_DIR. 'page/' . $filename;
+    } 
+
+    parent::_smarty_include($params); 
+  }
 }
 ?>

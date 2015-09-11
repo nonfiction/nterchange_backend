@@ -1,26 +1,28 @@
-{assign var="layouts" value=$smarty.template|dirname}{include file="$layouts/head.html" layout="login"}
-{include file="$layouts/navigation.html"}
+{include file="layouts/head" layout="login"}
+{include file="layouts/navigation"}
 {literal}<script>document.observe("dom:loaded", function() { document.login_form.username.focus(); });</script>{/literal}
 
+{if $_FLASH_.notice}<div id="notice">{$_FLASH_.notice}</div>{/if}
+
 <div id="container">
-<div id="loginbox">
-<div id="login">
-<h1 class="title">{$_TITLE_}</h1>
-{$MAIN_CONTENT}
-{if !$forgot}
-<div id="forgot" style="margin-top:3px;margin-bottom:3px;">
-<a href="/nterchange/login/forgot">Forgot your password?</a>
-</div>
-{/if}
-{php}
-print '<div style="font-size:9px;color:#CCC;">' . "\n";
-print 'Browser: ' . $_SERVER['HTTP_USER_AGENT'] . "<br />\n";
-print 'IP: ' . $_SERVER['REMOTE_ADDR'] . "\n";
-print "</div>\n";
-{/php}
-</div>
-<div class="bottom">&nbsp;</div>
-</div>
+  <div id="loginbox">
+    <div id="login">
+      <h1 class="title">{$_TITLE_}</h1>
+      {$MAIN_CONTENT}
+      {if !$forgot}
+      <div id="forgot" style="margin-top:3px;margin-bottom:3px;">
+        <a href="/nterchange/login/forgot">Forgot your password?</a>
+      </div>
+      {/if}
+      {php}
+      print '<div style="font-size:9px;color:#CCC;">' . "\n";
+      print 'Browser: ' . $_SERVER['HTTP_USER_AGENT'] . "<br />\n";
+      print 'IP: ' . $_SERVER['REMOTE_ADDR'] . "\n";
+      print "</div>\n";
+      {/php}
+    </div>
+    <div class="bottom">&nbsp;</div>
+  </div>
 </div>
 
-{include file="$layouts/tail.html"}
+{include file="layouts/tail"}

@@ -1,34 +1,30 @@
-{assign var="layouts" value=$smarty.template|dirname}{include file="$layouts/head.html" layout="default"}
-{include file="$layouts/navigation.html"}
+{include file="layouts/head" layout="default"}
+{include file="layouts/navigation"}
 
 <div id="container">
-<div id="contentbox{if !$SIDEBAR_CONTENT}alone{/if}">
-<div id="content">
-<h1 class="title">{$_TITLE_}</h1>
-{dynamic}
-{if $_FLASH_.notice}
-<div id="notice">
-{$_FLASH_.notice}
-</div>
-{/if}
-{/dynamic}
-{if $subnav}
-{include file="layouts/subnav.html"}
-<div class="pane">
-{/if}
-{$MAIN_CONTENT}
-{if $subnav}
-</div>
-{/if}
-</div>
-<div class="bottom">&nbsp;</div>
-</div>
-{if $SIDEBAR_CONTENT}
-<div id="sidebarbox">
-<h1 class="title">{$SIDEBAR_TITLE}</h1>
-{$SIDEBAR_CONTENT}
-</div>
-{/if}
+
+  <div id="contentbox{if !$SIDEBAR_CONTENT}alone{/if}">
+    <div id="content">
+      <h1 class="title">{$_TITLE_}</h1>
+      {dynamic}{if $_FLASH_.notice}<div id="notice">{$_FLASH_.notice}</div>{/if}{/dynamic}
+      {if $subnav}
+        {include file="layouts/subnav"}
+        <div class="pane">
+      {/if}
+      {$MAIN_CONTENT}
+      {if $subnav}
+        </div>
+      {/if}
+    </div>
+    <div class="bottom">&nbsp;</div>
+  </div>
+
+  {if $SIDEBAR_CONTENT}
+  <div id="sidebarbox">
+    <h1 class="title">{$SIDEBAR_TITLE}</h1>
+    {$SIDEBAR_CONTENT}
+  </div>
+  {/if}
 </div>
 
-{include file="$layouts/tail.html"}
+{include file="layouts/tail"}

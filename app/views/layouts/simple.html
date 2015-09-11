@@ -1,18 +1,14 @@
-{assign var="layouts" value=$smarty.template|dirname}{include file="$layouts/head.html" layout="simple"}
+{include file="layouts/head" layout="simple"}
 
 <div id="container" style="min-width:200px;">
-<div id="contentboxalone">
-<div id="content" style="min-height:150px;">
-<h1 class="title">{$_TITLE_}</h1>
-{if $_FLASH_.notice}
-<div id="notice">
-{$_FLASH_.notice}
-</div>
-{/if}
-{$MAIN_CONTENT}
-</div>
-<div class="bottom">&nbsp;</div>
-</div>
+  <div id="contentboxalone">
+    <div id="content" style="min-height:150px;">
+      <h1 class="title">{$_TITLE_}</h1>
+      {if $_FLASH_.notice}<div id="notice">{$_FLASH_.notice}</div>{/if}
+      {$MAIN_CONTENT}
+    </div>
+    <div class="bottom">&nbsp;</div>
+  </div>
 </div>
 <div class="clear">&nbsp;</div>
 

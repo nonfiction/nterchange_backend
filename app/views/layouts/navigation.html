@@ -3,9 +3,7 @@
     {if $login_name}You are logged in as <b>{$login_name}</b> {/if}<a href="{php}print $_SERVER['PHP_SELF'] . '?' . ($_SERVER['QUERY_STRING']?$_SERVER['QUERY_STRING'] . '&amp;':''){/php}logout=1">logout</a>
   </div>
 
-  <div id="logo">
-    <a href="/nterchange/">nter<span class="n-orange">change</span></a>
-  </div>
+  {include file="layouts/logo"}
 
   {if $navigation}
   <div id="navigation"><ul>
@@ -15,7 +13,3 @@
   </ul></div>
   {/if}
 </div>
-
-{if $_FLASH_.notice}
-<div id="notice">{$_FLASH_.notice}</div>
-{/if}

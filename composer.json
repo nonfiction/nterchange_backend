@@ -1,7 +1,7 @@
 {
   "name": "nonfiction/nterchange",
   "description": "Core libraries for nterchange CMS",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "require": {
     "amazonwebservices/aws-sdk-for-php": "1.6.2",
     "nonfiction/nterchange_pear": "*"

@@ -384,13 +384,11 @@ class PageController extends SiteAdminController {
       }
 
       if ($this->nterchange) {
-        // include_once 'view/helpers/asset_tag_helper.php';
-        // $contents['header']  = AssetTagHelper::stylesheetLinkTagFunc(array('href'=>'surftoedit'), $this);
         $contents['header']  = '';
         $contents['header'] .= "\n  <!-- Surf-to-Edit -->\n  ";
-        $contents['header'] .= '<link href="/nterchange/assets/stylesheets/surftoedit.css" rel="stylesheet">';
+        $contents['header'] .= '<link href="/nterchange/stylesheets/surftoedit.css" rel="stylesheet">';
         $contents['header'] .= "\n  ";
-        $contents['header'] .= '<script src="/nterchange/assets/javascripts/surftoedit.js"></script>';
+        $contents['header'] .= '<script src="/nterchange/javascripts/surftoedit.js"></script>';
       }
       if ($this->nterchange) {
         $contents['admin_dir'] = 1;

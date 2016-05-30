@@ -19,7 +19,7 @@ require_once 'app/controllers/asset_controller.php';
  * @since		3.1.12
  */
 class VersionCheckController extends AssetController {
-	var $check_version_url = 'http://versioncheck.nterchange.com/versioncheck';
+	var $check_version_url = 'https://raw.githubusercontent.com/nonfiction/nterchange/master/version.yml';
 	var $check_version_interval = 86400;
 	var $cache_name = 'version_check';
 	var $cache_group = 'vcheck';

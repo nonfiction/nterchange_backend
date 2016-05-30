@@ -1,0 +1,5 @@
+version: "4.4.1"
+distribution: "https://github.com/nonfiction/nterchange"
+changelog: "https://github.com/nonfiction/nterchange/commits/master"
+release_date: "March 18, 2016"
+website: "https://github.com/nonfiction/nterchange"

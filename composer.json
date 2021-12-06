@@ -1,5 +1,5 @@
 {
-  "name": "nonfiction/nterchange4",
+  "name": "nonfiction/nterchange_backend",
   "description": "Core libraries for nterchange CMS",
   "version": "4.1.1",
   "require": {

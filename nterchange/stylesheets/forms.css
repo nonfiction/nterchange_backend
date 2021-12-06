@@ -36,6 +36,7 @@ input {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 3px;
+  color: #333;
 }
 
 input[type=submit] {
